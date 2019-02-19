@@ -7,6 +7,7 @@ public class Show {
     private int show_id;        //演出票id
     private int show_type_id;   //演出类型id
     private String show_time;   //演出时间
+    private int show_times;    //演出时间区间
     private int show_place_id;  //演出地点id
     private String show_people; //演出者（人）
     private String show_name;   //演出名称
@@ -17,6 +18,16 @@ public class Show {
     private String show_message; //演出信息
     private int show_attention;  //关注量
     private int show_discount;   //演出票折扣
+    private double show_comment_grade;   //演出评分
+    private int show_comment_num;      //评论人数
+
+    public int getShow_times() {
+        return show_times;
+    }
+
+    public void setShow_times(int show_times) {
+        this.show_times = show_times;
+    }
 
     public int getShow_id() {
         return show_id;
@@ -120,5 +131,21 @@ public class Show {
 
     public void setShow_discount(int show_discount) {
         this.show_discount = show_discount;
+    }
+
+    public double getShow_comment_grade() {
+        return show_comment_grade;
+    }
+
+    public void setShow_comment_grade(double show_comment_grade) {
+        this.show_comment_grade = show_comment_grade;
+    }
+
+    public int getShow_comment_num() {
+        return show_comment_num;
+    }
+
+    public void setShow_comment_num(int show_comment_num) {
+        this.show_comment_num = show_comment_num;
     }
 }
