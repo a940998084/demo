@@ -10,4 +10,6 @@ import java.util.List;
 public interface IndexDao {
     List<ShowType> findShowtype();
     List<IndexModel> findShowByAll(Show show);
+    List<IndexModel> findByCityAndHot(Show show);
+    List<IndexModel> findByCityAndGrade(Show show);
 }

@@ -6,7 +6,8 @@ package com.piaoniu.demo.pojo;
 public class Show {
     private int show_id;        //演出票id
     private int show_type_id;   //演出类型id
-    private String show_time;   //演出时间
+    private String show_begin_time;   //演出开始时间
+    private String show_end_time;   //演出结束时间
     private int show_times;    //演出时间区间
     private int show_place_id;  //演出地点id
     private String show_people; //演出者（人）
@@ -20,6 +21,15 @@ public class Show {
     private int show_discount;   //演出票折扣
     private double show_comment_grade;   //演出评分
     private int show_comment_num;      //评论人数
+    private int show_sort;         //排序方式id
+
+    public int getShow_sort() {
+        return show_sort;
+    }
+
+    public void setShow_sort(int show_sort) {
+        this.show_sort = show_sort;
+    }
 
     public int getShow_times() {
         return show_times;
@@ -45,12 +55,20 @@ public class Show {
         this.show_type_id = show_type_id;
     }
 
-    public String getShow_time() {
-        return show_time;
+    public String getShow_begin_time() {
+        return show_begin_time;
     }
 
-    public void setShow_time(String show_time) {
-        this.show_time = show_time;
+    public void setShow_begin_time(String show_begin_time) {
+        this.show_begin_time = show_begin_time;
+    }
+
+    public String getShow_end_time() {
+        return show_end_time;
+    }
+
+    public void setShow_end_time(String show_end_time) {
+        this.show_end_time = show_end_time;
     }
 
     public int getShow_place_id() {

@@ -24,4 +24,14 @@ public class IndexServiceImpl implements IndexService {
     public List<IndexModel> findShowByAll(Show show) {
         return indexDao.findShowByAll(show);
     }
+
+    @Override
+    public List<IndexModel> findByCityAndHot(Show show) {
+        return indexDao.findByCityAndHot(show);
+    }
+
+    @Override
+    public List<IndexModel> findByCityAndGrade(Show show) {
+        return indexDao.findByCityAndGrade(show);
+    }
 }
