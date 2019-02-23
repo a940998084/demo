@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/position.css"/>
+		<link rel="stylesheet" href="../css/base2.css">
+		<link rel="stylesheet" type="text/css" href="../css/jq22.css" />
+		 
+	</head>
+	<body>
+		<!-- header -->
+		<header>
+			<div class="header">
+				<ul class="clearfix">
+					<li class="fl"><a href="javascript:;">票牛首页</a></li>
+					<li class="fr fr1" id="frf">
+						<a href="javascript:;">手机票牛</a>
+						<a href="javascript:;" id="frz"><img src="../img/app.jpg"></a>
+					</li>
+					<li class="fr fr2" id="dwf">
+						<p class="clearfix" >
+							<a href="javascript:;" class="fl username">用户***************</a>
+						<span class="fl">,您好</span>
+						</p>	
+						<ul class="dw" id="dwz" >
+							<li>
+								<a href="javascript:;" style="color: red;">用户******</a>
+								<span>,您好</span>
+							</li>
+							<li><a href="">我的订单</a></li>
+							<li><a href="">我的钱包</a></li>
+							<li><a href="">账户设置</a></li>
+							<li><a href="">退出登录</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<div class="clearfix nav" style="margin-top: 30px;">
+			<h1 class="fl"><a href="javascript:;">票牛网</a></h1>
+			<div class="fl">
+				<ul class="clearfix">
+					<li class="fl change3">1.选择商品
+					<img src="../img/5-b9.png" class="im1">
+					</li>
+					
+					<li class="fl change1">
+						
+						2.确认订单信息
+						<img src="../img/5-b11.png" class="im2">
+						</li>
+					<li class="fl change2">3.支付订单
+						<img src="../img/5-b11.png" class="im3">
+					</li>
+					<li class="fl">4.成功</li>
+				</ul>
+			</div>
+		</div>
+		<div class="box">
+			<p class="dizhi">
+				<span class="dym">开心麻花爆笑舞台剧《李茶的姑妈》 第3轮 </span>
+				<span class="dyy">  &nbsp;&nbsp;&nbsp索菲特人民大剧院</span>
+			</p>
+			<div class="container">
+				<div class="zuowei">
+					<ul class="pj">
+						<li>票档：</li>
+						<li><img src="../img/5-03.jpg"> &nbsp1180元</li>
+						<li><img src="../img/5-04.jpg" > &nbsp780元</li>
+						<li><img src="../img/5-05.jpg" > &nbsp680元</li>
+						<li><img src="../img/5-06.jpg" > &nbsp280元</li>
+						<li><img src="../img/5-07.jpg" > &nbsp200元</li>
+					</ul>
+					<!-- <div class="qy">
+						<div class="qy0">
+							<div class="qy1">
+								区域
+							</div>
+							<select name="">
+								<option value="">一楼</option>
+								<option value="">二楼</option>
+							</select>
+						</div>
+					</div> -->
+				
+				</div>
+				
+				            <div class="demo clearfix">
+				
+				                <!--左边座位列表-->
+				
+				                <div id="seat_area">
+				
+				                    <div class="front">舞台</div>					
+				
+				                </div>
+				
+				                <!---右边选座信息-->
+				
+				                <div class="booking_area">
+				
+				                    <p class="cc">
+				                    	<span id="">
+				                    	场次:
+				                    	</span>
+				                    	<select name="">
+				                    		<option value="">2018年12月09日 周日 14：30</option>
+				                    		<option value="">2018年12月09日 周日 16：30</option>
+				                    	</select>
+				                    </p>
+				
+				                    <p>座位：</p>
+				
+				                    <ul id="seats_chose"></ul>
+				
+				                    <p>票数：<span id="tickects_num">0</span></p>
+				
+				                    <p>总价：<b>￥<span id="total_price">0</span></b></p>
+				
+				
+				
+				                    <input type="button" class="btn" value="确定购买" />
+									<p class="dz" style="font-size:12px;"><img src="../img/5-09.jpg" >  票品售价低于票面价格</p>
+									<p class="dz1" style="font-size:12px;"><img src="../img/5-010.jpg" >  票品售价高于票面价格</p>
+				
+				
+				                    <div id="legend"></div>
+				
+				                </div>
+				
+				            </div>
+		
+				     
+				
+		</div>
+		</div>
+
+
+<!-- 尾部 -->
+
+<footer>
+	<div class="content">
+		<div class="container">
+			<a href="javascript:;" rel="nofollow" class="item">
+				<img src="../img/icon-diamond.3524e325.png" class="icon">
+				<div class="text">
+					<div class="title">无票赔付</div>
+					<div class="desc">无票赔付，最高退一赔二</div>
+				</div>
+			</a>
+			<a href="javascript:;" rel="nofollow" class="item">
+				<img src="../img/icon-shield.ff071a4b.png" class="icon"><div class="text"><div class="title">出票保真</div>
+				<div class="desc">全程消费保障，买得放心</div>
+			</div>
+			</a>
+			<a href="javascript:;" rel="nofollow" class="item">
+				<img src="../img/icon-umbrella.ed43b4ea.png" class="icon">
+				<div class="text">
+					<div class="title">配送保障</div>
+					<div class="desc">多种取票方式 安全送达</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</footer>
+<div  class="footer">
+	<div class="content">
+		<div class="container">
+			<div class="links-and-brand">
+				<img src="https://static.piaoniu.com/pc/ui/img/footer-logo.1a1486d7.png" class="footer-logo">
+
+				<div class="helps">
+					<div class="buyDesc help">
+						<div class="title">订票说明</div>
+						<div class="item">
+							<a href="/questions?question=订购渠道&amp;questionGroup=订购说明" rel="nofollow">订购渠道</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=演出状态&amp;questionGroup=订购说明" rel="nofollow">演出状态</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=如何订购&amp;questionGroup=订购说明" rel="nofollow">如何订购</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=价格说明&amp;questionGroup=订购说明" rel="nofollow">价格说明</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=关于座位&amp;questionGroup=订购说明" rel="nofollow">关于座位</a>
+						</div>
+					</div>
+					<div class="payType help">
+						<div class="title">支付方式</div>
+						<div class="item">
+							<a href="/questions?question=在线支付&amp;questionGroup=支付方式" rel="nofollow">在线支付</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=花呗&amp;questionGroup=支付方式" rel="nofollow">花呗</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=银行卡支付&amp;questionGroup=支付方式" rel="nofollow">银行卡支付</a>
+						</div>
+					</div>
+					<div class="deliverType help">
+						<div class="title">配送方式</div>
+						<div class="item">
+							<a href="/questions?question=上门自取&amp;questionGroup=配送方式" rel="nofollow">上门自取</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=现场自取&amp;questionGroup=配送方式" rel="nofollow">现场自取</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=顺丰配送&amp;questionGroup=配送方式" rel="nofollow">顺丰配送</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=电子票&amp;questionGroup=配送方式" rel="nofollow">电子票</a>
+						</div>
+					</div>
+					<div class="afterSaleService help">
+						<div class="title">售后服务</div>
+						<div class="item">
+							<a href="/questions?question=退换票说明&amp;questionGroup=售后服务" rel="nofollow">退换票说明</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=退款说明&amp;questionGroup=售后服务" rel="nofollow">退款说明</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=退款条件&amp;questionGroup=售后服务" rel="nofollow">退款条件</a>
+						</div>
+					</div>
+					<div class="featureService help">
+						<div class="title">特色服务</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">无票赔付</a>
+						</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">下单一小时可退款</a>
+						</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">保证真票</a>
+						</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">配送保障</a>
+						</div>
+					</div>
+				</div>
+				<div class="qr-codes">
+					<div class="item">
+						<img src="https://static.piaoniu.com/pc/img/qr-app.a2c8e636.png" class="img">
+						<div class="text">票牛app</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+
+</div>
+<div class="footer1">
+	<div class="content">
+			<div class="links">
+					<a href="/about" rel="nofollow">关于我们</a>
+					<a href="/contact" rel="nofollow">联系我们</a>
+					<a href="http://piaoniu.zhiye.com/" rel="nofollow">加入我们</a>
+					<a href="/actor" rel="nofollow">艺人</a>
+					<a href="/city/all" rel="nofollow">全部城市</a>
+					<a href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a>
+					<a href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a>
+					<a href="/disputeResolution" rel="nofollow">争议调解</a>
+					<a href="javascirpt:;" class="hot-find">热门搜索</a>
+			</div> 
+			<div class="hot-search">
+					
+			
+				<a href="//www.piaoniu.com/stag/32048">BIGBANG郑州演唱会</a>
+				<a href="//www.piaoniu.com/stag/48745">刘若英兰州演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/56052">魏如萱海口演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/56286">Teen Top梧州演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/62199">Ben UFO贵阳演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/62472">Mr. Graceless长春演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/67415">刘思涵太原演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/75673">叶丽仪绍兴演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/86996">方季惟南宁演唱会安排</a>
+			<!-- 	<a href="//www.piaoniu.com/stag/112643">吕方温州演唱会安排</a> -->
+							
+			</div>
+			<div class="w-conduct">
+				上海颂品网络科技有限公司 Copyright (c) 2015年 Songpin. All rights reserved. | 沪ICP备14000399号-2
+			</div>
+			<div class="police-icons">
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682" target="_blank" rel="nofollow" class="link link-police">
+					<img src="https://static.piaoniu.com/pc/img/police.dfd1a0f7.png" class="icon">
+					<div class="text">沪公网安备 31010602001682号</div>
+				</a>
+				<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank" rel="nofollow" class="link link-gongshang">
+					<img src="https://static.piaoniu.com/pc/img/gongshang.5c149d3e.png" class="icon">
+					<div class="text">上海工商</div>
+				</a>
+			</div>
+				
+		</div>
+</div>
+<!-- /尾部 -->
+
+
+		<script src="../js/jquery-1.11.3.min.js"></script>
+		
+		        <script type="text/javascript" src="../js/jquery.seat-charts.min.js"></script>
+		
+		        <script type="text/javascript">
+							$('.btn').click(function(){
+									window.location.href = "order.html";
+							})
+		
+		            var price = 680; //电影票价
+		
+		            $(document).ready(function() {
+		
+		                var $cart = $('#seats_chose'), //座位区
+		
+		                        $tickects_num = $('#tickects_num'), //票数
+		
+		                        $total_price = $('#total_price'); //票价总额
+		
+		
+		
+		                var sc = $('#seat_area').seatCharts({
+		
+		                    map: [//座位结构图 a 代表座位; 下划线 "_" 代表过道
+		
+		                        'cccccccccc',
+		
+		                        'cccccccccc',
+		
+		                        '__________',
+		
+		                        'cccccccccc',
+		
+		                        'cccccccccc',
+		
+		                        'cccccccccc',
+		
+		                        '__________',
+		
+		                        'cccccccccc',
+		
+		                        'cccccccccc',
+		
+		                        'cccccccccc'
+		
+		                    ],
+		
+		                    naming: {//设置行列等信息
+		
+		                        top: false, //不显示顶部横坐标（行） 
+		
+		                        getLabel: function(character, row, column) { //返回座位信息 
+		
+		                            return column;
+		
+		                        }
+		
+		                    },
+		
+		                    legend: {//定义图例
+		
+		                        node: $('#legend'),
+		
+		                        items: [
+		
+		                            ['c', 'available', '可选座'],
+		
+		                            ['c', 'unavailable', '已售出']
+		
+		                        ]
+		
+		                    },
+		
+		                    click: function() {
+		
+		                        if (this.status() == 'available') { //若为可选座状态，添加座位
+		
+		                            $('<li>' + (this.settings.row + 1) + '排' + this.settings.label + '座</li>')
+		
+		                                    .attr('id', 'cart-item-' + this.settings.id)
+		
+		                                    .data('seatId', this.settings.id)
+		
+		                                    .appendTo($cart);
+		
+		
+		
+		                            $tickects_num.text(sc.find('selected').length + 1); //统计选票数量
+		
+		                            $total_price.text(getTotalPrice(sc) + price);//计算票价总金额
+		
+		
+		
+		                            return 'selected';
+		
+		                        } else if (this.status() == 'selected') { //若为选中状态
+		
+		
+		
+		                            $tickects_num.text(sc.find('selected').length - 1);//更新票数量
+		
+		                            $total_price.text(getTotalPrice(sc) - price);//更新票价总金额
+		
+		                            $('#cart-item-' + this.settings.id).remove();//删除已预订座位
+		
+		
+		
+		                            return 'available';
+		
+		                        } else if (this.status() == 'unavailable') { //若为已售出状态
+		
+		                            return 'unavailable';
+		
+		                        } else {
+		
+		                            return this.style();
+		
+		                        }
+		
+		                    }
+		
+		                });
+		
+		                //设置已售出的座位
+		
+		                sc.get(['1_3', '1_4', '4_4', '4_5', '4_6', '4_7', '4_8']).status('unavailable');
+		
+		
+		
+		            });
+		
+		
+		
+		            function getTotalPrice(sc) { //计算票价总额
+		
+		                var total = 0;
+		
+		                sc.find('selected').each(function() {
+		
+		                    total += price;
+		
+		                });
+		
+		                return total;
+		
+		            }
+					var oBox = document.getElementById('dwf');
+					var oBox1 = document.getElementById('dwz');
+					var oBox2 = document.getElementById('frf');
+					var oBox3 = document.getElementById('frz');
+					oBox.onmouseover = function(){
+						oBox1.style.display = 'block';
+					}
+					oBox.onmouseout = function(){
+						oBox1.style.display = 'none';
+					}
+					oBox2.onmouseover = function(){
+						oBox3.style.display = 'block';
+					}
+					oBox2.onmouseout = function(){
+						oBox3.style.display = 'none';
+					}
+		
+
+
+					// 尾部
+// $('.hot-find').mouseenter(function(){
+// 	$('.hot-search').css({'display':'block'})
+// })
+// $('.hot-find').mouseleave(function(){
+// 	$('.hot-search').css({'display':'none'})
+// })
+// $('.hot-search').mouseenter(function(){
+// 	$('.hot-search').css({'display':'block'})
+// })
+// $('.hot-search').mouseleave(function(){
+// 	$('.hot-search').css({'display':'none'})
+// })
+
+
+		        </script>
+	</body>
+</html>

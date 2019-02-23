@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上海演唱会门票</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/city.css">
+    <link rel="stylesheet" type="text/css" href="../css/pinglun.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/noselect-place.css">
+    <link href="../img/1-t.png" rel="SHORTCUT ICON" />
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/noselect-place.js"></script>
+    <!-- <script type="text/javascript" src="../js/city.js"></script> -->
+</head>
+<body>
+    <!-- 头部 -->
+    <nav class="clearfix">
+        <div class="nav">
+            <a class="logo fl" href="index.html">
+                <img src="../img/1-logo-white.3de707b4.png" alt="">
+            </a>
+            <div class="city-name fl" style="color:#fff;margin-left:20px;font-size:14px;width: 50px;background:  url(../img/1-arr-down.9f1dbfdd.png) no-repeat right center;">上海</div>
+            <ul class="lei fl">
+                <li class="fl"><a href="javascript:;">首页</a></li>
+                <li class="ashow fl"><a href="javascript:;">全部演出</a>
+                    <div class="submenu">
+                        <ul class="allshow">    
+                            <li>
+                                <a href="javascript:;">演唱会</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">话剧歌剧</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">休闲展览</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">体育赛事</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">音乐会</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">儿童亲子</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">舞蹈芭蕾</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">戏曲综艺</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </li>
+                <li class="fl"><a href="javascript:;">发现</a></li>
+                <li class="fl"><a href="./shifen.html">十分现场</a></li>
+            </ul>
+            <div class="search fl">
+                <input class="fl" type="text" placeholder="搜索演出、明星、场馆">
+                <img src="../img/1-icon-search.c1ea7e12.png" alt="搜索">
+            </div>
+            <div class="right fr">
+                <a class="fl" href="javascript:;">登录</a>
+                <span>|</span>
+                <div class="app fr">手机票牛
+                    <div class="submenu1">
+                        <ul class="appshow">
+                            <li class="clearfix">
+                                <img  class="img1 fl" src="../img/1-qr-app.a2c8e636.png" width="84px" >
+                                <div class="text fr"> 
+                                    <div class="title">票牛APP</div>
+                                    <div class="desc">热门票随时抢<br>折扣票随时买</div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="img2 fl"><img src="../img/1-qr-wechat.eceb0fc5.png"  height="84px"></div>
+                                
+                                <div class="text fr">
+                                    <p class="title">微信订阅号</p>
+                                    <p class="desc">精彩剧评最新<br>活动随时看</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 上海 -->
+    <div>
+    <!-- <div class="city-name">上海</div> -->
+    
+        <div class="citylist">
+              <div class="top-rows">
+                <div class="row">
+                  <div class="title">当前城市：</div>
+                      <ul>
+                        <li class="selected" data-name="shanghai">上海</li>
+                      </ul>
+                </div>
+                <div class="row">
+                  <div class="title">热门城市：</div>
+                  <ul class="asdf">
+                    <li class="city-item" data-name="shanghai">上海</li>
+                    <li class="city-item" data-name="beijing">北京</li>
+                    <li class="city-item" data-name="guangzhou">广州</li>
+                    <li class="city-item" data-name="shenzhen">深圳</li>
+                    <li class="city-item" data-name="chengdu">成都</li>
+                    <li class="city-item" data-name="chongqing">重庆</li>
+                    <li class="city-item" data-name="tianjin">天津</li>
+                    <li class="city-item" data-name="hangzhou">杭州</li>
+                    <li class="city-item" data-name="nanjing">南京</li>
+                    <li class="city-item" data-name="wuhan">武汉</li>
+                    <li class="city-item" data-name="xian">西安</li>
+                    <li class="city-item" data-name="changsha">长沙</li>
+                    <li class="city-item" data-name="kunming">昆明</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="city-indexes">
+                <div class="title">按字母查找</div>
+                <ul class="hot-city-capitcals">
+                  <li class="cap" id="a">A</li><li class="cap" id="b">B</li><li class="cap" id="c">C</li><li class="cap" id="d">D</li><li class="cap" id="f">F</li><li class="cap" id="g">G</li><li class="cap" id="h">H</li><li class="cap" id="j">J</li><li class="cap" id="k">K</li><li class="cap" id="l">L</li><li class="cap" id="m">M</li><li class="cap" id="n">N</li><li class="cap" id="p">P</li><li class="cap" id="q">Q</li><li class="cap" id="r">R</li><li class="cap" id="s">S</li><li class="cap" id="t">T</li><li class="cap" id="w">W</li><li class="cap" id="x">X</li><li class="cap" id="y">Y</li><li class="cap" id="z">Z</li>
+                </ul>
+              </div>
+              <div class="hot-cities">
+                <ul>
+                  <li data-capital="A" id="A">
+                      <div class="capital">A</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="anshun">安顺</div><div class="item city-item" data-name="macau">澳门</div>
+                      </ul>
+                 </li>
+                 <li data-capital="B" id="B">
+                      <div class="capital">B</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="bangkok">曼谷</div><div class="item city-item" data-name="baoding">保定</div><div class="item city-item" data-name="baotou">包头</div><div class="item city-item" data-name="beihai">北海</div><div class="item city-item" data-name="beijing">北京</div><div class="item city-item" data-name="bengbu">蚌埠</div><div class="item city-item" data-name="benxi">本溪</div><div class="item city-item" data-name="binzhou">滨州</div>
+                      </ul>
+                </li>
+                <li data-capital="C" id="C">
+                      <div class="capital">C</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="changchun">长春</div><div class="item city-item" data-name="changsha">长沙</div><div class="item city-item" data-name="changshu">常熟</div><div class="item city-item" data-name="changzhou">常州</div><div class="item city-item" data-name="chengde">承德</div><div class="item city-item" data-name="chengdu">成都</div><div class="item city-item" data-name="chongqing">重庆</div>
+                      </ul>
+                </li>
+                <li data-capital="D" id="D"> 
+                      <div class="capital">D</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="dalian">大连</div><div class="item city-item" data-name="daqing">大庆</div><div class="item city-item" data-name="deyang">德阳</div><div class="item city-item" data-name="dezhou">德州</div><div class="item city-item" data-name="dongguan">东莞</div><div class="item city-item" data-name="dongying">东营</div>
+                      </ul>
+                </li>
+                <li data-capital="F" id="F">
+                      <div class="capital">F</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="foshan">佛山</div><div class="item city-item" data-name="fushun">抚顺</div><div class="item city-item" data-name="fuzhou">福州</div>
+                      </ul>
+                </li>
+                <li data-capital="G" id="G">
+                      <div class="capital">G</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="ganzhou">赣州</div><div class="item city-item" data-name="guangan">广安</div><div class="item city-item" data-name="guangxiyulin">玉林</div><div class="item city-item" data-name="guangzhou">广州</div><div class="item city-item" data-name="guilin">桂林</div><div class="item city-item" data-name="guiyang">贵阳</div>
+                      </ul>
+                </li>
+                <li data-capital="H" id="H">
+                      <div class="capital">H</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="haerbin">哈尔滨</div><div class="item city-item" data-name="haikou">海口</div><div class="item city-item" data-name="handan">邯郸</div><div class="item city-item" data-name="hangzhou">杭州</div><div class="item city-item" data-name="hefei">合肥</div><div class="item city-item" data-name="hengshui">衡水</div><div class="item city-item" data-name="hengyang">衡阳</div><div class="item city-item" data-name="heyuan">河源</div><div class="item city-item" data-name="huaian">淮安</div><div class="item city-item" data-name="huanggang">黄冈</div><div class="item city-item" data-name="huhehaote">呼和浩特</div><div class="item city-item" data-name="huizhou">惠州</div><div class="item city-item" data-name="huzhou">湖州</div>
+                      </ul>
+                </li>
+                <li data-capital="J" id="J">
+                      <div class="capital">J</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="jiangmen">江门</div><div class="item city-item" data-name="jiangxiyichun">宜春</div><div class="item city-item" data-name="jiaxing">嘉兴</div><div class="item city-item" data-name="jilin">吉林</div><div class="item city-item" data-name="jinan">济南</div><div class="item city-item" data-name="jingzhou">荆州</div><div class="item city-item" data-name="jinhua">金华</div><div class="item city-item" data-name="jining">济宁</div><div class="item city-item" data-name="jiujiang">九江</div>
+                      </ul>
+                </li>
+                <li data-capital="K" id="K">
+                      <div class="capital">K</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="kunming">昆明</div><div class="item city-item" data-name="kunshan">昆山</div>
+                      </ul>
+                </li>
+                <li data-capital="L" id="L">
+                      <div class="capital">L</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="langfang">廊坊</div><div class="item city-item" data-name="lanzhou">兰州</div><div class="item city-item" data-name="lasvegas">拉斯维加斯</div><div class="item city-item" data-name="leshan">乐山</div><div class="item city-item" data-name="lianyuangang">连云港</div><div class="item city-item" data-name="liaocheng">聊城</div><div class="item city-item" data-name="linyi">临沂</div><div class="item city-item" data-name="lishui">丽水</div><div class="item city-item" data-name="liuzhou">柳州</div><div class="item city-item" data-name="luoyang">洛阳</div>
+                      </ul>
+                </li>
+                <li data-capital="M" id="M">
+                      <div class="capital">M</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="maanshan">马鞍山</div><div class="item city-item" data-name="maoming">茂名</div><div class="item city-item" data-name="mianyang">绵阳</div><div class="item city-item" data-name="moscow">莫斯科</div><div class="item city-item" data-name="mudanjiang">牡丹江</div>
+                      </ul>
+                </li>
+                <li data-capital="N" id="N">
+                      <div class="capital">N</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="nanchang">南昌</div><div class="item city-item" data-name="nanjing">南京</div><div class="item city-item" data-name="nanning">南宁</div><div class="item city-item" data-name="nantong">南通</div><div class="item city-item" data-name="ningbo">宁波</div>
+                      </ul>
+                </li>
+                <li data-capital="P" id="P">
+                      <div class="capital">P</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="pingxiang">萍乡</div>
+                      </ul>
+                </li>
+                <li data-capital="Q" id="Q">
+                      <div class="capital">Q</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="qianjiang">潜江</div><div class="item city-item" data-name="qingdao">青岛</div><div class="item city-item" data-name="qingyuan">清远</div><div class="item city-item" data-name="qinhuangdao">秦皇岛</div><div class="item city-item" data-name="quanzhou">泉州</div>
+                      </ul>
+                </li>
+                <li data-capital="R" id="R">
+                      <div class="capital">R</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="rizhao">日照</div><div class="item city-item" data-name="russia">俄罗斯</div>
+                      </ul>
+                </li>
+                <li data-capital="S" id="S">
+                      <div class="capital">S</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="sanya">三亚</div><div class="item city-item" data-name="shanghai">上海</div><div class="item city-item" data-name="shantou">汕头</div><div class="item city-item" data-name="shaoxing">绍兴</div><div class="item city-item" data-name="shenyang">沈阳</div><div class="item city-item" data-name="shenzhen">深圳</div><div class="item city-item" data-name="shijiazhuang">石家庄</div><div class="item city-item" data-name="singapore">新加坡</div><div class="item city-item" data-name="suining">遂宁</div><div class="item city-item" data-name="suzhou">苏州</div>
+                      </ul>
+                </li>
+                <li data-capital="T" id="T">
+                      <div class="capital">T</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="taian">泰安</div><div class="item city-item" data-name="taiyuan">太原</div><div class="item city-item" data-name="taizhou">泰州</div><div class="item city-item" data-name="tangshan">唐山</div><div class="item city-item" data-name="tianjin">天津</div>
+                      </ul>
+                </li>
+                <li data-capital="W" id="W">
+                      <div class="capital">W</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="weifang">潍坊</div><div class="item city-item" data-name="weihai">威海</div><div class="item city-item" data-name="wenzhou">温州</div><div class="item city-item" data-name="wuhan">武汉</div><div class="item city-item" data-name="wuhu">芜湖</div><div class="item city-item" data-name="wulumuqi">乌鲁木齐</div><div class="item city-item" data-name="wuxi">无锡</div><div class="item city-item" data-name="wuzhou">梧州</div>
+                      </ul>
+                </li>
+                <li data-capital="X" id="X">
+                      <div class="capital">X</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="xiamen">厦门</div><div class="item city-item" data-name="xian">西安</div><div class="item city-item" data-name="hongkong">香港</div><div class="item city-item" data-name="xuzhou">徐州</div>
+                      </ul>
+                </li>
+                <li data-capital="Y" id="Y">
+                      <div class="capital">Y</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="yancheng">盐城</div><div class="item city-item" data-name="yangzhou">扬州</div><div class="item city-item" data-name="yantai">烟台</div><div class="item city-item" data-name="yibin">宜宾</div><div class="item city-item" data-name="yichang">宜昌</div><div class="item city-item" data-name="yinchuan">银川</div><div class="item city-item" data-name="yingkou">营口</div><div class="item city-item" data-name="yiwu">义乌</div><div class="item city-item" data-name="yulin">榆林</div>
+                      </ul>
+                </li>
+                <li data-capital="Z" id="Z">
+                      <div class="capital">Z</div>
+                      <ul class="items">
+                        <div class="item city-item" data-name="zaozhuang">枣庄</div><div class="item city-item" data-name="zhangjiakou">张家口</div><div class="item city-item" data-name="zhangqiu">章丘</div><div class="item city-item" data-name="zhanjiang">湛江</div><div class="item city-item" data-name="zhaoqing">肇庆</div><div class="item city-item" data-name="zhejiangtaizhou">台州</div><div class="item city-item" data-name="zhengzhou">郑州</div><div class="item city-item" data-name="zhenjiang">镇江</div><div class="item city-item" data-name="zhongshan">中山</div><div class="item city-item" data-name="zhoushan">舟山</div><div class="item city-item" data-name="zhuhai">珠海</div><div class="item city-item" data-name="zhuzhou">株洲</div><div class="item city-item" data-name="zibo">淄博</div><div class="item city-item" data-name="zigong">自贡</div><div class="item city-item" data-name="zunyi">遵义</div>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+            </div>
+    </div>
+    <!-- 介绍 -->
+    <section>
+        <div class="section clearfix">
+            <div class="section-left fl">
+                <span class="eticket">电子票</span>
+                <h3 class="title">开心麻花爆笑舞台剧《牢友记》 第19轮</h3>
+                <p class="desc">2018.11.21 - 12.09 地质礼堂开心麻花剧场</p>
+                <div class="main clearfix">
+                    <img class="main-img fl" src="../img/1-102d24406078908a7cdb0246245a0f0f29beb408.jpg">
+                    <div class="detail fl">
+                        <!-- 促销信息 -->
+                        <div class="clearfix">
+                            <h6 class="sale fl">促销信息</h6>
+                            <div class="sale-content fl">
+                                <a class="sale1 clearfix" class="clearfix" href="javascript:;" target="_blank">
+                                    <p class="p1 fl">促</p>
+                                    <p class="p2 fl">选座：部分场次购买两张同等价位门票，享8折优惠。</p>
+                                </a>
+                                <a  class="sale1  clearfix" href="javascript:;" target="_blank">
+                                    <p class="p1 fl">促</p>
+                                    <p class="p2 fl">选座：部分场次购买两张同等价位门票，享8折优惠。</p>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 选择场次 -->
+                        <div class="select clearfix">
+                            <h6 class="title fl">选择场次</h6>
+                            <div class="items fl">
+                                <p class="item selected fl">2018年12月09日 周日 14:30</p>
+                                <p class="item fl ">2018年12月09日 周日 19:30</p>
+                            </div>
+                        </div>
+                        <!-- 选择票档 -->
+                        <div class="select-floor clearfix">
+                            <h6 class="label fl">选择票档</h6>
+                            <div class="items fl">
+                                <div class="item item1 selected fl">80元</div>
+                                <div class="item fl" style="position:relative;">180元
+                                    <div class="icon icon-yi"></div>
+                                </div>
+                                <div class="item  fl">280元</div>
+                                <div class="item fl">380元</div>
+                                <div class="item fl">480元</div>
+                                <div class="item fl">680元</div>
+                                <div class="item fl">880元</div>
+                                <div class="item fl">1080元</div>
+                            </div>
+                        </div>
+                        <!-- 选择数量 -->
+                        <div class="number clearfix">
+                            <h6 class="label fl">选择数量</h6>
+                            <ul class="items fl">
+                                <li class="item selected fl">1</li>
+                                <li class="item fl">2</li>
+                                <li class="item fl">3</li>
+                                <li class="item fl">4</li>
+                                <li class="item fl">5</li>
+                                <li class="item fl">6</li>
+                            </ul>
+                        </div>
+                        <!-- 合计 -->
+                        <div class="sum clearfix">
+                            <h6 class="label fl">合计</h6>
+                            <div class="price fl">
+                                <p class="sum1 fl">￥<span style="color: #ff2661;font-size: 24px;font-weight: bold;">80</span></p>
+                                <p class="common fl">￥80/张</p>
+                            </div>
+                        </div>
+                        <!-- 点击购票 -->
+                        <div class="buy clearfix">
+                            <div class="btn-buy fl">立即抢购</div>
+                            <!-- <div class="choose fl">选座购票</div> -->
+                            <p class="buyp fl">已有71人购买</p>
+                        </div>
+                        
+                       <!-- 立即抢购 -->
+                        <div class="rush-buy">
+                            <div class="img">
+                                <a href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <!-- 服务承诺 -->
+                        <div class="sure clearfix">
+                            <h6 class="label fl">服务承诺</h6>
+                            <div class="items">
+                                <a href="javascript:;">无票赔付</a>
+                                <a href="javascript:;">出票保真</a>
+                                <a href="javascript:;">配送保障</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- 右部分 -->
+            <div class="section-right fr">
+                <!-- 评分 -->
+                <div class="score clearfix">
+                    <div class="score-l fl">
+                        <p>票牛评分&nbsp;</p>
+                        <p class="star-score fl">10<b>.0<b></p>
+                        <div class="star fl"></div>
+                    </div>
+                    <div class="wish fr">
+                        <p class="text1 fl">想看</p>
+                        <p class="text2 fl">评论</p>
+                    </div>
+                </div>
+                <div class="suc">关注成功</div>
+                <!-- 地址 -->
+                <div class="add">
+                    <a href="javascript:;">湖南大剧院</a>
+                    <a href="javascript:;">长沙市芙蓉区韶山北路139号</a>
+                </div>
+                <!-- 说明 -->
+                <div class="type-desc">
+                    <div class="line clearfix">
+                        <img class="fl" src="../img/1-icon-zhe.c8456ccd.png" alt="zhe" width="15px">
+                        <div class="text fl">票品售价低于票面价格</div>
+                        <img class="wen fl" src="../img/1-quest-mark.9c56cf34.png" alt="wen" width="14px">
+                    </div>
+                    <div class="line clearfix">
+                            <img class="fl" src="../img/1-icon-yi.10092b5a.png" alt="yi" width="15px">
+                        <div class="text fl">票品售价高于票面价格</div>
+                    </div>
+                    <div class="line clearfix">
+                            <img class="fl" src="../img/1-icon-qiang.76cfd2ae.png" alt="zhe" width="15px">
+                        <div class="text fl">票品票源紧张，下单后系统将自动为您抢票</div>
+                    </div>
+                    <!-- 说明隐藏部分 -->
+                    <div class="info-desc">
+                        <div class="type-desc">
+                            <div class="line clearfix">
+                                <img class="fl" src="../img/1-icon-zhe.c8456ccd.png" alt="zhe" width="15px">
+                                <div class="text fl">票品售价低于票面价格</div>
+                            </div>
+                            <div class="line clearfix">
+                                    <img class="fl" src="../img/1-icon-yi.10092b5a.png" alt="yi" width="15px">
+                                <div class="text fl">票品售价高于票面价格</div>
+                            </div>
+                            <div class="line clearfix">
+                                    <img class="fl" src="../img/1-icon-qiang.76cfd2ae.png" alt="zhe" width="15px">
+                                <div class="text fl">票品票源紧张，下单后系统将自动为您抢票</div>
+                            </div>
+                            <div class="line clearfix">
+                                <span class="fl">连座</span>
+                                <p class="text fl">商家承诺3张(含)以下保证连座,3张以上尽<br>量连座</p>
+                            </div>
+                            <div class="line clearfix">
+                                <span class="nn fl">不连座</span>
+                                <p class="text fl">多张票品不连座</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- 详情 -->
+    <div class="content clearfix">
+        <!-- 左部分 -->
+        <div class="content-left fl">
+            <div class="content1 fl">
+                <div class="content1-nav fl">
+                    <a class="active fl" href="#block-1">演出详情</a>
+                    <a class="fl" href="#block-2">票友评论</a>
+                    <a class="fl" href="#block-3">温馨提示</a>
+                </div>
+                <!-- <div class="btn fr">立即抢购</div> -->
+            </div>
+            <div class="btn-show clearfix">
+                <div class="content1 fl">
+                    <div class="content1-nav fl">
+                        <a class="active fl" href="#block-1">演出详情</a>
+                        <a class="fl" href="#block-2">票友评论</a>
+                        <a class="fl" href="#block-3">温馨提示</a>
+                        <div class="btn fr">立即抢购</div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+            <!-- 购票须知 -->
+            <div id="block-1" class="info fl">
+                <h3 class="info-h fl"><b>|</b>购票须知</h3>
+                <span class="hr fr"></span>
+            </div>
+            <table class="fl">
+                <tbody>
+                    <tr>
+                        <td>入场时间</td>
+                        <td>演出前约30分钟</td>
+                        <td>限购说明</td>
+                        <td>每单限购6张</td>
+                    </tr>
+                    <tr>
+                        <td>座位类型</td>
+                        <td>请按门票对应座位，有序对号入</td>
+                        <td>儿童入场提示 </td>
+                        <td>1.2米以上凭票入场，1.2米以下谢绝入场</td>
+                    </tr>
+                    <tr>
+                        <td>禁止携带物品</td>
+                        <td>食品、饮料、相机、充电宝、打火机等</td>
+                        <td>实体票</td>
+                        <td>本项目支持凭实体票入场，支持以下取票方式：<br>- 快递配送：运费10元(V2及以上会员包邮)，顺丰发货。<br>- 上门自提：前往门店自取，门店店址西安市新城区民乐园步行街票牛网西安旗舰店（五路口万达4号门外），咨询电话：029-87409243(工作日 09:30 - 18:30（国庆等法定节假日除外）)。<br>- 现场取票：票牛工作人员将在演出开场前1小时至现场派票。工作人员联系方式、具体取票地点将在演出当天以短信通知发送至预留的手机号。<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 项目简介 -->
+            <div id="block-1" class="info fl">
+                <h3 class="info-h fl"><b>|</b>项目简介</h3>
+                <span class="hr fr"></span>
+            </div>
+            <p class="like">喜欢开心麻花的小伙伴入群，我们一起去看剧呀~</p>
+            <p class="group">
+                <img src="../img/1-411e80e2d75f70000aaf77f31f12118dac9de5ff.png" alt="入群">
+            </p>
+            <p class="laoyou"><img src="../img/1-upload-ueditor-image-20180927-1538015749839065996.jpg" alt="牢友记">
+            <img src="../img/1-upload-ueditor-image-20180927-1538015750208089659.jpg" alt="">
+            <img src="../img/1-upload-ueditor-image-20180927-1538015750329036905.jpg" alt="">
+            <img src="../img/1-upload-ueditor-image-20180927-1538015750454035915.jpg" alt="">
+            </p>
+
+             <!-- 评论 -->
+            <div class="comment—top" id="block-2">
+                <div class="comment—top_l">票友评论</div>
+                <a href="" style="text-decoration:none;margin-right:610px;">
+                    <div style="color:skyblue;font-size: 14px;">(全部评论2)</div>
+             </a>
+             <a href="./woyaopinglun.html" class="comment—top_r">我要评论</a>
+            </div>
+            <ul class="comment-cennter">
+                <li class="comment-cennter1">
+                    <div class="comment-cennter1_l">
+                        <div class="comment-cennter1_l1">
+                            <img src="../img/1-default-avatar.51fb766c.png" alt="" style="width:100%;height: 100%">
+                        </div>
+                        <div class="comment-cennter1_l2">LV3</div>
+                    </div>
+                    <div style="border-bottom: 1px solid #999">
+                        <div style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;width:765px;overflow:hidden;height:20px;">
+                            <span style="float:left">用户153****1838</span>
+                            <span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px">2018-12-14</span>
+                        </div>
+                        <div class="comment-cennter1_c"></div>
+                        <div class="comment-cennter1_ct">asdas</div>
+                        <div class="comment-cennter1_r">
+                            <div style="width:20px;height:20px;cursor: pointer;">
+                                <img src="../img/1-icon-reply.4c1a85db.png" alt="" style="width:100%;height:100%" >
+                            </div>
+                            <a href="javascript:;" style="text-decoration: none;margin-left:5px;font-size:13px;color:black">
+                                回复
+                            </a>
+                            <div style="width:18px;height:18px;cursor: pointer;margin-left:20px" id="praise">
+                                <img src="../img/1-icon-like.479b123c.png" alt="" style="width:100%;height:100%" id="praise1">
+                                <!-- <img src="img/1-icon-liked.d953fa65.png" alt="" style="width:100%;height:100%"> -->
+                            </div>
+                            <a href="javascript:;" style="text-decoration: none;margin-left:5px;font-size:13px;color:black" id="praise2">
+                                赞
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <a href="" class="discuss" ><span>更多评论 ></span></a>
+
+            <!-- 温馨提示 -->
+            <div id="block-3" class="info fl" style="margin-bottom: 15px;">
+                <h3 class="info-h fl"><b>|</b>温馨提示</h3>
+                <span class="hr fr"></span>
+            </div>
+            <ul class="tips">
+                <li class="clearfix"><span class="fl">·票品真实</span><p class="fl">票牛作为国家工商认证的票务平台，在收到机构和商家的票品后会第一时间核查票品真实性，确保售出票品100%真实有效，请放心购买</p></li>
+                <li class="clearfix"><span class="fl">·付款时效</span><p class="fl">购票下单成功后需在15分钟内完成支付，逾期系统将自动取消订单，所选价位自动释放，您可及时刷新购票页面进行购买</p></li>
+                <li class="clearfix"><a href="javascript:;"><span class="fl">·退换说明</span><p class="active fl">演出票品为特殊商品，除因不可抗力因素导致演出取消或延期，其他订单不支持无理由退换；请参考《票牛退换货说明》</p></a></li>
+            </ul>
+        </div>
+        <!-- 右部分 -->
+        <!-- 扫码下载 -->
+        <div class="content-right fr">
+            <div class="scan clearfix">
+                <p class="fl">扫码下载</p>
+            </div>
+            <div class="scan-app clearfix">
+                <img class="fl" src="../img/1-qrcode.43be93ee.png" alt="票牛app" width="100px" height="100px">
+                <div class="scan-p fl">
+                    <a href="javascript:;">票牛APP</a>
+                    <p>热门票随时抢&nbsp;折扣票随时买</p>
+                </div>
+            </div>
+            <div class="scan clearfix">
+                <p class="fl">大家都在看</p>
+            </div>
+            <ul>
+                <!-- 德云社 -->
+                <li class="deyunshe clearfix" style="margin-top:20px;">
+                        <a href="//www.piaoniu.com/activity/64075" title="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站" class="fl"><img src="../img/1-160312_n.jpg" alt="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站" height="109px"></a>
+                    <div class="fl">
+                        <a href="//www.piaoniu.com/activity/64075" title="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站">德云社郭德纲 岳云鹏 郭麒麟专场<br>演出</a>
+                        <p class="p1">2019.01.05 19:30</p>
+                        <p class="p2">45281人想看</p>
+                    </div>
+                </li>
+                <!-- 李茶的姑妈 -->
+                <li class="deyunshe clearfix">
+                    <a href="javascript:;" title="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮" class="fl"><img src="../img/1-476609bd95edaa3bb52c60f272720eac45beb444.jpg" alt="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮" height="109px"></a>
+                    <div class="fl">
+                        <a href="//www.piaoniu.com/activity/65527" title="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮">李茶的姑妈</a>
+                        <p class="p1">2018.12.28 - 12.29</p>
+                        <p class="p2">13293人想看</p>
+                    </div>
+                </li>
+                <!-- 音乐剧|乱世佳人 -->
+                <li class="deyunshe clearfix">
+                    <a href="javascript:;" title="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》" class="fl"><img src="../img/1-159212_n.jpg" alt="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》" height="109px"></a>
+                    <div class="fl">
+                        <a href="javascript:;" title="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》">音乐剧|乱世佳人</a>
+                        <p class="p1">2018.12.15 - 12.19</p>
+                        <p class="p2">8001人想看</p>
+                    </div>
+                </li>
+                <!-- 音乐会 -->
+                <li class="rank clearfix">
+                    <span class="num fl">4 </span>
+                    <a class="fl" href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" >上海彩虹室内合唱团西安音乐会</a>
+                    <p class="p1 fr">4248人想看</p>
+                </li>
+                <!-- 白鹿原 -->
+                <li class="rank clearfix">
+                    <span class="num fl">5 </span>
+                    <a class="fl" href="javascript:;" title="20180904_陕西大剧院 歌剧厅_陕西人民艺术剧院话剧《白鹿原》" >白鹿原</a>
+                    <p class="p1 fr">8148人想看</p>
+                </li>
+                 <!-- 蔡琴 -->
+                 <li class="rank clearfix">
+                    <span class="num fl">6</span>
+                    <a class="fl" href="javascript:;" title="20181101_西安曲江国际会展中心B4馆_风华绝代 蔡琴2018西安演唱会" >蔡琴西安演唱会</a>
+                    <p class="p1 fr">5276人想看</p>
+                </li>
+                 <!-- 卢鑫玉浩迎新专场 -->
+                 <li class="rank clearfix">
+                    <span class="num fl">7</span>
+                    <a class="fl" href="javascript:;" title="20181025_曲江大礼堂_2019相声新势力 嗨你好 卢鑫玉浩迎新专场" >卢鑫玉浩迎新专场</a>
+                    <p class="p1 fr">4587人想看</p>
+                </li>
+                <!-- 卢鑫玉浩迎新专场 -->
+                <li class="rank clearfix">
+                    <span class="num fl">8</span>
+                    <a class="fl" href="javascript:;" title="20181012_西安索菲特人民大厦大剧院_周杰伦作品音乐剧《不能说的秘密》西安站" >音乐剧|不能说的秘密</a>
+                    <p class="p1 fr">5040人想看</p>
+                </li>
+            </ul>
+            <!-- 猜你喜欢 -->
+            <div class="scan clearfix">
+                <p class="fl">猜你喜欢</p>
+            </div>
+            <!-- 猜你喜欢详情 -->
+            <ul>
+                <!-- 猜德云社 -->
+                <li class="guess clearfix" style="margin-top:20px;">
+                    <a class="a1 fl" href="javascript:;" title="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站">
+                        <img src="https://img.piaoniu.com/perform/project/1603/160312_n.jpg" alt="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站" height="120px">
+                    </a>
+                    <div class="detail fl">
+                        <a class="a2" href="javascript:;" title="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站">德云社郭德纲 岳云鹏 郭麒麟专场演出
+                        </a>
+                        <p class="p1">2019.01.05 19:30</p>
+                        <a class="a3" href="javascript:;" title="20181108_西安曲江国际会展中心B4馆_德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站" >西安曲江国际会展中心B4馆</a>
+                        <p class="p2">
+                        <b class="num">388元</b>
+                        起
+                        </p>
+                    </div>
+                </li>
+                <!-- 猜李茶的姑妈 -->
+                <li class="guess clearfix">
+                    <a class="a1 fl" href="javascript:;" title="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮">
+                        <img src="../img/1-476609bd95edaa3bb52c60f272720eac45beb444.jpg" alt="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮" height="120px">
+                    </a>
+                    <div class="detail fl">
+                        <a class="a2" href="javascript:;" title="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮">索菲特人民大剧院
+                        </a>
+                        <p class="p1">2018.12.28 - 12.29</p>
+                        <a class="a3" href="//www.piaoniu.com/venue/2370" title="20181209_索菲特人民大剧院_开心麻花爆笑舞台剧《李茶的姑妈》 第3轮" >索菲特人民大剧院</a>
+                        <p class="p2">
+                        <b class="num">100元</b>
+                        起
+                        </p>
+                    </div>
+                </li>
+                <!-- 猜乱世佳人 -->
+                <li class="guess clearfix">
+                    <a class="a1 fl" href="javascript:;" title="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》">
+                        <img src="../img/1-159212_n.jpg" alt="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》" height="120px">
+                    </a>
+                    <div class="detail fl">
+                        <a class="a2" href="javascript:;" title="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》">音乐剧|乱世佳人
+                        </a>
+                        <p class="p1">2018.12.15 - 12.19</p>
+                        <a class="a3" href="javascript:;" title="20180828_陕西大剧院 歌剧厅_女性第一励志大戏 英文版音乐剧《乱世佳人》The English Musical 《Gone With The Wind 》" >陕西大剧院 歌剧厅</a>
+                        <p class="p2">
+                        <b class="num">152元</b>
+                        起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+                <li class="guess1">
+                    <a href="javascript:;" title="20181107_西安音乐厅-交响大厅_【第17届西安国际音乐节】上海彩虹室内合唱团西安音乐会" class="a1">上海彩虹室内合唱团西安音乐会
+                    </a>
+                    <div class="detail1 clearfix">
+                        <p class="p1 fl">2019.01.05 19:30
+                        </p>
+                        <p class="p2 fr">
+                            <span class="unit">¥</span>
+                            <b class="num">80</b>起
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>  
+    <!-- 尾部 -->
+    <footer>
+    <div class="content">
+        <div class="container">
+            <a href="javascript:;" rel="nofollow" class="item">
+                <img src="../img/1-icon-diamond.3524e325.png" class="icon">
+                <div class="text">
+                    <div class="title">无票赔付</div>
+                    <div class="desc">无票赔付，最高退一赔二</div>
+                </div>
+            </a>
+            <a href="javascript:;" rel="nofollow" class="item">
+                <img src="../img/1-icon-shield.ff071a4b.png" class="icon"><div class="text"><div class="title">出票保真</div>
+                <div class="desc">全程消费保障，买得放心</div>
+            </div>
+            </a>
+            <a href="javascript:;" rel="nofollow" class="item">
+                <img src="../img/1-icon-umbrella.ed43b4ea.png" class="icon">
+                <div class="text">
+                    <div class="title">配送保障</div>
+                    <div class="desc">多种取票方式 安全送达</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</footer>
+<div  class="footer">
+    <div class="content1">
+        <div class="container">
+            <div class="links-and-brand">
+                <img src="https://static.piaoniu.com/pc/ui/img/footer-logo.1a1486d7.png" class="footer-logo">
+
+                <div class="helps">
+                    <div class="buyDesc help">
+                        <div class="title">订票说明</div>
+                        <div class="item">
+                            <a href="/questions?question=订购渠道&amp;questionGroup=订购说明" rel="nofollow">订购渠道</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=演出状态&amp;questionGroup=订购说明" rel="nofollow">演出状态</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=如何订购&amp;questionGroup=订购说明" rel="nofollow">如何订购</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=价格说明&amp;questionGroup=订购说明" rel="nofollow">价格说明</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=关于座位&amp;questionGroup=订购说明" rel="nofollow">关于座位</a>
+                        </div>
+                    </div>
+                    <div class="payType help">
+                        <div class="title">支付方式</div>
+                        <div class="item">
+                            <a href="/questions?question=在线支付&amp;questionGroup=支付方式" rel="nofollow">在线支付</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=花呗&amp;questionGroup=支付方式" rel="nofollow">花呗</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=银行卡支付&amp;questionGroup=支付方式" rel="nofollow">银行卡支付</a>
+                        </div>
+                    </div>
+                    <div class="deliverType help">
+                        <div class="title">配送方式</div>
+                        <div class="item">
+                            <a href="/questions?question=上门自取&amp;questionGroup=配送方式" rel="nofollow">上门自取</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=现场自取&amp;questionGroup=配送方式" rel="nofollow">现场自取</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=顺丰配送&amp;questionGroup=配送方式" rel="nofollow">顺丰配送</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=电子票&amp;questionGroup=配送方式" rel="nofollow">电子票</a>
+                        </div>
+                    </div>
+                    <div class="afterSaleService help">
+                        <div class="title">售后服务</div>
+                        <div class="item">
+                            <a href="/questions?question=退换票说明&amp;questionGroup=售后服务" rel="nofollow">退换票说明</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=退款说明&amp;questionGroup=售后服务" rel="nofollow">退款说明</a>
+                        </div>
+                        <div class="item">
+                            <a href="/questions?question=退款条件&amp;questionGroup=售后服务" rel="nofollow">退款条件</a>
+                        </div>
+                    </div>
+                    <div class="featureService help">
+                        <div class="title">特色服务</div>
+                        <div class="item">
+                            <a href="/services" rel="nofollow">无票赔付</a>
+                        </div>
+                        <div class="item">
+                            <a href="/services" rel="nofollow">下单一小时可退款</a>
+                        </div>
+                        <div class="item">
+                            <a href="/services" rel="nofollow">保证真票</a>
+                        </div>
+                        <div class="item">
+                            <a href="/services" rel="nofollow">配送保障</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="qr-codes">
+                    <div class="item">
+                        <img src="https://static.piaoniu.com/pc/img/qr-app.a2c8e636.png" class="img">
+                        <div class="text">票牛app</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer1">
+    <div class="content">
+            <div class="links">
+                    <a href="/about" rel="nofollow">关于我们</a>
+                    <a href="/contact" rel="nofollow">联系我们</a>
+                    <a href="http://piaoniu.zhiye.com/" rel="nofollow">加入我们</a>
+                    <a href="/actor" rel="nofollow">艺人</a>
+                    <a href="/city/all" rel="nofollow">全部城市</a>
+                    <a href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a>
+                    <a href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a>
+                    <a href="/disputeResolution" rel="nofollow">争议调解</a>
+                    <a href="javascirpt:;" class="hot-find">热门搜索</a>
+            </div> 
+            <div class="hot-search">
+                    
+            
+                <a href="//www.piaoniu.com/stag/32048">BIGBANG郑州演唱会</a>
+                <a href="//www.piaoniu.com/stag/48745">刘若英兰州演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/56052">魏如萱海口演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/56286">Teen Top梧州演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/62199">Ben UFO贵阳演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/62472">Mr. Graceless长春演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/67415">刘思涵太原演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/75673">叶丽仪绍兴演唱会行程</a>
+                <a href="//www.piaoniu.com/stag/86996">方季惟南宁演唱会安排</a>
+            <!--    <a href="//www.piaoniu.com/stag/112643">吕方温州演唱会安排</a> -->
+                            
+            </div>
+            <div class="w-conduct">
+                上海颂品网络科技有限公司 Copyright (c) 2015年 Songpin. All rights reserved. | 沪ICP备14000399号-2
+            </div>
+            <div class="police-icons">
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682" target="_blank" rel="nofollow" class="link link-police">
+                    <img src="https://static.piaoniu.com/pc/img/police.dfd1a0f7.png" class="icon">
+                    <div class="text">沪公网安备 31010602001682号</div>
+                </a>
+                <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank" rel="nofollow" class="link link-gongshang">
+                    <img src="https://static.piaoniu.com/pc/img/gongshang.5c149d3e.png" class="icon">
+                    <div class="text">上海工商</div>
+                </a>
+            </div>
+                
+        </div>
+</div>
+</body>
+<script>
+    var oPra = document.getElementById('praise')
+    var oPra1 = document.getElementById('praise1')
+    var oPra2 = document.getElementById('praise2')
+    oPra.onclick = function(){
+        if(true){
+            oPra1.src = "../img/1-icon-liked.d953fa65.png"
+            oPra2.innerHTML="1赞"
+            }else{
+                oPra1.src=''
+                oPra2.innerHTML=""
+            }
+    }
+</script>
+<script type="text/javascript">
+    var oTj = $("#J").offset().top
+    $("#j").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTj-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+
+    $("#a").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: $("#A").offset().top-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+
+    var oTb =  $("#B").offset().top
+
+    $("#b").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTb -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTc = $("#C").offset().top
+    $("#c").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTc -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTd = $("#D").offset().top
+
+    $("#d").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTd-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTf = $("#F").offset().top
+
+    $("#f").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTf - $('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTg = $("#G").offset().top
+
+    $("#g").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop:oTg -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTh = $("#H").offset().top
+
+    $("#h").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTh-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTk = $("#K").offset().top
+
+    $("#k").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop:oTk -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTl = $("#L").offset().top
+    $("#l").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTl-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTm = $("#M").offset().top
+    $("#m").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTm-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTn = $("#N").offset().top
+
+    $("#n").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTn-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTp = $("#P").offset().top
+    $("#p").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTp-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+
+    var oTq = $("#Q").offset().top
+    $("#q").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTq-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTr = $("#R").offset().top
+    $("#r").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTr-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTs = $("#S").offset().top
+    $("#s").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTs-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTt = $("#T").offset().top
+    $("#t").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTt-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTw = $("#W").offset().top
+    $("#w").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTw-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    var oTx = $("#X").offset().top
+    $("#x").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTx-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTy = $("#Y").offset().top
+    $("#y").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTy-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+    var oTz = $("#Z").offset().top
+    $("#z").click(function() {
+        
+    $(".hot-cities").animate({
+    scrollTop: oTz-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+    return false;
+    });
+
+
+    $('.citylist').css({'display':'none'})
+
+
+
+    var num = 0
+
+    $('.city-name').click(function(){
+        if (num == 0) {
+            num=1
+        $('.citylist').css({'display':'block'})
+       }else{
+        num = 0
+        $('.citylist').css({'display':'none'})
+       }
+    })
+
+
+
+
+
+    $('.asdf>li').click(function(){
+        $('.selected').html($(this).html()) 
+        $('.city-name').html($(this).html())
+        $('.citylist').css({'display':'none'})      
+    })
+    // 立即抢购
+     $(".btn-buy").click(function(){
+        $(".rush-buy").fadeIn()
+     })
+     $(".rush-buy .img a").click(function(){
+        $(".rush-buy").fadeOut()
+     })
+     $(".rush-buy").click(function(){
+        $(".rush-buy").fadeOut()
+     })
+</script>
+</html>

@@ -10,7 +10,7 @@ public class Comment {
     private int love;              //点赞数
     private int show_id;           //演出id
     private String comment_photo;  //评论图片
-    private String comment_grade;   //评分
+    private double comment_grade;   //评分
     private int comment_next_id;    //评论副id
 
     public int getComment_id() {
@@ -61,11 +61,11 @@ public class Comment {
         this.comment_photo = comment_photo;
     }
 
-    public String getComment_grade() {
+    public double getComment_grade() {
         return comment_grade;
     }
 
-    public void setComment_grade(String comment_grade) {
+    public void setComment_grade(double comment_grade) {
         this.comment_grade = comment_grade;
     }
 

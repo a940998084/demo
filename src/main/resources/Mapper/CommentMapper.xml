@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.CommentDao">
+    <select id="findComment"  resultType="com.piaoniu.demo.model.CommentModel">
+        SELECT pn_show.show_comment_grade,
+        pn_show.show_comment_num,
+        pn_user.user_head_photo,
+        pn_user.user_username,
+        pn_comment.comment_message,
+        pn_comment.comment_photo,
+        pn_comment.love,
+        pn_comment.comment_grade
+        FROM pn_comment
+        INNER JOIN pn_user ON pn_comment.user_id=pn_user.user_id
+        INNER JOIN pn_show ON pn_comment.show_id=pn_show.show_id
+        WHERE pn_show.show_id=#{pn_show.show_id}
+    </select>
+    <update id="updateShowGrade" parameterType="com.piaoniu.demo.pojo.Show">
+        update  pn_show
+        <set>
+            <if test="show_comment_grade!=0">
+            show_comment_grade=#{show_comment_grade}</if>
+            <if test="show_id!=0">
+             show_id=#{show_id}</if>
+            <if test="show_type_id!=0">
+             show_type_id=#{show_type_id}</if>
+            <if test="show_time!=0">
+             show_time=#{show_time}</if>
+            <if test="show_place_id!=0">
+             show_place_id=#{show_place_id}</if>
+            <if test="show_people!=0">
+             show_people=#{show_people}</if>
+            <if test="show_name!=0">
+             show_name=#{show_name}</if>
+            <if test="show_picture!=0">
+             show_picture=#{show_picture}</if>
+            <if test="show_money!=0">
+             show_money=#{show_money}</if>
+            <if test="city_id!=0">
+             city_id=#{city_id}</if>
+            <if test="show_status_id!=0">
+             show_status_id=#{show_status_id}</if>
+            <if test="show_message!=0">
+                show_message=#{show_message}</if>
+            <if test="show_attention!=0">
+                show_attention=#{show_attention}</if>
+            <if test="show_discount!=0">
+                show_discount=#{show_discount}</if>
+            <if test="show_comment_num!=0">
+                show_comment_num=#{show_comment_num}</if>
+        </set>
+        where show_id=#{show_id}
+    </update>
+
+    <insert id="insertComment"  parameterType="com.piaoniu.demo.pojo.Comment" >
+        insert into pn_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="comment_id!= null">
+                comment_id,
+            </if>
+            <if test="love!= null">
+                love,
+            </if>
+            <if test="comment_grade != null">
+                comment_grade,
+            </if>
+            <if test="comment_message != null">
+                comment_message,
+            </if>
+            <if test="comment_photo != null">
+                comment_photo,
+            </if>
+            <if test="comment_next_id != null">
+                comment_next_id,
+            </if>
+            <if test="show_id != null">
+                show_id,
+            </if>
+            <if test="user_id != null">
+                user_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="comment_id!= null">
+                #{comment_id},
+            </if>
+            <if test="love!= null">
+                #{love},
+            </if>
+            <if test="comment_grade != null">
+                #{comment_grade},
+            </if>
+            <if test="comment_message != null">
+                #{comment_message},
+            </if>
+            <if test="comment_photo != null">
+                #{comment_photo},
+            </if>
+            <if test="comment_next_id != null">
+                #{comment_next_id},
+            </if>
+            <if test="show_id != null">
+                #{show_id},
+            </if>
+            <if test="user_id != null">
+                #{user_id}
+            </if>
+        </trim>
+    </insert>
+</mapper>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>关于我们-保障服务</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/1.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/base.css}">
+</head>
+<body>
+	<header>
+	<div class="content">
+		<a href="javascript:;"><img th:src="@{/img/logo.f6de0a61.png}" alt=""></a>
+		<div>
+			<div class="city-name">上海</div>
+			
+				<div class="citylist">
+				      <div class="top-rows">
+				        <div class="row">
+				          <div class="title">当前城市：</div>
+					          <ul>
+					            <li class="selected" data-name="shanghai">上海</li>
+					          </ul>
+				        </div>
+				        <div class="row">
+				          <div class="title">热门城市：</div>
+				          <ul class="asdf">
+				            <li class="city-item" data-name="shanghai">上海</li>
+				            <li class="city-item" data-name="beijing">北京</li>
+				            <li class="city-item" data-name="guangzhou">广州</li>
+				            <li class="city-item" data-name="shenzhen">深圳</li>
+				            <li class="city-item" data-name="chengdu">成都</li>
+				            <li class="city-item" data-name="chongqing">重庆</li>
+				            <li class="city-item" data-name="tianjin">天津</li>
+				            <li class="city-item" data-name="hangzhou">杭州</li>
+				            <li class="city-item" data-name="nanjing">南京</li>
+				            <li class="city-item" data-name="wuhan">武汉</li>
+				            <li class="city-item" data-name="xian">西安</li>
+				            <li class="city-item" data-name="changsha">长沙</li>
+				            <li class="city-item" data-name="kunming">昆明</li>
+				          </ul>
+				        </div>
+				      </div>
+				      <div class="city-indexes">
+				        <div class="title">按字母查找</div>
+				        <ul class="hot-city-capitcals">
+				          <li class="cap" id="a">A</li><li class="cap" id="b">B</li><li class="cap" id="c">C</li><li class="cap" id="d">D</li><li class="cap" id="f">F</li><li class="cap" id="g">G</li><li class="cap" id="h">H</li><li class="cap" id="j">J</li><li class="cap" id="k">K</li><li class="cap" id="l">L</li><li class="cap" id="m">M</li><li class="cap" id="n">N</li><li class="cap" id="p">P</li><li class="cap" id="q">Q</li><li class="cap" id="r">R</li><li class="cap" id="s">S</li><li class="cap" id="t">T</li><li class="cap" id="w">W</li><li class="cap" id="x">X</li><li class="cap" id="y">Y</li><li class="cap" id="z">Z</li>
+				        </ul>
+				      </div>
+				      <div class="hot-cities">
+				        <ul>
+				          <li data-capital="A" id="A">
+				              <div class="capital">A</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="anshun">安顺</div><div class="item city-item" data-name="macau">澳门</div>
+				              </ul>
+				         </li>
+				         <li data-capital="B" id="B">
+				              <div class="capital">B</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="bangkok">曼谷</div><div class="item city-item" data-name="baoding">保定</div><div class="item city-item" data-name="baotou">包头</div><div class="item city-item" data-name="beihai">北海</div><div class="item city-item" data-name="beijing">北京</div><div class="item city-item" data-name="bengbu">蚌埠</div><div class="item city-item" data-name="benxi">本溪</div><div class="item city-item" data-name="binzhou">滨州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="C" id="C">
+				              <div class="capital">C</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="changchun">长春</div><div class="item city-item" data-name="changsha">长沙</div><div class="item city-item" data-name="changshu">常熟</div><div class="item city-item" data-name="changzhou">常州</div><div class="item city-item" data-name="chengde">承德</div><div class="item city-item" data-name="chengdu">成都</div><div class="item city-item" data-name="chongqing">重庆</div>
+				              </ul>
+				        </li>
+				        <li data-capital="D" id="D"> 
+				              <div class="capital">D</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="dalian">大连</div><div class="item city-item" data-name="daqing">大庆</div><div class="item city-item" data-name="deyang">德阳</div><div class="item city-item" data-name="dezhou">德州</div><div class="item city-item" data-name="dongguan">东莞</div><div class="item city-item" data-name="dongying">东营</div>
+				              </ul>
+				        </li>
+				        <li data-capital="F" id="F">
+				              <div class="capital">F</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="foshan">佛山</div><div class="item city-item" data-name="fushun">抚顺</div><div class="item city-item" data-name="fuzhou">福州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="G" id="G">
+				              <div class="capital">G</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="ganzhou">赣州</div><div class="item city-item" data-name="guangan">广安</div><div class="item city-item" data-name="guangxiyulin">玉林</div><div class="item city-item" data-name="guangzhou">广州</div><div class="item city-item" data-name="guilin">桂林</div><div class="item city-item" data-name="guiyang">贵阳</div>
+				              </ul>
+				        </li>
+				        <li data-capital="H" id="H">
+				              <div class="capital">H</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="haerbin">哈尔滨</div><div class="item city-item" data-name="haikou">海口</div><div class="item city-item" data-name="handan">邯郸</div><div class="item city-item" data-name="hangzhou">杭州</div><div class="item city-item" data-name="hefei">合肥</div><div class="item city-item" data-name="hengshui">衡水</div><div class="item city-item" data-name="hengyang">衡阳</div><div class="item city-item" data-name="heyuan">河源</div><div class="item city-item" data-name="huaian">淮安</div><div class="item city-item" data-name="huanggang">黄冈</div><div class="item city-item" data-name="huhehaote">呼和浩特</div><div class="item city-item" data-name="huizhou">惠州</div><div class="item city-item" data-name="huzhou">湖州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="J" id="J">
+				              <div class="capital">J</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="jiangmen">江门</div><div class="item city-item" data-name="jiangxiyichun">宜春</div><div class="item city-item" data-name="jiaxing">嘉兴</div><div class="item city-item" data-name="jilin">吉林</div><div class="item city-item" data-name="jinan">济南</div><div class="item city-item" data-name="jingzhou">荆州</div><div class="item city-item" data-name="jinhua">金华</div><div class="item city-item" data-name="jining">济宁</div><div class="item city-item" data-name="jiujiang">九江</div>
+				              </ul>
+				        </li>
+				        <li data-capital="K" id="K">
+				              <div class="capital">K</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="kunming">昆明</div><div class="item city-item" data-name="kunshan">昆山</div>
+				              </ul>
+				        </li>
+				        <li data-capital="L" id="L">
+				              <div class="capital">L</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="langfang">廊坊</div><div class="item city-item" data-name="lanzhou">兰州</div><div class="item city-item" data-name="lasvegas">拉斯维加斯</div><div class="item city-item" data-name="leshan">乐山</div><div class="item city-item" data-name="lianyuangang">连云港</div><div class="item city-item" data-name="liaocheng">聊城</div><div class="item city-item" data-name="linyi">临沂</div><div class="item city-item" data-name="lishui">丽水</div><div class="item city-item" data-name="liuzhou">柳州</div><div class="item city-item" data-name="luoyang">洛阳</div>
+				              </ul>
+				        </li>
+				        <li data-capital="M" id="M">
+				              <div class="capital">M</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="maanshan">马鞍山</div><div class="item city-item" data-name="maoming">茂名</div><div class="item city-item" data-name="mianyang">绵阳</div><div class="item city-item" data-name="moscow">莫斯科</div><div class="item city-item" data-name="mudanjiang">牡丹江</div>
+				              </ul>
+				        </li>
+				        <li data-capital="N" id="N">
+				              <div class="capital">N</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="nanchang">南昌</div><div class="item city-item" data-name="nanjing">南京</div><div class="item city-item" data-name="nanning">南宁</div><div class="item city-item" data-name="nantong">南通</div><div class="item city-item" data-name="ningbo">宁波</div>
+				              </ul>
+				        </li>
+				        <li data-capital="P" id="P">
+				              <div class="capital">P</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="pingxiang">萍乡</div>
+				              </ul>
+				        </li>
+				        <li data-capital="Q" id="Q">
+				              <div class="capital">Q</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="qianjiang">潜江</div><div class="item city-item" data-name="qingdao">青岛</div><div class="item city-item" data-name="qingyuan">清远</div><div class="item city-item" data-name="qinhuangdao">秦皇岛</div><div class="item city-item" data-name="quanzhou">泉州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="R" id="R">
+				              <div class="capital">R</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="rizhao">日照</div><div class="item city-item" data-name="russia">俄罗斯</div>
+				              </ul>
+				        </li>
+				        <li data-capital="S" id="S">
+				              <div class="capital">S</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="sanya">三亚</div><div class="item city-item" data-name="shanghai">上海</div><div class="item city-item" data-name="shantou">汕头</div><div class="item city-item" data-name="shaoxing">绍兴</div><div class="item city-item" data-name="shenyang">沈阳</div><div class="item city-item" data-name="shenzhen">深圳</div><div class="item city-item" data-name="shijiazhuang">石家庄</div><div class="item city-item" data-name="singapore">新加坡</div><div class="item city-item" data-name="suining">遂宁</div><div class="item city-item" data-name="suzhou">苏州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="T" id="T">
+				              <div class="capital">T</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="taian">泰安</div><div class="item city-item" data-name="taiyuan">太原</div><div class="item city-item" data-name="taizhou">泰州</div><div class="item city-item" data-name="tangshan">唐山</div><div class="item city-item" data-name="tianjin">天津</div>
+				              </ul>
+				        </li>
+				        <li data-capital="W" id="W">
+				              <div class="capital">W</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="weifang">潍坊</div><div class="item city-item" data-name="weihai">威海</div><div class="item city-item" data-name="wenzhou">温州</div><div class="item city-item" data-name="wuhan">武汉</div><div class="item city-item" data-name="wuhu">芜湖</div><div class="item city-item" data-name="wulumuqi">乌鲁木齐</div><div class="item city-item" data-name="wuxi">无锡</div><div class="item city-item" data-name="wuzhou">梧州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="X" id="X">
+				              <div class="capital">X</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="xiamen">厦门</div><div class="item city-item" data-name="xian">西安</div><div class="item city-item" data-name="hongkong">香港</div><div class="item city-item" data-name="xuzhou">徐州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="Y" id="Y">
+				              <div class="capital">Y</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="yancheng">盐城</div><div class="item city-item" data-name="yangzhou">扬州</div><div class="item city-item" data-name="yantai">烟台</div><div class="item city-item" data-name="yibin">宜宾</div><div class="item city-item" data-name="yichang">宜昌</div><div class="item city-item" data-name="yinchuan">银川</div><div class="item city-item" data-name="yingkou">营口</div><div class="item city-item" data-name="yiwu">义乌</div><div class="item city-item" data-name="yulin">榆林</div>
+				              </ul>
+				        </li>
+				        <li data-capital="Z" id="Z">
+				              <div class="capital">Z</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="zaozhuang">枣庄</div><div class="item city-item" data-name="zhangjiakou">张家口</div><div class="item city-item" data-name="zhangqiu">章丘</div><div class="item city-item" data-name="zhanjiang">湛江</div><div class="item city-item" data-name="zhaoqing">肇庆</div><div class="item city-item" data-name="zhejiangtaizhou">台州</div><div class="item city-item" data-name="zhengzhou">郑州</div><div class="item city-item" data-name="zhenjiang">镇江</div><div class="item city-item" data-name="zhongshan">中山</div><div class="item city-item" data-name="zhoushan">舟山</div><div class="item city-item" data-name="zhuhai">珠海</div><div class="item city-item" data-name="zhuzhou">株洲</div><div class="item city-item" data-name="zibo">淄博</div><div class="item city-item" data-name="zigong">自贡</div><div class="item city-item" data-name="zunyi">遵义</div>
+				              </ul>
+				            </li>
+				        </ul>
+				      </div>
+				    </div>
+
+
+
+
+			</div>
+	
+		<div class="menu">
+        	<a href="javascript:;" class="active">首页</a>
+        	<a href="javascript:;">全部演出</a>
+        	<a href="javascript:;">发现</a>
+
+		</div>
+		<div class="search">
+			<div class="search-t clearfix">
+				<input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value="" class="input">
+				<button>搜索</button>
+			</div>
+			<div class="search-b" style="opacity: 0;">
+				<ul>
+					<li><a href="javascript:;" style="color: #ff2661;">胡军</a></li>
+					<li><a href="javascript:;">费玉清</a></li>
+					<li><a href="javascript:;">崔健</a></li>
+					<li><a href="javascript:;">动力火车</a></li>
+					<li><a href="javascript:;">开心麻花</a></li>
+					<li><a href="javascript:;">孟京辉</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header-right">
+			<div class="app">
+				<div class="app--icon"><img src="../img/icon-phone.9fd4d282.png" alt=""></div>
+				<span class="app-icon" style="width: 82px">APP下载</span>
+				<div class="apptwo">
+					<ul class="submenu-inner">
+						<li>
+							<img src="https://static.piaoniu.com/pc/img/qr-app.a2c8e636.png" class="qr">
+							<div class="txt"> 
+								<div class="title">
+									票牛APP
+								</div>
+								<div class="desc">
+									热门票随时抢
+									<br>折扣票随时买
+								</div>
+							</div>
+							</li>
+							<li>
+								<img src="https://static.piaoniu.com/pc/img/qr-wechat.eceb0fc5.png" class="qr">
+								<div class="txt">
+									<div class="title">
+										微信订阅号
+									</div>
+									<div class="desc">
+										精彩剧评最新
+										<br>活动随时看
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				
+			</div>
+			<div class="login">
+				<div class="login--icon"><img src="../img/icon-user.833933d9.png" alt=""></div>
+				<span class="login-icon" style="color: blue">登录</span>
+			</div>
+			<div class="cover-login">
+				<div class="cover"></div>
+				<div class="light-login">
+					  <div class="close"><img src="../img/icon-close.9fd605df.png" alt=""></div>
+					  <div class="titles">
+					    <div class="title-quick-login title1">快捷登录</div>
+					    <div class="title-login title2">密码登录</div>
+					  </div>
+
+					  <form method="post" class="form form-quick-login">
+					    <div class="row">
+					      <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+					    </div>
+<!-- 					    <div class="row row-vcode">
+					      <input placeholder="图形验证码" name="vcode" class="input input-vcode">
+					      <img src="/api/v1/user/captcha" class="vcode"> -->
+					      <!-- <div class="btn btn-vcode">换一张</div> -->
+					 <!--    </div> -->
+					    <div class="row row-getcode">
+					      <input placeholder="验证码" maxlength="6" name="code" class="input input-getcode" style="">
+					      <div class="btn btn-getcode disabled">获取验证码</div>
+					    </div>
+					    <div class="row">
+					      <input type="submit" class="btn btn-submit" value="登录" style="">
+					    </div>
+					    <div class="hint">免注册，登录即创建票牛账户</div>
+					  </form>
+					  
+					  <form method="post" class="form form-login">
+					    <div class="row">
+					      <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+					    </div>
+					    <div class="row">
+					      <input type="password" name="pw" placeholder="密码" class="input input-password">
+					    </div>
+				<!-- 	    <div class="row row-vcode form-login-vcode">
+					      <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
+					      <img src="/api/v1/user/captcha" class="vcode">
+					    </div> -->
+					    <div class="row">
+					      <input type="submit" class="btn btn-submit" value="登录">
+					    </div>
+					  </form>
+					</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+</header>
+
+
+	<div class="head">
+		<div class="head-1">
+			<div>在票牛购买门票，我们承诺</div>
+		</div>
+		<!--  -->
+		<div class="wenzhang">
+			<div class="wenzhang-1">
+				<p class="wenzhang-2">无票赔付</p>
+				<p class="wenzhang-3">在票牛购买门票，如果因为卖家原因无法获得指定票品（因主办或不可抗力的因素导致演出取消除外），除全额退款外，可获得额外赔付：</p>
+			</div>
+		</div>
+		<!--  -->
+		<div class="content">
+			<ul class="rules">
+				<li class="rule">
+					<div class="imgs">
+						<div class="xiao">赔余额</div>
+						<div class="dade"></div>
+						<p>下单演出为“预售中”</p>
+					</div>
+					<div class="xiamian">若商家取消订单，按订单支付价全额退款并按票档价 <span>30%</span>进行赔付</div>
+				</li>
+				<li class="rule">
+					<div class="imgs1">
+						<div class="xiao">赔现金</div>
+						<div class="dade"></div>
+						<p>下单演出为“在售中”</p>
+					</div>
+					<div class="xiamian">若商家取消订单，按订单支付价全额退款并按票档价 <span>50%</span>进行赔付</div>
+				</li>
+				<li class="rule">
+					<div class="imgs2">
+						<div class="xiao">赔现金</div>
+						<div class="dade"></div>
+						<p>下单演出为“现场取票”</p>
+					</div>
+					<div class="xiamian">若商家取消订单，按订单支付价全额退款并按票档价 <span>200%</span>进行赔付</div>
+				</li>
+			</ul>
+		</div>
+		<!--  -->
+		<div class="wenzhang2">
+			<div class="wenzhang2-1">
+				<div class="wenzhang2-2">出票抱枕</div>
+				<img src="../img/download12.png">
+				<div class="wenzhang2-3">票牛对所有票品进行真票承诺，如果发现票牛所售票品为假票，一经核实将按订单支付价的1000%进行赔偿</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="wenzhang2">
+			<div class="wenzhang2-1">
+				<div class="wenzhang2-2">一小时无条件退款</div>
+				<img src="../img/download11.png">
+				<div class="wenzhang2-3">下单后一小时内，可以无条件取消订单，按订单支付价全额退款※下单时选择“现场取票”订单及特殊演出项目除外</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="wenzhang2">
+			<div class="wenzhang2-1">
+				<div class="wenzhang2-2">配送保障</div>
+				<img src="../img/download10.png">
+				<div class="wenzhang2-3">多种配送方式：现场自取、门店自取、电子票、快递寄送。 <br>顺丰快递同城次日达达</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="head1-1">
+			<div>服务流程</div>
+		</div>
+		<div class="wenzhang3">
+			<div class="wenzhang3-1">
+				<img src="../img/download9.png">
+				<img src="../img/download6.png">
+				<img src="../img/download8.png">
+				<img src="../img/download7.png">
+			</div>
+			<div class="wenzhang3-2">（当商家因不可抗力因素更改为现场取票，票牛会征询用户想法，若用户不同意更改，票牛将会协商退款）</div>
+		</div>
+		<div class="head2-1">
+			<div>关于票牛</div>
+		</div>
+		<div class="wenzhang4-1">
+			<p class="wenzhang4-2">我们的目标</p>
+			<p class="wenzhang4-3">我们是一家热爱生活并热爱现场娱乐的公司，希望让更多人感受现场，享受快乐 我们对接了各大票务平台、主办方、票务代理和场馆资源，为用户提供各类演出票品，同时也为热爱演出的用户提供优质演出信息内容和交流平台 我们希望通过技术手段来打造对消费者负责、保障消费者权益的购票平台，鼓励好卖家、淘汰不靠谱卖家，确保每一个热爱演出的观众买得到票，买得放心、买得实惠</p>
+		</div>
+		<div class="wenzhang4-1">
+			<p class="wenzhang4-2">公司背景</p>
+			<p class="wenzhang4-3">票牛成立于2015年，因向用户提供了放心靠谱的购票体验而受到演出观众群体的信赖，取得了高速成长 2018年，凭借对用户提供优质的服务而得到行业和投资人认可，获得了由SIG海纳亚洲、红杉资本、GGV、头头是道、硅谷银行、点亮基金、穗彩科技等机构以及大众点评创始人张涛、华尔街金融家黄奇辅等个人领头的B轮融资</p>
+		</div>	
+	<div style="width: 100%;height:100px;background: #000;opacity: 0.8;">
+		<div class="w-conduct" style="padding-top: 25px;">
+				上海颂品网络科技有限公司 Copyright (c) 2015年 Songpin. All rights reserved. | 沪ICP备14000399号-2
+			</div>
+			<div class="police-icons">
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682" target="_blank" rel="nofollow" class="link link-police">
+					<img src="https://static.piaoniu.com/pc/img/police.dfd1a0f7.png" class="icon">
+					<div class="text">沪公网安备 31010602001682号</div>
+				</a>
+				<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank" rel="nofollow" class="link link-gongshang">
+					<img src="https://static.piaoniu.com/pc/img/gongshang.5c149d3e.png" class="icon">
+					<div class="text">上海工商</div>
+				</a>
+			</div>
+	</div>
+		
+	</div>
+	<script type="text/javascript" src="../js/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/1.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>支付宝付款</title>
+	<link rel="stylesheet" type="text/css" href="../css/pay.css">
+</head>
+<body>
+	<div class="top">
+		<header>
+			<ul class="clearfix fr">
+				<li class="fl">你好，欢迎使用支付宝付款！</li>
+				<span class="fl"></span>
+				<li class="fl"><a href="https://help.alipay.com/lab/help_detail.htm?help_id=258086" target="_blank">常见问题</a></li>
+			</ul>
+		</header>
+	</div>
+	<div class="nav">
+		<div class="nav_main">
+			<h2 class="fl"><img src="../img/5-T1HHFgXXVeXXXXXXXX.png"></h2>
+			<span>我的收银台</span>
+		</div>
+	</div>
+	<div class="apply">
+		<div class="apply_l fl">
+			<p>正在使用即时到账交易<i>[?]</i></p>
+			<p>开心麻花爆笑贺岁演出《牢友记》第6轮<span>收款方：上海颂品网络科技...</span></p>
+			<div class="tip left">
+				<p style="font-weight: 700;">付款后资金直接进入对方账户</p> 
+				<p>若发生退款需联系收款方协商，如付款给陌生人，请谨慎操作。</p>
+			</div>
+		</div>
+		<div class="apply_r fr">
+			<span><strong>1360.00</strong>元</span>
+			<a href="javascript:;">订单详情</a>
+		</div>
+	</div>
+	<div class="scan">
+		<div class="scan_l fl">
+			<div class="scan_l_m">
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;扫一扫付款（元）</p>
+				<h3>1360.00</h3>
+				<img src="../img/5-zhifubao.png">
+				<a href="javascript:;">首次使用请下载手机支付宝</a>
+				<div class="cover"><img src="../img/5-cover02.png"></div>
+			</div>
+		</div>
+		<div class="scan_r fr">
+			<div class="scan_r_m">
+				<img src="../img/5-computer.png">
+				<a href="javascript:;"><&nbsp;登录账户付款</a>
+			</div>
+		</div>
+	</div>
+	<div class="sponsor">
+		<p><a href="https://fun.alipay.com/certificate/jyxkz.htm" target="_blank">ICP证：沪B2-20150087</a></p>
+		<ul class="clearfix">
+			<li class="fl"><a href="javascript:;"><img src="../img/5-alipay01.png"></a></li>
+			<li class="fl"><a href="javascript:;"><img src="../img/5-alipay02.png"></a></li>
+			<li class="fl"><a href="javascript:;"><img src="../img/5-alipay03.png"></a></li>
+			<li class="fl"><a href="javascript:;"><img src="../img/5-alipay04.png"></a></li>
+			<li class="fl"><a href="javascript:;"><img src="../img/5-alipay05.png"></a></li>
+			<li class="fl"><a href="javascript:;"><img src="../img/5-alipay06.png"></a></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+// 点击切换两张图片的切换
+	$('.cover').click(function(){
+		if ($(this).find('img').attr('src')=='../img/5-cover02.png'){
+			$(this).find('img').attr('src','../img/5-cover01.png')
+		}else{
+			$(this).find('img').attr('src','../img/5-cover02.png')
+		}
+	})
+// 小提示框
+	$('.apply_l i').mouseenter(function(){
+		$('.tip').css('display','block')
+	})
+	$('.apply_l i').mouseleave(function(){
+		$('.tip').css('display','none')
+	})
+</script>
+</html>
