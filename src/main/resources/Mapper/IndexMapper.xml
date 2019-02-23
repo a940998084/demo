@@ -10,8 +10,8 @@
         select a.show_id,a.show_name,a.show_begin_time,a.show_end_time,a.show_picture,b.show_place,a.show_comment_grade,a.show_money,d.city_name from pn_show a,pn_city d,pn_show_place b where a.show_place_id=b.show_place_id and a.show_status_id=1 and a.city_id=d.city_id
             <if test= "city_id!=0"> and a.city_id= ${city_id}</if>
             <if test= "show_type_id!=0"> and a.show_type_id = ${show_type_id}</if>
-            <if test= "show_times==1"> and YEARWEEK(date_format(a.show_time,'%Y-%m-%d')) = YEARWEEK(now())</if>
-            <if test= "show_times==2"> and date_format(show_time,'%Y-%m')=date_format(now(),'%Y-%m')</if>
+            <if test= "show_times==1"> and YEARWEEK(date_format(a.show_begin_time,'%Y-%m-%d')) = YEARWEEK(now())</if>
+            <if test= "show_times==2"> and date_format(show_begin_time,'%Y-%m')=date_format(now(),'%Y-%m')</if>
             <if test= "show_begin_time!=null">and a.show_begin_time = ${show_begin_time}</if>
             <if test= "show_sort==1">order by a.show_begin_time desc </if>
             <if test= "show_sort==2">order by a.show_money desc </if>
@@ -24,5 +24,11 @@
     </select>
     <select id="findByCityAndGrade" resultType="com.piaoniu.demo.model.IndexModel" parameterType="com.piaoniu.demo.pojo.Show">
         select a.show_id,a.show_discount,a.show_money,a.show_picture,b.city_name from pn_show a,pn_city b where a.city_id=b.city_id and a.city_id=${city_id} and a.show_discount>0 order by a.show_discount asc limit 6;
+    </select>
+    <select id="findHotCity" resultType="com.piaoniu.demo.pojo.City">
+        select * from pn_city limit 1,5;
+    </select>
+    <select id="findCity" resultType="com.piaoniu.demo.pojo.City">
+        select * from pn_city;
     </select>
 </mapper>
