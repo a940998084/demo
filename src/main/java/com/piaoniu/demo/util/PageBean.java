@@ -60,8 +60,6 @@ public class PageBean<T> {
         String str=Integer.toString(temp);
         return str;
     }
-
-
     public void description(){
         String description="共有数据数："+this.getTotalRows()+
                 "共有页数："+this.getTotalPage()+
