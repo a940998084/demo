@@ -1,6 +1,8 @@
 package com.piaoniu.demo.service;
 
+import com.piaoniu.demo.model.CityModel;
 import com.piaoniu.demo.model.IndexModel;
+import com.piaoniu.demo.pojo.City;
 import com.piaoniu.demo.pojo.Show;
 import com.piaoniu.demo.pojo.ShowType;
 
@@ -11,4 +13,6 @@ public interface IndexService {
     List<IndexModel> findShowByAll(Show show);
     List<IndexModel> findByCityAndHot(Show show);
     List<IndexModel> findByCityAndGrade(Show show);
+    List<CityModel> findCity();
+    List<City> findHotCity();
 }

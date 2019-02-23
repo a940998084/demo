@@ -58,5 +58,26 @@ public class IndexController {
             return Status.getStatus(1);
         }
     }
+    @RequestMapping(value = "selectHotCity",method = RequestMethod.GET)
+    @ApiOperation(value = "查询热门城市",notes="查询热门城市")
+    @ApiResponses({@ApiResponse(code = 1,message = "操作成功"),@ApiResponse(code = 0,message = "操作失败"),@ApiResponse(code = 3,message = "权限不足")})
+    public Json getUser4() {
+        if(indexService.findHotCity()!=null){
+            return Status.getStatus(0,indexService.findHotCity());
+        }else {
+            return Status.getStatus(1);
+        }
+    }
+    @RequestMapping(value = "selectCity",method = RequestMethod.GET)
+    @ApiOperation(value = "查询城市",notes="查询城市")
+    @ApiResponses({@ApiResponse(code = 1,message = "操作成功"),@ApiResponse(code = 0,message = "操作失败"),@ApiResponse(code = 3,message = "权限不足")})
+    public Json getUser5() {
+        if(indexService.findCity()!=null){
+            return Status.getStatus(0,indexService.findCity());
+        }else {
+            return Status.getStatus(1);
+        }
+    }
+
 }
 

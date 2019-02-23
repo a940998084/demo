@@ -1,13 +1,18 @@
 package com.piaoniu.demo.service.impl;
 
 import com.piaoniu.demo.dao.IndexDao;
+import com.piaoniu.demo.model.CityModel;
 import com.piaoniu.demo.model.IndexModel;
+import com.piaoniu.demo.pojo.City;
 import com.piaoniu.demo.pojo.Show;
 import com.piaoniu.demo.pojo.ShowType;
 import com.piaoniu.demo.service.IndexService;
+import com.piaoniu.demo.util.PinYin;
+import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,5 +38,52 @@ public class IndexServiceImpl implements IndexService {
     @Override
     public List<IndexModel> findByCityAndGrade(Show show) {
         return indexDao.findByCityAndGrade(show);
+    }
+
+    @Override
+    public List<CityModel> findCity() {
+        List<City> cities=indexDao.findCity();
+        //结果
+        List<CityModel> cityNums=new ArrayList<>();
+        //所有首字母
+        List<String> inits=new ArrayList<>();
+        PinYin py=new PinYin();
+
+        for (int i=0;i<cities.size();i++){
+            CityModel cityModel=new CityModel();
+            City city=cities.get(i);
+            String num=null;
+            try {
+                num= py.toPinYin(city.getCity_name());
+            } catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
+                badHanyuPinyinOutputFormatCombination.printStackTrace();
+            }
+            String n= String.valueOf(num.charAt(0));
+            if (inits.contains(n)){
+                int size = inits.indexOf(n);
+                cityModel=cityNums.get(size);
+                List<City> list=cityModel.getCity();
+                list.add(city);
+                cityModel.setCity(list);
+            }else {
+                inits.add(n);
+                cityModel.setInit(n);
+
+                List<City> list1=new ArrayList<>();
+                list1.add(city);
+
+                cityModel.setCity(list1);
+               //list.add(city);
+               //cityModel.setCity(list);
+                cityNums.add(cityModel);
+            }
+        }
+
+        return cityNums;
+    }
+
+    @Override
+    public List<City> findHotCity() {
+        return indexDao.findHotCity();
     }
 }
