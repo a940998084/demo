@@ -4,6 +4,7 @@ import com.piaoniu.demo.dao.IndexDao;
 import com.piaoniu.demo.model.CityModel;
 import com.piaoniu.demo.model.IndexModel;
 import com.piaoniu.demo.pojo.City;
+import com.piaoniu.demo.pojo.Photo;
 import com.piaoniu.demo.pojo.Show;
 import com.piaoniu.demo.pojo.ShowType;
 import com.piaoniu.demo.service.IndexService;
@@ -85,5 +86,15 @@ public class IndexServiceImpl implements IndexService {
     @Override
     public List<City> findHotCity() {
         return indexDao.findHotCity();
+    }
+
+    @Override
+    public List<Photo> findPhoto() {
+        return indexDao.findPhoto();
+    }
+
+    @Override
+    public List<IndexModel> findShowBySome(String message) {
+        return indexDao.findShowBySome(message);
     }
 }
