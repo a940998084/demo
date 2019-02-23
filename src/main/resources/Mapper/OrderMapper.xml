@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.OrderDao">
+  <!---根据订单的状态查个人订单-->
+    <select id="selectByUserAndStatus" resultType="com.piaoniu.demo.model.Order1">
+        select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.order_money,pn_show_place.show_place,pn_order.order_number,pn_order_status.order_sts,
+        pn_order.order_time,pn_order.order_amount,pn_order.user_id from pn_order left join pn_show on pn_show.show_id=pn_order.show_id LEFT JOIN pn_show_place on
+         pn_show.show_place_id=pn_show_place.show_place_id LEFT JOIN pn_order_status on pn_order_status.order_status_id=pn_order.order_status_id WHERE pn_order.order_status_id=#{order_status_id} and pn_order.user_id=#{user_id}
+    </select>
+
+<!--遍历用户的所有订单那-->
+    <select id="selectAll" resultType="com.piaoniu.demo.model.Order1">
+select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.order_money,pn_show_place.show_place,pn_order.order_number,pn_order_status.order_sts,
+        pn_order.order_time,pn_order.order_amount,pn_order.user_id from pn_order left join pn_show on pn_show.show_id=pn_order.show_id LEFT JOIN pn_show_place on
+         pn_show.show_place_id=pn_show_place.show_place_id LEFT JOIN pn_order_status on pn_order_status.order_status_id=pn_order.order_status_id WHERE  pn_order.user_id=#{user_id}
+    </select>
+<!--取消订单-->
+    <update id="updateStatus" parameterType="com.piaoniu.demo.pojo.Order">
+        update `pn_order` set order_status_id=5 where order_number=#{order_number}
+    </update>
+
+<!--订单的详情-->
+    <select id="selectOrderDetail" resultType="com.piaoniu.demo.pojo.Order" >
+      select pn_order.order_number,pn_order.order_time,pn_order.consignee,pn_order.consignee_phone,pn_order.order_money,
+      pn_order.order_amount,pn_order_status.order_sts,pn_save_way.save_way,pn_show.show_name,pn_show.show_begin_time,
+      pn_show.show_money,pn_show_place.show_place from pn_order left join pn_order_status on pn_order.order_status_id
+      =pn_order_status.order_status_id left join pn_save_way on pn_save_way.save_way_id=pn_order.save_way_id left join
+      pn_show on pn_show.show_id=pn_order.show_id left join pn_show_place on pn_show_place.show_place_id=
+      pn_show.show_place_id WHERE pn_order.order_number=#{order_number}
+
+    </select>
+
+
+<!-- 生成订单-->
+    <insert id="add" parameterType="com.piaoniu.demo.pojo.Order">
+        insert into `pn_order` (order_number,save_way_id,show_id,address_id,order_money,order_time,user_id,discount_id,show_type_id,seat_id,consignee,consignee_phone) values (#{order_number},#{save_way_id},#{show_id},#{address_id},#{order_money},#{order_time},#{user_id},#{discount_id},#{show_type_id},#{seat_id},#{consignee},#{consignee_phone})
+    </insert>
+<!-- 查询优惠券-->
+    <select id="selectDiscount" resultType="com.piaoniu.demo.pojo.Discount">
+        SELECT * FROM pn_discount WHERE user_id=#{user_id} and show_type_id=#{show_type_id} and discount_status_id=#{discount_status_id}
+    </select>
+
+<!--便利用用户的收货地址-->
+    <select id="selectAddress" resultType="com.piaoniu.demo.pojo.Address">
+        SELECT pn_address.address_name,pn_address.address_phone,pn_address.address_street,pn_area.area from pn_address LEFT JOIN
+         pn_area  on pn_address.area_id=pn_area.area_id WHERE pn_address.user_id=#{user_id}
+    </select>
+
+
+
+
+
+
+</mapper>
