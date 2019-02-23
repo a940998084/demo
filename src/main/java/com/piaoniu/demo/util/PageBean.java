@@ -17,6 +17,8 @@ public class PageBean<T> {
     private boolean hasNextPage=false;    //是否有下一页
     private boolean hasPreviousPage=false; //是否有前一页
 
+
+
     public PageBean(List<T> list,int pageSize){
         init(list,pageSize);
     }
