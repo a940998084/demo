@@ -1,16 +1,12 @@
-package com.piaoniu.demo.pojo;
+package com.piaoniu.demo.model;
 
-/**
- * 地址
- */
-public class Address {
+public class AddressModel {
     private int address_id;    //地址id
-    private int area_id;       //地区id
+    private String area;       //地区
     private String address_street;  //街道
     private String address_phone;   //收货人联系方式
     private int user_id;        //用户id
     private String address_name;  //收货人姓名
-
 
     public int getAddress_id() {
         return address_id;
@@ -20,12 +16,12 @@ public class Address {
         this.address_id = address_id;
     }
 
-    public int getArea_id() {
-        return area_id;
+    public String getArea() {
+        return area;
     }
 
-    public void setArea_id(int area_id) {
-        this.area_id = area_id;
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public String getAddress_street() {

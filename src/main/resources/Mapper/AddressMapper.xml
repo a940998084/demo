@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.AddressDao">
+    <select id="SelectByUid" resultType="com.piaoniu.demo.model.AddressModel" parameterType="int">
+      select a.address_id,a.address_street,a.address_phone,a.address_name,b.area from pn_address a,pn_area b where a.area_id=b.area_id and user_id=#{user_id};
+  </select>
+    <delete id="DeleteByAid" parameterType="int">
+        delete from pn_address where address_id=#{address_id};
+    </delete>
+    <insert id="insertAddress" parameterType="com.piaoniu.demo.pojo.Address">
+      insert into pn_address(area_id,address_street,address_name,address_phone,user_id)
+      values (#{area_id},#{address_street},#{address_name},#{address_phone},#{user_id});
+    </insert>
+</mapper>
