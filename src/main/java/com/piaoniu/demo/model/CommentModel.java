@@ -1,14 +1,41 @@
 package com.piaoniu.demo.model;
 
 public class CommentModel {
+    private int comment_id;
+    private int show_id;
     private String comment_message;
-    private String comment_photo;
+    private String path;
     private String user_head_photo;
     private String user_username;
     private String love;
     private double comment_grade;
     private double show_comment_grade;
     private int show_comment_num;
+    private String comment_creat_time;
+
+    public int getComment_id() {
+        return comment_id;
+    }
+
+    public void setComment_id(int comment_id) {
+        this.comment_id = comment_id;
+    }
+
+    public int getShow_id() {
+        return show_id;
+    }
+
+    public void setShow_id(int show_id) {
+        this.show_id = show_id;
+    }
+
+    public String getComment_creat_time() {
+        return comment_creat_time;
+    }
+
+    public void setComment_creat_time(String comment_creat_time) {
+        this.comment_creat_time = comment_creat_time;
+    }
 
     public String getComment_message() {
         return comment_message;
@@ -18,12 +45,12 @@ public class CommentModel {
         this.comment_message = comment_message;
     }
 
-    public String getComment_photo() {
-        return comment_photo;
+    public String getPath() {
+        return path;
     }
 
-    public void setComment_photo(String comment_photo) {
-        this.comment_photo = comment_photo;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getUser_head_photo() {

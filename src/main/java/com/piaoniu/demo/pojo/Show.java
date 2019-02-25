@@ -38,8 +38,6 @@ public class Show {
     public void setShow_times(int show_times) {
         this.show_times = show_times;
     }
-    private double show_comment_grade;//演出评分
-    private int show_comment_num;  //评论人数量
 
     public int getShow_id() {
         return show_id;
