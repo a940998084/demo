@@ -11,7 +11,6 @@ public class Comment {
     private int show_id;           //演出id
     private String comment_photo;  //评论图片
     private String comment_grade;   //评分
-    private int comment_next_id;    //评论副id
 
     public int getComment_id() {
         return comment_id;
@@ -67,13 +66,5 @@ public class Comment {
 
     public void setComment_grade(String comment_grade) {
         this.comment_grade = comment_grade;
-    }
-
-    public int getComment_next_id() {
-        return comment_next_id;
-    }
-
-    public void setComment_next_id(int comment_next_id) {
-        this.comment_next_id = comment_next_id;
     }
 }

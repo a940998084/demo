@@ -9,9 +9,20 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-  redis:
-    host: localhost
-    port: 6379
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+    prefix: classpath:/templates/
+    enabled: true
+    suffix: .html
 mybatis:
- mapper-locations: classpath:mapper/*.xml
- type-aliases-package: com.piaoniu.demo.model
+ mapper-locations: classpath:Mapper/*.xml
+ type-aliases-package: com.piaoniu.demo.dao

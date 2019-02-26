@@ -1,9 +1,9 @@
 package com.piaoniu.demo.pojo;
+
 /**
  * 用户表
  *
  */
-
 public class User {
     private int user_id; //用户id
     private String user_phone; //用户手机号
