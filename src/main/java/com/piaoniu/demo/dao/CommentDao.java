@@ -3,12 +3,7 @@ package com.piaoniu.demo.dao;
 import com.piaoniu.demo.model.CommentModel;
 import com.piaoniu.demo.pojo.Comment;
 import com.piaoniu.demo.pojo.CommentChild;
-import com.piaoniu.demo.pojo.CommentPhoto;
 import com.piaoniu.demo.pojo.Show;
-import io.swagger.models.auth.In;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -37,6 +32,4 @@ public interface CommentDao {
     //添加评论回复
     int insertCommentChild(CommentChild commentChild);
 
-    // 添加图片路径
-    int insertPhtotPath(CommentPhoto commentPhoto);
 }
