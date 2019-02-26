@@ -1,0 +1,25 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.TicketDao">
+    <!--根据演出名称查询场次-->
+    <select id="SelectCCBySid" resultType="com.piaoniu.demo.model.IndexModel" parameterType="String">
+        select a.show_begin_time,a.show_id,a.show_comment_grade,b.show_place from pn_show a,pn_show_place b where a.show_place_id=b.show_place_id and show_name=#{show_name};
+    </select>
+    <!--根据演出id查询演厅-->
+    <select id="SelectZTBySid" resultType="com.piaoniu.demo.pojo.Hall" parameterType="int">
+        select hall_id,hall_name from pn_hall where show_place_id in (select show_place_id from pn_show where show_id=#{show_id});
+    </select>
+    <!--根据演厅id查询座位信息-->
+    <select id="SelectSeatByHall" resultType="com.piaoniu.demo.pojo.Seat" parameterType="int">
+        select seat_id,seat_money,seat_number,seat_status_type_id from pn_seat where seat_status_type_id=2 and hall_id=#{hall_id};
+    </select>
+    <!--修改座位状态-->
+    <update id="UpdateSeatStatus" parameterType="int">
+        update pn_seat set seat_status_type_id=1 where seat_id=#{seat_id};
+    </update>
+    <!--根据票档和演出id查询座位-->
+    <select id="SelectSeatByMoneyAndSid" parameterType="com.piaoniu.demo.pojo.Seat" resultType="com.piaoniu.demo.pojo.Seat">
+        select * from pn_seat where seat_money=#{seat_money} and show_id=#{show_id};
+    </select>
+</mapper>
