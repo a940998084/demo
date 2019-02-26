@@ -12,6 +12,8 @@ public class CommentModel {
     private double show_comment_grade;
     private int show_comment_num;
     private String comment_creat_time;
+    private String comment_picture;  //评论图片
+
 
     public int getComment_id() {
         return comment_id;
@@ -99,5 +101,13 @@ public class CommentModel {
 
     public void setShow_comment_num(int show_comment_num) {
         this.show_comment_num = show_comment_num;
+    }
+
+    public String getComment_picture() {
+        return comment_picture;
+    }
+
+    public void setComment_picture(String comment_picture) {
+        this.comment_picture = comment_picture;
     }
 }

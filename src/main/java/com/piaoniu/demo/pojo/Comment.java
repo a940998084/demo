@@ -11,6 +11,7 @@ public class Comment {
     private int show_id;           //演出id
     private double comment_grade;   //评分
     private String comment_creat_time;//评论创建时间
+    private String comment_picture;  //评论图片
 
     public int getComment_id() {
         return comment_id;
@@ -67,4 +68,14 @@ public class Comment {
     public void setComment_creat_time(String comment_creat_time) {
         this.comment_creat_time = comment_creat_time;
     }
+
+    public String getComment_picture() {
+        return comment_picture;
+    }
+
+    public void setComment_picture(String comment_picture) {
+        this.comment_picture = comment_picture;
+    }
+
+
 }

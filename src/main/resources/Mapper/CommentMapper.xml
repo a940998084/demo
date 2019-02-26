@@ -11,13 +11,13 @@
         a.love,
         a.comment_creat_time,
         a.comment_grade,
+        a.comment_picture,
         b.user_head_photo,
         b.user_username,
         c.show_comment_grade,
-        c.show_comment_num,
-        d.path
-        FROM pn_comment a,pn_user b,pn_show c,pn_comment_photo d WHERE a.user_id=b.user_id
-        and a.show_id=c.show_id and d.comment_id=a.comment_id
+        c.show_comment_num
+        FROM pn_comment a,pn_user b,pn_show c WHERE a.user_id=b.user_id
+        and a.show_id=c.show_id
         <if test= "comment_id!=0"> and a.comment_id= ${comment_id}</if>
         <if test= "show_id!=0"> and a.show_id= ${show_id}</if>
     </select>
@@ -34,77 +34,23 @@
         INNER JOIN pn_show ON pn_comment_child.show_id=pn_show.show_id
         WHERE pn_comment_child.comment_parent_id=#{pn_comment_child.comment_parent_id}
     </select>
+    <select id="findShowById"  resultType="com.piaoniu.demo.pojo.Show">
+        SELECT c.show_comment_grade,c.show_comment_num
+        FROM pn_show c WHERE
+         c.show_id= 1
+    </select>
     <!--修改演出评分和评分总人数-->
     <update id="updateShowGrade" parameterType="com.piaoniu.demo.pojo.Show">
         update  pn_show set show_comment_grade=#{show_comment_grade},show_comment_num=#{show_comment_num}
         where show_id=#{show_id}
     </update>
     <!--添加评论-->
-    <insert id="insertComment"  parameterType="com.piaoniu.demo.pojo.Comment" >
-        insert into pn_comment
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="comment_id!= null">
-                comment_id,
-            </if>
-            <if test="love!= null">
-                love,
-            </if>
-            <if test="comment_grade != null">
-                comment_grade,
-            </if>
-            <if test="comment_message != null">
-                comment_message,
-            </if>
-            <if test="comment_photo != null">
-                comment_photo,
-            </if>
-            <if test="show_id != null">
-                show_id,
-            </if>
-            <if test="user_id != null">
-                user_id,
-            </if>
-            <if test="comment_creat_time != null">
-                comment_creat_time,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="comment_id!= null">
-                #{comment_id},
-            </if>
-            <if test="love!= null">
-                #{love},
-            </if>
-            <if test="comment_grade != null">
-                #{comment_grade},
-            </if>
-            <if test="comment_message != null">
-                #{comment_message},
-            </if>
-            <if test="comment_photo != null">
-                #{comment_photo},
-            </if>
-            <if test="show_id != null">
-                #{show_id},
-            </if>
-            <if test="user_id != null">
-                #{user_id}
-            </if>
-            <if test="comment_creat_time != null">
-                #{comment_creat_time}
-            </if>
-        </trim>
-    </insert>
-    <insert id="insert" parameterType="com.piaoniu.demo.pojo.Comment">
-        insert into pn_comment (comment_id,love,comment_grade,comment_message,show_id,user_id,comment_creat_time)
-         value (#{comment_id},#{love},#{comment_grade},#{comment_message},#{show_id},#{user_id},#{comment_creat_time});
+    <insert id="insertComment" parameterType="com.piaoniu.demo.pojo.Comment">
+        insert into pn_comment (love,comment_grade,comment_message,show_id,user_id,comment_creat_time,comment_picture)
+         value (#{love},#{comment_grade},#{comment_message},#{show_id},#{user_id},#{comment_creat_time},#{comment_picture});
     </insert>
     <insert id="insertCommentChild" parameterType="com.piaoniu.demo.pojo.CommentChild">
         insert into pn_comment_child (comment_message,show_id,user_id,comment_creat_time,comment_parent_id)
          value (#{comment_message},#{show_id},#{user_id},#{comment_creat_time},#{comment_parent_id});
-    </insert>
-    <insert id="insertPhtotPath" parameterType="com.piaoniu.demo.pojo.CommentPhoto">
-        insert into pn_comment_photo (path,comment_id) value
-        (#{path},#{comment_id})
     </insert>
 </mapper>

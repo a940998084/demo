@@ -1,18 +1,12 @@
 package com.piaoniu.demo.controller;
 
-import com.piaoniu.demo.model.CommentModel;
 import com.piaoniu.demo.pojo.Comment;
 import com.piaoniu.demo.pojo.CommentChild;
-import com.piaoniu.demo.pojo.CommentPhoto;
-import com.piaoniu.demo.pojo.Show;
-import com.piaoniu.demo.service.CommentService;
 import com.piaoniu.demo.service.impl.CommentServiceImpl;
 import com.piaoniu.demo.util.Json;
 import com.piaoniu.demo.util.Status;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,14 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+
 @RequestMapping("/comment")
 @RestController
 public class CommentController {
@@ -81,10 +71,11 @@ public class CommentController {
 
     @RequestMapping(value = "/addComment",method = RequestMethod.POST)
     @ApiOperation(value="添加评论", notes="添加评论")
-    public Json addComment( Comment comment,@ApiParam("file")MultipartFile[] files) throws InterruptedException, IOException {
-        commentService.insetpath(files, comment);
-        commentService.insertComment(comment);
-        commentService.updateService(comment.getShow_id(),comment);
+    public Json addComment( Comment comment,@ApiParam("files")MultipartFile files) throws InterruptedException, IOException {
+        commentService.insetpath(files,comment);
+        /*commentService.insetpath(files, comment);*/
+        System.out.println(comment.getShow_id());
+        commentService.updateService(comment);
         return Status.getStatus(0);
     }
     @RequestMapping(value = "/addCommentChild",method = RequestMethod.GET)
