@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @Api(value = "后台登录控制",tags = "后台登录接口")
-public class LoginController {
+public class HtLoginController {
 
-    private Logger logger=LoggerFactory.getLogger(LoginController.class);
+    private Logger logger=LoggerFactory.getLogger(HtLoginController.class);
     /**
      * 登录
      * @return

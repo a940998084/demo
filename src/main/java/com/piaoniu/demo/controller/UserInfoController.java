@@ -19,6 +19,7 @@ public class UserInfoController {
     public String userInfo(){
         return "userInfo";
     }
+
     /**
      * 用户添加
      * @return
@@ -28,6 +29,7 @@ public class UserInfoController {
     public String userInfoAdd(){
         return "userInfoAdd";
     }
+
     /**
      * 用户修改
      * @return
