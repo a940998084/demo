@@ -1,6 +1,6 @@
 package com.piaoniu.demo.pojo;
 
-
+import java.util.Date;
 
 /**
  * 优惠券
@@ -8,8 +8,8 @@ package com.piaoniu.demo.pojo;
 public class Discount {
     private int discount_id;     //优惠券id
     private int discount_money;  //优惠券金额
-    private String discount_begin;  //优惠券开始时间
-    private String discount_end;    //优惠券过期时间
+    private Date discount_begin;  //优惠券开始时间
+    private Date discount_end;    //优惠券过期时间
     private int show_type_id;     //演出类型id
     private int discount_status_id;   //优惠券状态id
     private int user_id;           //用户id
@@ -39,19 +39,19 @@ public class Discount {
         this.discount_money = discount_money;
     }
 
-    public String getDiscount_begin() {
+    public Date getDiscount_begin() {
         return discount_begin;
     }
 
-    public void setDiscount_begin(String discount_begin) {
+    public void setDiscount_begin(Date discount_begin) {
         this.discount_begin = discount_begin;
     }
 
-    public String getDiscount_end() {
+    public Date getDiscount_end() {
         return discount_end;
     }
 
-    public void setDiscount_end(String discount_end) {
+    public void setDiscount_end(Date discount_end) {
         this.discount_end = discount_end;
     }
 

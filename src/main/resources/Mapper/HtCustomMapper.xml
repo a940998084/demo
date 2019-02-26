@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.Ht_OrderDao">
+    <select id="SelectOrderInfoByCondition" resultType="com.piaoniu.demo.pojo.Order" parameterType="com.piaoniu.demo.pojo.Order">
+        select
+        order_number,save_way_id ,show_id ,address_id ,order_money,order_status_id ,order_time ,user_id ,discount_id ,show_type_id ,seat_id,consignee,consignee_phone
+        from pn_order
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="order_number != null and order_number!=''">
+                and order_number=#{order_number}
+            </if>
+            <if test="save_way_id != null and save_way_id!=''">
+                and save_way_id=#{save_way_id}
+            </if>
+            <if test="show_id != null and show_id!=''">
+                and show_id=#{show_id}
+            </if>
+            <if test="address_id != null and address_id!=''">
+                and address_id=#{address_id}
+            </if>
+            <if test="order_money != null and order_money!=''">
+                and order_money=#{order_money}
+            </if>
+            <if test="order_status_id != null and order_status_id!=''">
+                and order_status_id=#{order_status_id}
+            </if>
+            <if test="order_time != null and order_time!=''">
+                and order_time=#{order_time}
+            </if>
+            <if test="user_id != null and user_id!=''">
+                and user_id=#{user_id}
+            </if>
+            <if test="discount_id != null and discount_id!=''">
+                and discount_id=#{discount_id}
+            </if>
+            <if test="show_type_id != null and show_type_id!=''">
+                and show_type_id=#{show_type_id}
+            </if>
+            <if test="seat_id != null and seat_id!=''">
+                and seat_id=#{seat_id}
+            </if>
+            <if test="consignee != null and consignee!=''">
+                and consignee=#{consignee}
+            </if>
+            <if test="consignee_phone != null and consignee_phone!=''">
+                and consignee_phone=#{consignee_phone}
+            </if>
+        </trim>
+    </select>
+</mapper>
