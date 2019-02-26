@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+
+ <div>
+     <ul>
+         <li  th:each="land:${lands}">
+             用户名:<span th:text="${land.user_phone}"></span>
+         </li>
+         .0
+     </ul>
+ </div>
+
+</body>
+</html>
