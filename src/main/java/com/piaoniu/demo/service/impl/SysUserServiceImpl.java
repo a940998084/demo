@@ -12,20 +12,20 @@ import javax.annotation.Resource;
 public class SysUserServiceImpl implements SysUserService {
 
     @Resource
-    private SysUserDao userDao;
+    private SysUserDao sysUserDao;
 
     @Override
     public SysUser findByUserName(String username) {
-        return userDao.findByUserName(username);
+        return sysUserDao.findByUserName(username);
     }
 
     @Override
     public int add(SysUser sysUser) {
-        return userDao.add(sysUser);
+        return sysUserDao.add(sysUser);
     }
 
     @Override
     public int delete(int uid) {
-        return userDao.delete(uid);
+        return sysUserDao.delete(uid);
     }
 }

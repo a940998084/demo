@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexController {
     @Autowired
     IndexService indexService;
-    @RequestMapping(value = "selectShowType",method = RequestMethod.GET)
+    @RequestMapping(value = "selectShowType",method  = RequestMethod.GET)
     @ApiOperation(value = "遍历演出类型",notes="遍历演出类型")
     @ApiResponses({@ApiResponse(code = 1,message = "操作成功"),@ApiResponse(code = 0,message = "操作失败"),@ApiResponse(code = 3,message = "权限不足")})
     public Json getUser() {
