@@ -1,10 +1,14 @@
 package com.piaoniu.demo.service;
 
+import com.alipay.api.AlipayApiException;
+import com.piaoniu.demo.model.AlipayBean;
 import com.piaoniu.demo.model.Order2;
 import com.piaoniu.demo.pojo.Address;
 import com.piaoniu.demo.pojo.Discount;
 import com.piaoniu.demo.pojo.Order;
 import com.piaoniu.demo.model.Order1;
+import com.piaoniu.demo.pojo.Pnlog;
+import sun.rmi.runtime.Log;
 
 import java.util.List;
 
@@ -45,9 +49,17 @@ public interface OrderService {
     /**
      * 订单详情
      */
-    List<Order2> selectOrderDetail(Order2 order2);
+    List<Order2>  selectOrderDetail(Order2 order2);
 /**
  * 遍历用户的收货地址
  */
 List<Address> selectAddress(Address address);
+
+/*生成日志*/
+    int insetlog(Pnlog pnlog) ;
+    /*查看日志*/
+    List<Pnlog>  selectLog();
+
+
+    String aliPay(AlipayBean alipayBean) throws AlipayApiException;
 }

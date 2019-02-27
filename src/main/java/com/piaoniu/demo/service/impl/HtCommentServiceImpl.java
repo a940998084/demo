@@ -12,24 +12,24 @@ import java.util.List;
 @Service
 public class HtCommentServiceImpl implements HtCommentService {
     @Resource
-    private Ht_CommentDao commentDao;
+    private Ht_CommentDao HtcommentDao;
     @Override
     public List<Comment> findAllCommentInfo() {
-        return commentDao.findAllCommentInfo();
+        return HtcommentDao.findAllCommentInfo();
     }
 
     @Override
     public List<CommentChild> findAllChildCommentInfo() {
-        return commentDao.findAllChildCommentInfo();
+        return HtcommentDao.findAllChildCommentInfo();
     }
 
     @Override
     public int deleteComment(int comment_id) {
-        return commentDao.deleteComment(comment_id);
+        return HtcommentDao.deleteComment(comment_id);
     }
 
     @Override
     public int deleteChirlComment(int comment_child_id) {
-        return commentDao.deleteChirlComment(comment_child_id);
+        return HtcommentDao.deleteChirlComment(comment_child_id);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 public class Order1 {
     private int Order_status_id;  //状态id
     private int user_id;  //用户id
-    private String begin_show_time;   //演出时间
+    private String show_begin_time;   //演出时间
     private Date order_time;         //下单时间
     private String show_name;   //演出名称
     private String show_picture; //演出图
@@ -32,12 +32,12 @@ public class Order1 {
         this.user_id = user_id;
     }
 
-    public String getBegin_show_time() {
-        return begin_show_time;
+    public String getShow_begin_time() {
+        return show_begin_time;
     }
 
-    public void setBegin_show_time(String begin_show_time) {
-        this.begin_show_time = begin_show_time;
+    public void setShow_begin_time(String show_begin_time) {
+        this.show_begin_time = show_begin_time;
     }
 
     public Date getOrder_time() {

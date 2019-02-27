@@ -1,15 +1,20 @@
 package com.piaoniu.demo.controller;
 
+import com.alipay.api.AlipayApiException;
 import com.google.gson.Gson;
+import com.piaoniu.demo.model.AlipayBean;
+import com.piaoniu.demo.model.Order2;
 import com.piaoniu.demo.pojo.Address;
 import com.piaoniu.demo.pojo.Discount;
 import com.piaoniu.demo.pojo.Order;
 import com.piaoniu.demo.model.Order1;
+import com.piaoniu.demo.pojo.Pnlog;
 import com.piaoniu.demo.service.OrderService;
 import io.swagger.annotations.Api;
 
 
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +36,14 @@ public class OrderController {
     private OrderService orderService;
 
 
+
+
+    @PostMapping(value = "alipay")
+    public String alipay (AlipayBean alipayBean) throws AlipayApiException{
+        return orderService.aliPay(alipayBean);
+    }
+
+
    //根据订单的状态去查询各种类型的订单
     @RequestMapping(value = "/selectByUserAndStatus", method = RequestMethod.GET)
     public List<Order1> selectByUserAndStatus(Order1 order1) {
@@ -49,18 +62,27 @@ public class OrderController {
     }
 
     //查询该用户的优惠券
-    @RequestMapping(value = "/selectOrderDetail", method = RequestMethod.POST)
+    @RequestMapping(value = "/selectDiscount", method = RequestMethod.POST)
     public List<Discount> selectDiscount(Discount discount){
 
         return orderService.selectDiscount(discount);
     }
 
+    // 查询订单详情
+    @RequestMapping(value = "/selectOrderDetail", method = RequestMethod.POST)
+    public List<Order2> selectOrderDetail(Order2 order2 ){
+       return orderService.selectOrderDetail(order2);
+    }
 
-
+    //日志的查看
+    @RequestMapping(value = "/selectLog", method = RequestMethod.POST)
+    public List<Pnlog> selectLog(){
+        return orderService.selectLog();
+    }
 
     //生成订单
   @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public int add (Order order, HttpSession session) {
+    public int  add (Order order, HttpSession session) {
 
         //设置订单编号
         String temp_str = "";
@@ -73,12 +95,20 @@ public class OrderController {
         String d=UUID.randomUUID().toString().substring(0, 5);
         String e=c+d;
         order.setOrder_number(e);
+        Pnlog pnlog=new Pnlog();
+        pnlog.setLog_message("订单以及提交,等待支付");
+        pnlog.setOrder_number(e);
+        orderService.insetlog(pnlog);
+        if (orderService.add(order)>1){
+            return 1;
+        }
+        return 0;
 
 
         //获取当前的用户id
    //    order.setUser_id((Integer) session.getAttribute("user_id"));
 
-        order.setOrder_status_id(1);
+
 
        //判断用户是不是有优惠券
   //  Discount discount=new Discount();
@@ -93,12 +123,12 @@ public class OrderController {
   //  }
 
 
+/*
+      redisTemplate.opsForValue().set("key", String.valueOf(order),15,TimeUnit.MINUTES);*/
 
-      redisTemplate.opsForValue().set("key", String.valueOf(order),15,TimeUnit.MINUTES);
 
 
 
-      return orderService.add(order);
 
 
         //获取当前的配送方式id
@@ -110,20 +140,25 @@ public class OrderController {
             List <Address> A=orderService.selectAddress(address);
             return String.valueOf(A);
         }*/
-
-
-
-
-
-
-
-
         }
+
+    @RequestMapping(value = "/insetlog", method = RequestMethod.POST )
+    public int insetlog (Pnlog pnlog){
+        pnlog.setLog_message("订单已经提交等待支付");
+    return orderService.insetlog(pnlog);
+    }
+
+
 //遍历用户的收货地址
     @RequestMapping(value = "/selectAddress", method = RequestMethod.POST )
     public List<Address> selectAddress(Address address){
         return  orderService.selectAddress(address);
     }
+
+
+
+
+
 
     @RequestMapping(value = "/test", method = RequestMethod.POST)
     public String TEST(){
@@ -136,4 +171,10 @@ public class OrderController {
     public String TEST1(){
         return redisTemplate.opsForValue().get("key");
     }
+
+
+
+
+
+
 }
