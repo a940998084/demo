@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @MapperScan("com.piaoniu.demo.dao")
 @EntityScan("com.piaoniu.demo.pojo")
 public class DemoApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }

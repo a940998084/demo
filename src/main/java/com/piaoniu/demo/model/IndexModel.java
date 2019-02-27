@@ -8,7 +8,7 @@ public class IndexModel {
     private String show_name;   //演出名称
     private String show_picture; //演出图
     private double show_money;   //演出票价格
-    private String city_name;    //城市名称
+    private String city_name;    //城市名
     private String show_comment_grade; //演出评分
     private int show_attention;    //关注量
     private int show_discount;    //折扣
