@@ -6,7 +6,9 @@ import com.piaoniu.demo.pojo.Discount;
 import com.piaoniu.demo.pojo.Order;
 import com.piaoniu.demo.model.Order1;
 
+import com.piaoniu.demo.pojo.Pnlog;
 import org.springframework.stereotype.Repository;
+import sun.rmi.runtime.Log;
 
 import java.util.List;
 
@@ -49,12 +51,27 @@ public interface OrderDao {
     /**
      * 订单详情
      */
-    List<Order2> selectOrderDetail(Order2 order2);
+    List<Order2>  selectOrderDetail(Order2 order2);
 
     /**
      * 遍历用户的守护地址
      */
     List<Address> selectAddress(Address address);
+
+/**
+
+ String aliPay(AlipayBean alipayBean) throws AlipayApiException;
+
+ /* *
+ *  日志生成
+ */
+    int insetlog(Pnlog pnlog) ;
+
+
+    /**
+     * 日志查看
+     */
+   List<Pnlog>  selectLog();
 
   /*  @Autowired
     private RedisTemplate<String,String> redisTemplate;

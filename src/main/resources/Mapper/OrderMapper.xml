@@ -5,9 +5,10 @@
 <mapper namespace="com.piaoniu.demo.dao.OrderDao">
   <!---根据订单的状态查个人订单-->
     <select id="selectByUserAndStatus" resultType="com.piaoniu.demo.model.Order1">
-        select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.order_money,pn_show_place.show_place,pn_order.order_number,pn_order_status.order_sts,
+  select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.order_money,pn_show_place.show_place,pn_order.order_number,pn_order_status.order_sts,
         pn_order.order_time,pn_order.order_amount,pn_order.user_id from pn_order left join pn_show on pn_show.show_id=pn_order.show_id LEFT JOIN pn_show_place on
-         pn_show.show_place_id=pn_show_place.show_place_id LEFT JOIN pn_order_status on pn_order_status.order_status_id=pn_order.order_status_id WHERE pn_order.order_status_id=#{order_status_id} and pn_order.user_id=#{user_id}
+         pn_show.show_place_id=pn_show_place.show_place_id LEFT JOIN pn_order_status on pn_order_status.order_status_id=pn_order.order_status_id WHERE
+         pn_order.order_status_id=#{order_status_id} and pn_order.user_id=#{user_id}
     </select>
 
 <!--遍历用户的所有订单那-->
@@ -22,7 +23,7 @@ select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.o
     </update>
 
 <!--订单的详情-->
-    <select id="selectOrderDetail" resultType="com.piaoniu.demo.pojo.Order" >
+    <select id="selectOrderDetail" resultType="com.piaoniu.demo.model.Order2" >
       select pn_order.order_number,pn_order.order_time,pn_order.consignee,pn_order.consignee_phone,pn_order.order_money,
       pn_order.order_amount,pn_order_status.order_sts,pn_save_way.save_way,pn_show.show_name,pn_show.show_begin_time,
       pn_show.show_money,pn_show_place.show_place from pn_order left join pn_order_status on pn_order.order_status_id
@@ -39,7 +40,7 @@ select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.o
     </insert>
 <!-- 查询优惠券-->
     <select id="selectDiscount" resultType="com.piaoniu.demo.pojo.Discount">
-        SELECT * FROM pn_discount WHERE user_id=#{user_id} and show_type_id=#{show_type_id} and discount_status_id=#{discount_status_id}
+        SELECT * FROM pn_discount WHERE user_id=#{user_id} and show_type_id=#{show_type_id} and discount_status_id=1;
     </select>
 
 <!--便利用用户的收货地址-->
@@ -48,9 +49,15 @@ select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.o
          pn_area  on pn_address.area_id=pn_area.area_id WHERE pn_address.user_id=#{user_id}
     </select>
 
+    <!--日志生成-->
+    <insert id="insetlog" parameterType="com.piaoniu.demo.pojo.Pnlog" >
+        insert  into pn_log (log_message,order_number,log_time) values( #{log_message},#{order_number},#{log_time})
+    </insert>
 
-
-
+   <!--产看日志-->
+    <select id="selectLog" resultType="com.piaoniu.demo.pojo.Pnlog">
+        select * from pn_log;
+    </select>
 
 
 </mapper>
