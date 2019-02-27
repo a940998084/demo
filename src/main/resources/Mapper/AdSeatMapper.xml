@@ -15,11 +15,24 @@
         VALUES(#{seat_number},#{seat_money},#{seat_status_id},#{hall_id},#{show_id})
     </insert>
     <update id="updateseat">
-		update pn_seat set seat_number=#{seat_number},seat_money=#{seat_money},
-		seat_status_id=#{seat_status_id},hall_id=#{hall_id},show_id=#{show_id}
-		 where seat_id=#{seat_id}
-	</update>
-
+        update pn_seat set
+        <if test="seat_number!=null">
+            seat_number=#{seat_number},
+        </if>
+        <if test="seat_money!=0">
+            seat_money=#{seat_money},
+        </if>
+        <if test="seat_status_id!=0">
+            seat_status_id=#{seat_status_id},
+        </if>
+        <if test="hall_id!=0">
+            hall_id=#{hall_id},
+        </if>
+        <if test="show_id!=0">
+            show_id=#{show_id}
+        </if>
+        where seat_id=#{seat_id}
+    </update>
     <delete id="delseat">
         delete from pn_seat where seat_id=#{seat_id}
     </delete>
