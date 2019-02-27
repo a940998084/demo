@@ -6,8 +6,8 @@
     <!--当用户刚注册成功后添加每个类型的优惠券各一张-->
     <insert id="shengchengyouhuiquan" parameterType="com.piaoniu.demo.pojo.Discount">
       INSERT INTO pn_discount
-      (discount_money,discount_begin,discount_end,show_type_id,user_id)
-      VALUES (#{discount_money},#{discount_begin},#{discount_end},#{show_type_id},#{user_id})
+       (discount_money,discount_begin,discount_end,show_type_id,user_id,discount_name)
+      VALUES (#{discount_money},#{discount_begin},#{discount_end},#{show_type_id},#{user_id},#{discount_name})
     </insert>
 
     <!--查询某用户的优惠券状态为可使用-->

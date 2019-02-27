@@ -71,7 +71,7 @@ public class User_CouponController {
     }
 
     @RequestMapping(value = "user/select/dingdan/coupon",method = RequestMethod.GET)
-    @ApiOperation(value = "用户买演出票时，遍历对应的优惠券",notes="用户买演出票时，遍历对应的优惠券")
+    @ApiOperation(value = "买演出票时，显示对应优惠券",notes="买演出票时，显示对应优惠券")
     public Json duiyingDiscount(Integer user_id, Integer show_type_id){
         List<Discount> duiyingDiscountList=user_couponService.duiyingDiscount(user_id,show_type_id);
         if (duiyingDiscountList.size()<=0){
