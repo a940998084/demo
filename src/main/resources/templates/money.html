@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的余额</title>
+	<link rel="stylesheet" type="text/css" href="../css/zero0.css">
+	<link rel="stylesheet" type="text/css" href="../css/money.css">
+	<link rel="stylesheet" type="text/css" href="../js/layui/layui-v2.4.5/layui/css/layui.css">
+</head>
+<body>
+<header>
+	<div class="content">
+		<a href="javascript:;"><img src="../img/logo.f6de0a61.png" alt=""></a>
+		<div>
+			<div class="city-name">上海</div>
+			
+				<div class="citylist">
+				      <div class="top-rows">
+				        <div class="row">
+				          <div class="title">当前城市：</div>
+					          <ul>
+					            <li class="selected" data-name="shanghai">上海</li>
+					          </ul>
+				        </div>
+				        <div class="row">
+				          <div class="title title3">热门城市：</div>
+				          <ul class="asdf">
+				            <li class="city-item" data-name="shanghai">上海</li>
+				            <li class="city-item" data-name="beijing">北京</li>
+				            <li class="city-item" data-name="guangzhou">广州</li>
+				            <li class="city-item" data-name="shenzhen">深圳</li>
+				            <li class="city-item" data-name="chengdu">成都</li>
+				            <li class="city-item" data-name="chongqing">重庆</li>
+				            <li class="city-item" data-name="tianjin">天津</li>
+				            <li class="city-item" data-name="hangzhou">杭州</li>
+				            <li class="city-item" data-name="nanjing">南京</li>
+				            <li class="city-item" data-name="wuhan">武汉</li>
+				            <li class="city-item" data-name="xian">西安</li>
+				            <li class="city-item" data-name="changsha">长沙</li>
+				            <li class="city-item" data-name="kunming">昆明</li>
+				          </ul>
+				        </div>
+				      </div>
+				      <div class="city-indexes">
+				        <div class="title">按字母查找</div>
+				        <ul class="hot-city-capitcals">
+				          <li class="cap" id="a">A</li><li class="cap" id="b">B</li><li class="cap" id="c">C</li><li class="cap" id="d">D</li><li class="cap" id="f">F</li><li class="cap" id="g">G</li><li class="cap" id="h">H</li><li class="cap" id="j">J</li><li class="cap" id="k">K</li><li class="cap" id="l">L</li><li class="cap" id="m">M</li><li class="cap" id="n">N</li><li class="cap" id="p">P</li><li class="cap" id="q">Q</li><li class="cap" id="r">R</li><li class="cap" id="s">S</li><li class="cap" id="t">T</li><li class="cap" id="w">W</li><li class="cap" id="x">X</li><li class="cap" id="y">Y</li><li class="cap" id="z">Z</li>
+				        </ul>
+				      </div>
+				      <div class="hot-cities">
+				        <ul>
+				          <li data-capital="A" id="A">
+				              <div class="capital">A</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="anshun">安顺</div><div class="item city-item" data-name="macau">澳门</div>
+				              </ul>
+				         </li>
+				         <li data-capital="B" id="B">
+				              <div class="capital">B</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="bangkok">曼谷</div><div class="item city-item" data-name="baoding">保定</div><div class="item city-item" data-name="baotou">包头</div><div class="item city-item" data-name="beihai">北海</div><div class="item city-item" data-name="beijing">北京</div><div class="item city-item" data-name="bengbu">蚌埠</div><div class="item city-item" data-name="benxi">本溪</div><div class="item city-item" data-name="binzhou">滨州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="C" id="C">
+				              <div class="capital">C</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="changchun">长春</div><div class="item city-item" data-name="changsha">长沙</div><div class="item city-item" data-name="changshu">常熟</div><div class="item city-item" data-name="changzhou">常州</div><div class="item city-item" data-name="chengde">承德</div><div class="item city-item" data-name="chengdu">成都</div><div class="item city-item" data-name="chongqing">重庆</div>
+				              </ul>
+				        </li>
+				        <li data-capital="D" id="D"> 
+				              <div class="capital">D</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="dalian">大连</div><div class="item city-item" data-name="daqing">大庆</div><div class="item city-item" data-name="deyang">德阳</div><div class="item city-item" data-name="dezhou">德州</div><div class="item city-item" data-name="dongguan">东莞</div><div class="item city-item" data-name="dongying">东营</div>
+				              </ul>
+				        </li>
+				        <li data-capital="F" id="F">
+				              <div class="capital">F</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="foshan">佛山</div><div class="item city-item" data-name="fushun">抚顺</div><div class="item city-item" data-name="fuzhou">福州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="G" id="G">
+				              <div class="capital">G</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="ganzhou">赣州</div><div class="item city-item" data-name="guangan">广安</div><div class="item city-item" data-name="guangxiyulin">玉林</div><div class="item city-item" data-name="guangzhou">广州</div><div class="item city-item" data-name="guilin">桂林</div><div class="item city-item" data-name="guiyang">贵阳</div>
+				              </ul>
+				        </li>
+				        <li data-capital="H" id="H">
+				              <div class="capital">H</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="haerbin">哈尔滨</div><div class="item city-item" data-name="haikou">海口</div><div class="item city-item" data-name="handan">邯郸</div><div class="item city-item" data-name="hangzhou">杭州</div><div class="item city-item" data-name="hefei">合肥</div><div class="item city-item" data-name="hengshui">衡水</div><div class="item city-item" data-name="hengyang">衡阳</div><div class="item city-item" data-name="heyuan">河源</div><div class="item city-item" data-name="huaian">淮安</div><div class="item city-item" data-name="huanggang">黄冈</div><div class="item city-item" data-name="huhehaote">呼和浩特</div><div class="item city-item" data-name="huizhou">惠州</div><div class="item city-item" data-name="huzhou">湖州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="J" id="J">
+				              <div class="capital">J</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="jiangmen">江门</div><div class="item city-item" data-name="jiangxiyichun">宜春</div><div class="item city-item" data-name="jiaxing">嘉兴</div><div class="item city-item" data-name="jilin">吉林</div><div class="item city-item" data-name="jinan">济南</div><div class="item city-item" data-name="jingzhou">荆州</div><div class="item city-item" data-name="jinhua">金华</div><div class="item city-item" data-name="jining">济宁</div><div class="item city-item" data-name="jiujiang">九江</div>
+				              </ul>
+				        </li>
+				        <li data-capital="K" id="K">
+				              <div class="capital">K</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="kunming">昆明</div><div class="item city-item" data-name="kunshan">昆山</div>
+				              </ul>
+				        </li>
+				        <li data-capital="L" id="L">
+				              <div class="capital">L</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="langfang">廊坊</div><div class="item city-item" data-name="lanzhou">兰州</div><div class="item city-item" data-name="lasvegas">拉斯维加斯</div><div class="item city-item" data-name="leshan">乐山</div><div class="item city-item" data-name="lianyuangang">连云港</div><div class="item city-item" data-name="liaocheng">聊城</div><div class="item city-item" data-name="linyi">临沂</div><div class="item city-item" data-name="lishui">丽水</div><div class="item city-item" data-name="liuzhou">柳州</div><div class="item city-item" data-name="luoyang">洛阳</div>
+				              </ul>
+				        </li>
+				        <li data-capital="M" id="M">
+				              <div class="capital">M</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="maanshan">马鞍山</div><div class="item city-item" data-name="maoming">茂名</div><div class="item city-item" data-name="mianyang">绵阳</div><div class="item city-item" data-name="moscow">莫斯科</div><div class="item city-item" data-name="mudanjiang">牡丹江</div>
+				              </ul>
+				        </li>
+				        <li data-capital="N" id="N">
+				              <div class="capital">N</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="nanchang">南昌</div><div class="item city-item" data-name="nanjing">南京</div><div class="item city-item" data-name="nanning">南宁</div><div class="item city-item" data-name="nantong">南通</div><div class="item city-item" data-name="ningbo">宁波</div>
+				              </ul>
+				        </li>
+				        <li data-capital="P" id="P">
+				              <div class="capital">P</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="pingxiang">萍乡</div>
+				              </ul>
+				        </li>
+				        <li data-capital="Q" id="Q">
+				              <div class="capital">Q</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="qianjiang">潜江</div><div class="item city-item" data-name="qingdao">青岛</div><div class="item city-item" data-name="qingyuan">清远</div><div class="item city-item" data-name="qinhuangdao">秦皇岛</div><div class="item city-item" data-name="quanzhou">泉州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="R" id="R">
+				              <div class="capital">R</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="rizhao">日照</div><div class="item city-item" data-name="russia">俄罗斯</div>
+				              </ul>
+				        </li>
+				        <li data-capital="S" id="S">
+				              <div class="capital">S</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="sanya">三亚</div><div class="item city-item" data-name="shanghai">上海</div><div class="item city-item" data-name="shantou">汕头</div><div class="item city-item" data-name="shaoxing">绍兴</div><div class="item city-item" data-name="shenyang">沈阳</div><div class="item city-item" data-name="shenzhen">深圳</div><div class="item city-item" data-name="shijiazhuang">石家庄</div><div class="item city-item" data-name="singapore">新加坡</div><div class="item city-item" data-name="suining">遂宁</div><div class="item city-item" data-name="suzhou">苏州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="T" id="T">
+				              <div class="capital">T</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="taian">泰安</div><div class="item city-item" data-name="taiyuan">太原</div><div class="item city-item" data-name="taizhou">泰州</div><div class="item city-item" data-name="tangshan">唐山</div><div class="item city-item" data-name="tianjin">天津</div>
+				              </ul>
+				        </li>
+				        <li data-capital="W" id="W">
+				              <div class="capital">W</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="weifang">潍坊</div><div class="item city-item" data-name="weihai">威海</div><div class="item city-item" data-name="wenzhou">温州</div><div class="item city-item" data-name="wuhan">武汉</div><div class="item city-item" data-name="wuhu">芜湖</div><div class="item city-item" data-name="wulumuqi">乌鲁木齐</div><div class="item city-item" data-name="wuxi">无锡</div><div class="item city-item" data-name="wuzhou">梧州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="X" id="X">
+				              <div class="capital">X</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="xiamen">厦门</div><div class="item city-item" data-name="xian">西安</div><div class="item city-item" data-name="hongkong">香港</div><div class="item city-item" data-name="xuzhou">徐州</div>
+				              </ul>
+				        </li>
+				        <li data-capital="Y" id="Y">
+				              <div class="capital">Y</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="yancheng">盐城</div><div class="item city-item" data-name="yangzhou">扬州</div><div class="item city-item" data-name="yantai">烟台</div><div class="item city-item" data-name="yibin">宜宾</div><div class="item city-item" data-name="yichang">宜昌</div><div class="item city-item" data-name="yinchuan">银川</div><div class="item city-item" data-name="yingkou">营口</div><div class="item city-item" data-name="yiwu">义乌</div><div class="item city-item" data-name="yulin">榆林</div>
+				              </ul>
+				        </li>
+				        <li data-capital="Z" id="Z">
+				              <div class="capital">Z</div>
+				              <ul class="items">
+				                <div class="item city-item" data-name="zaozhuang">枣庄</div><div class="item city-item" data-name="zhangjiakou">张家口</div><div class="item city-item" data-name="zhangqiu">章丘</div><div class="item city-item" data-name="zhanjiang">湛江</div><div class="item city-item" data-name="zhaoqing">肇庆</div><div class="item city-item" data-name="zhejiangtaizhou">台州</div><div class="item city-item" data-name="zhengzhou">郑州</div><div class="item city-item" data-name="zhenjiang">镇江</div><div class="item city-item" data-name="zhongshan">中山</div><div class="item city-item" data-name="zhoushan">舟山</div><div class="item city-item" data-name="zhuhai">珠海</div><div class="item city-item" data-name="zhuzhou">株洲</div><div class="item city-item" data-name="zibo">淄博</div><div class="item city-item" data-name="zigong">自贡</div><div class="item city-item" data-name="zunyi">遵义</div>
+				              </ul>
+				            </li>
+				        </ul>
+				      </div>
+				    </div>
+			</div>
+	
+		<div class="menu">
+        	<a href="javascript:;" class="active">首页</a>
+        	<a href="javascript:;">全部演出</a>
+        	<a href="javascript:;">发现</a>
+
+		</div>
+		<div class="search">
+			<div class="search-t clearfix">
+				<input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value="" class="input">
+				<button>搜索</button>
+			</div>
+			<div class="search-b">
+				<ul>
+					<li><a href="javascript:;" style="color: #ff2661;">胡军</a></li>
+					<li><a href="javascript:;">费玉清</a></li>
+					<li><a href="javascript:;">崔健</a></li>
+					<li><a href="javascript:;">动力火车</a></li>
+					<li><a href="javascript:;">开心麻花</a></li>
+					<li><a href="javascript:;">孟京辉</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header-right">
+			<div class="app">
+				<div class="app--icon"><img src="../img/icon-phone.9fd4d282.png" alt=""></div>
+				<span class="app-icon" style="width: 82px">APP下载</span>
+				<div class="apptwo">
+					<ul class="submenu-inner">
+						<li>
+							<img src="https://static.piaoniu.com/pc/img/qr-app.a2c8e636.png" class="qr">
+							<div class="txt"> 
+								<div class="title">
+									票牛APP
+								</div>
+								<div class="desc">
+									热门票随时抢
+									<br>折扣票随时买
+								</div>
+							</div>
+							</li>
+							<li>
+								<img src="https://static.piaoniu.com/pc/img/qr-wechat.eceb0fc5.png" class="qr">
+								<div class="txt">
+									<div class="title">
+										微信订阅号
+									</div>
+									<div class="desc">
+										精彩剧评最新
+										<br>活动随时看
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				
+			</div>
+			<div class="login">
+				<div class="logimg"><img src="../img/default-avatar.51fb766c.png" alt=""></div>
+				<div class="sanjiaoxing"></div>
+			</div>
+			<div class="submenu submenu-account abcdefg">
+				<ul class="submenu-inner">
+					<li><a href="javascript:;">我的订单</a></li>
+					<li><a href="javascript:;">我的钱包</a></li>
+					<li><a href="javascript:;">账户设置</a></li>
+					<li><a href="javascript:;" class="logout">退出登录</a></li>
+				</ul>
+			</div>
+			<div class="cover-login">
+				<div class="cover"></div>
+				<div class="light-login">
+					  <div class="close"><img src="../img/icon-close.9fd605df.png" alt=""></div>
+					  <div class="titles">
+					    <div class="title-quick-login title1">快捷登录</div>
+					    <div class="title-login title2">密码登录</div>
+					  </div>
+
+					  <form method="post" class="form form-quick-login">
+					    <div class="row">
+					      <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+					    </div>
+<!-- 					    <div class="row row-vcode">
+					      <input placeholder="图形验证码" name="vcode" class="input input-vcode">
+					      <img src="/api/v1/user/captcha" class="vcode"> -->
+					      <!-- <div class="btn btn-vcode">换一张</div> -->
+					 <!--    </div> -->
+					    <div class="row row-getcode">
+					      <input placeholder="验证码" maxlength="6" name="code" class="input input-getcode" style="">
+					      <div class="btn btn-getcode disabled">获取验证码</div>
+					    </div>
+					    <div class="row">
+					      <input type="submit" class="btn btn-submit" value="登录" style="">
+					    </div>
+					    <div class="hint">免注册，登录即创建票牛账户</div>
+					  </form>
+					  
+					  <form method="post" class="form form-login">
+					    <div class="row">
+					      <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+					    </div>
+					    <div class="row">
+					      <input type="password" name="pw" placeholder="密码" class="input input-password">
+					    </div>
+				<!-- 	    <div class="row row-vcode form-login-vcode">
+					      <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
+					      <img src="/api/v1/user/captcha" class="vcode">
+					    </div> -->
+					    <div class="row">
+					      <input type="submit" class="btn btn-submit" value="登录">
+					    </div>
+					  </form>
+					</div>
+			</div>
+		</div>
+	</div>
+</header>
+<main>
+	<div class="all clearfix">
+		<div class="fl left">
+			<a href="zero.html"><h2>我的票牛</h2></a>
+			<h3>我的演出</h3>
+			<div class="active">
+				<a href="one.html">我的订单</a>
+				<a href="two.html">我的关注</a>
+			</div>
+			<h3>我的钱包</h3>
+			<div class="active">
+				<a href="discountcoupon.html">我的优惠券</a>
+				<a href="money.html" class=" active1">我的余额</a>
+			</div>
+			<h3>账户设置</h3>
+			<div class="active">
+				<a href="message.html">个人信息</a>
+				<a href="postplace.html">收货地址</a>
+				<a href="password.html">密码管理</a>
+			</div>
+		</div>
+		<div class="money">
+			<div class="money-top">
+				<p>钱包总余额:<span>0.00</span> 元</p>
+			</div>
+			<div class="money-bottom">
+				<p>交易记录</p>
+				<div class="bottom-bottom">
+					<div class="ewm0">
+						<div class="ewm"></div>
+						<p>下载票牛APP，查看余额明细</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- 尾部 -->
+<footer>
+	<div class="content">
+		<div class="container">
+			<a href="javascript:;" rel="nofollow" class="item">
+				<img src="../img/icon-diamond.3524e325.png" class="icon">
+				<div class="text">
+					<div class="title">无票赔付</div>
+					<div class="desc">无票赔付，最高退一赔二</div>
+				</div>
+			</a>
+			<a href="javascript:;" rel="nofollow" class="item">
+				<img src="../img/icon-shield.ff071a4b.png" class="icon"><div class="text"><div class="title">出票保真</div>
+				<div class="desc">全程消费保障，买得放心</div>
+			</div>
+			</a>
+			<a href="javascript:;" rel="nofollow" class="item">
+				<img src="../img/icon-umbrella.ed43b4ea.png" class="icon">
+				<div class="text">
+					<div class="title">配送保障</div>
+					<div class="desc">多种取票方式 安全送达</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</footer>
+<div  class="footer">
+	<div class="content">
+		<div class="container">
+			<div class="links-and-brand">
+				<img src="https://static.piaoniu.com/pc/ui/img/footer-logo.1a1486d7.png" class="footer-logo">
+
+				<div class="helps">
+					<div class="buyDesc help">
+						<div class="title">订票说明</div>
+						<div class="item">
+							<a href="/questions?question=订购渠道&amp;questionGroup=订购说明" rel="nofollow">订购渠道</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=演出状态&amp;questionGroup=订购说明" rel="nofollow">演出状态</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=如何订购&amp;questionGroup=订购说明" rel="nofollow">如何订购</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=价格说明&amp;questionGroup=订购说明" rel="nofollow">价格说明</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=关于座位&amp;questionGroup=订购说明" rel="nofollow">关于座位</a>
+						</div>
+					</div>
+					<div class="payType help">
+						<div class="title">支付方式</div>
+						<div class="item">
+							<a href="/questions?question=在线支付&amp;questionGroup=支付方式" rel="nofollow">在线支付</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=花呗&amp;questionGroup=支付方式" rel="nofollow">花呗</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=银行卡支付&amp;questionGroup=支付方式" rel="nofollow">银行卡支付</a>
+						</div>
+					</div>
+					<div class="deliverType help">
+						<div class="title">配送方式</div>
+						<div class="item">
+							<a href="/questions?question=上门自取&amp;questionGroup=配送方式" rel="nofollow">上门自取</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=现场自取&amp;questionGroup=配送方式" rel="nofollow">现场自取</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=顺丰配送&amp;questionGroup=配送方式" rel="nofollow">顺丰配送</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=电子票&amp;questionGroup=配送方式" rel="nofollow">电子票</a>
+						</div>
+					</div>
+					<div class="afterSaleService help">
+						<div class="title">售后服务</div>
+						<div class="item">
+							<a href="/questions?question=退换票说明&amp;questionGroup=售后服务" rel="nofollow">退换票说明</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=退款说明&amp;questionGroup=售后服务" rel="nofollow">退款说明</a>
+						</div>
+						<div class="item">
+							<a href="/questions?question=退款条件&amp;questionGroup=售后服务" rel="nofollow">退款条件</a>
+						</div>
+					</div>
+					<div class="featureService help">
+						<div class="title">特色服务</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">无票赔付</a>
+						</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">下单一小时可退款</a>
+						</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">保证真票</a>
+						</div>
+						<div class="item">
+							<a href="/services" rel="nofollow">配送保障</a>
+						</div>
+					</div>
+				</div>
+				<div class="qr-codes">
+					<div class="item">
+						<img src="https://static.piaoniu.com/pc/img/qr-app.a2c8e636.png" class="img">
+						<div class="text">票牛app</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer1">
+	<div class="content">
+			<div class="links">
+					<a href="/about" rel="nofollow">关于我们</a>
+					<a href="/contact" rel="nofollow">联系我们</a>
+					<a href="http://piaoniu.zhiye.com/" rel="nofollow">加入我们</a>
+					<a href="/actor" rel="nofollow">艺人</a>
+					<a href="/city/all" rel="nofollow">全部城市</a>
+					<a href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a>
+					<a href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a>
+					<a href="/disputeResolution" rel="nofollow">争议调解</a>
+					<a href="javascirpt:;" class="hot-find">热门搜索</a>
+			</div> 
+			<div class="hot-search">
+				<a href="//www.piaoniu.com/stag/32048">BIGBANG郑州演唱会</a>
+				<a href="//www.piaoniu.com/stag/48745">刘若英兰州演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/56052">魏如萱海口演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/56286">Teen Top梧州演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/62199">Ben UFO贵阳演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/62472">Mr. Graceless长春演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/67415">刘思涵太原演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/75673">叶丽仪绍兴演唱会行程</a>
+				<a href="//www.piaoniu.com/stag/86996">方季惟南宁演唱会安排</a>
+			<!-- 	<a href="//www.piaoniu.com/stag/112643">吕方温州演唱会安排</a> -->
+							
+			</div>
+			<div class="w-conduct">
+				上海颂品网络科技有限公司 Copyright (c) 2015年 Songpin. All rights reserved. | 沪ICP备14000399号-2
+			</div>
+			<div class="police-icons">
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682" target="_blank" rel="nofollow" class="link link-police">
+					<img src="https://static.piaoniu.com/pc/img/police.dfd1a0f7.png" class="icon">
+					<div class="text">沪公网安备 31010602001682号</div>
+				</a>
+				<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank" rel="nofollow" class="link link-gongshang">
+					<img src="https://static.piaoniu.com/pc/img/gongshang.5c149d3e.png" class="icon">
+					<div class="text">上海工商</div>
+				</a>
+			</div>
+				
+		<!-- 右边定位栏 -->
+
+		<div class="hddb">
+		<ul>
+			<li class="hu" id="lin">回到<br>顶部</li>
+			<li class="hu2">在线<br>客服</li>
+			<a href="http://www.piaoniu.com/faq" target="_black" class="aa"><li class="hu3">常见<br>问题</li></a>
+		</ul>
+	</div>	
+
+<script type="text/javascript" src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/layui/layui-v2.4.5/layui/layui.all.js"></script>
+<script type="text/javascript" src="../js/zero.js"></script>
+<script type="text/javascript">
+	// 头部
+
+$('.title-login').click(function(){
+	
+	$('.title2').removeClass('title-login')
+    $('.title2').addClass('title-quick-login')
+ 
+    $('.title1').removeClass('title-quick-login')
+    $('.title1').addClass('title-login')
+	$(".form-login").css({'display':'block'})
+	$('.form-quick-login').css({'display':'none'})
+})
+$('.title-quick-login').click(function(){
+	
+	$('.title2').removeClass('title-quick-login')
+    $('.title2').addClass('title-login')
+ 
+    $('.title1').removeClass('title-login')
+    $('.title1').addClass('title-quick-login')
+	$(".form-login").css({'display':'none'})
+	$('.form-quick-login').css({'display':'block'})
+})
+$('.close').click(function(){
+		$('.cover-login').fadeOut()
+})
+$('.cover').click(function(){
+		$('.cover-login').fadeOut()
+})
+$('.login-icon').click(function(){
+	$('.cover-login').css({'display':'block'})
+})
+$('.app-icon,.app--icon').mouseenter(function(){
+	$('.apptwo').css({'display':'block'})
+})
+$('.app-icon,.app--icon').mouseleave(function(){
+	$('.apptwo').css({'display':'none'})
+})
+
+$('.apptwo').mouseenter(function(){
+	$('.apptwo').css({'display':'block'})
+})
+$('.apptwo').mouseleave(function(){
+	$('.apptwo').css({'display':'none'})
+})
+
+
+// 尾部
+$('.hot-find').mouseenter(function(){
+	$('.hot-search').css({'display':'block'})
+})
+$('.hot-find').mouseleave(function(){
+	$('.hot-search').css({'display':'none'})
+})
+$('.hot-search').mouseenter(function(){
+	$('.hot-search').css({'display':'block'})
+})
+$('.hot-search').mouseleave(function(){
+	$('.hot-search').css({'display':'none'})
+})
+function getPos(obj){
+				var l = 0;
+				var t = 0;
+				while(obj){
+					l+=obj.offsetLeft;
+					t+=obj.offsetTop;
+					obj = obj.offsetParent;
+				}
+
+				return {left:l,top:t};
+			}
+
+
+		// 城市选择器
+		var oTj = $("#J").offset().top
+		$("#j").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTj-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+
+		$("#a").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: $("#A").offset().top-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+
+		var oTb =  $("#B").offset().top
+
+		$("#b").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTb -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTc = $("#C").offset().top
+		$("#c").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTc -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTd = $("#D").offset().top
+
+		$("#d").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTd-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTf = $("#F").offset().top
+
+		$("#f").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTf - $('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTg = $("#G").offset().top
+
+		$("#g").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop:oTg -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTh = $("#H").offset().top
+
+		$("#h").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTh-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTk = $("#K").offset().top
+
+		$("#k").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop:oTk -$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTl = $("#L").offset().top
+		$("#l").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTl-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTm = $("#M").offset().top
+		$("#m").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTm-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTn = $("#N").offset().top
+
+		$("#n").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTn-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTp = $("#P").offset().top
+		$("#p").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTp-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+
+		var oTq = $("#Q").offset().top
+		$("#q").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTq-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTr = $("#R").offset().top
+		$("#r").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTr-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTs = $("#S").offset().top
+		$("#s").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTs-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTt = $("#T").offset().top
+		$("#t").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTt-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTw = $("#W").offset().top
+		$("#w").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTw-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		var oTx = $("#X").offset().top
+		$("#x").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTx-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTy = $("#Y").offset().top
+		$("#y").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTy-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+		var oTz = $("#Z").offset().top
+		$("#z").click(function() {
+			
+		$(".hot-cities").animate({
+		scrollTop: oTz-$('.hot-cities').offset().top }, {duration: 500,easing: "swing"});
+		return false;
+		});
+
+
+		$('.citylist').css({'display':'none'})
+
+
+
+		var num = 0
+
+		$('.city-name').click(function(){
+			if (num == 0) {
+				num=1
+			$('.citylist').css({'display':'block'})
+		   }else{
+		   	num = 0
+		   	$('.citylist').css({'display':'none'})
+		   }
+		})
+
+
+
+
+
+		$('.asdf>li').click(function(){
+			$('.selected').html($(this).html()) 
+			$('.city-name').html($(this).html())
+			$('.citylist').css({'display':'none'})      
+		})
+
+
+		// 三个主页加类名
+		$('.menu a').click(function(){
+			$('.menu a').removeClass('active')
+			$(this).addClass('active')
+		})
+
+		$('.login').mouseenter(function(){
+			$('.abcdefg').css({'display':'block'})
+		})
+		$('.abcdefg').mouseenter(function(){
+			$('.abcdefg').css({'display':'block'})
+		})
+		$('.abcdefg').mouseleave(function(){
+			$('.abcdefg').css({'display':'none'})
+		})
+		$('.login').mouseleave(function(){
+			$('.abcdefg').css({'display':'none'})
+		})
+
+
+
+window.onscroll = window.onresize = function(ev){
+		var oEvent = ev ||event;
+		var scrollTop = document.documentElement.scrollTop;
+
+	var oL = document.getElementById('lin');
+		$('#lin').click(function(){
+			$('html,body').animate({'scrollTop':'0'},500)
+		})
+
+		if (scrollTop>100){
+			oL.style.display='block'
+		}
+		if (scrollTop<100) {
+			oL.style.display="none"
+		}
+}
+</script>
+</body>
+</html>

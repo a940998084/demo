@@ -1,0 +1,733 @@
+*{padding: 0;margin:0;text-decoration: none;list-style: none;box-sizing: border-box;vertical-align: middle;font-size: 12px;}
+@charset "utf-8";
+*{padding:0;margin:0;font-size:12px;}
+ul,ol,dl{padding:0;margin:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal;}
+i,em{font-style:normal;}
+b,strong{font-weight:normal;}
+a{text-decoration:none;color:#000;display: inline-block;}
+.clearfix:after{display:block;content:'';clear:both;}
+.clearfix{zoom:1;}
+.fl{float:left;}
+.fr{float:right;}
+table{border-collapse:collapse;}
+th,td{border:1px solid #000;padding:0;}
+a img{border:none;}
+
+.content{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+body{
+    background: #f5f5f5;
+
+}
+/*头部*/
+
+header{
+    background: #fff;
+    border-bottom: 1px solid #eaeaea
+}
+header .content{
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+header a img{
+    width: 104px;
+    height: 40px;
+}
+
+
+/*城市选择*/
+.city-name{
+    position: relative;
+    cursor: pointer;
+    margin-left: 14px;
+    width: 40px;
+    font-size: 14px;
+    background: url(../img/arr-down.9f1dbfdd.png) no-repeat right center ;
+}
+.citylist{
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    z-index: 9999;
+    background: #fff;
+
+    box-sizing: border-box;
+    border: solid 1px #ececec;
+   
+    font-size: 12px;
+    line-height: 20px;
+    padding: 15px 20px;
+    width: 440px;
+
+}
+.top-rows{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+.citylist li{
+    cursor: pointer;
+}
+.city-item{
+    cursor: pointer;
+    color: #333;
+   
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    line-height: 1.5;
+}
+.citylist .title{
+    font-weight: bold;
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.citylist .title3{
+     width: 90px;
+}
+.citylist .row,.hot-cities{
+    display: flex;
+}
+.city-indexes{
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+.citylist .row ul,.city-indexes ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.hot-cities ul{
+    display: inline-block;
+    width: 360px;
+
+}
+.hot-cities ul li{
+    display: flex;
+    
+    
+}
+.hot-cities .item{
+    font-size: 12px;
+
+}
+
+.hot-cities{
+    
+    margin-top: 24px;
+    overflow: scroll;
+    height: 150px;
+}
+.hot-cities ul .items{
+    display: flex;
+
+    flex-wrap: wrap;
+}
+.capital{font-size: 17px;
+    color: #333;
+    font-weight: bold;
+    width: 28px;
+   }    
+.citylist .selected{
+        background-color: #fff5f8;
+    color: #ff2661;
+    cursor: pointer;
+
+    
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    line-height: 1.5;
+}
+
+
+.cap{
+        cursor: pointer;
+    float: left;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    background-color: #eee;
+    color: #666;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    text-align: center;
+}
+/*三个主页*/
+.menu{
+    display: flex;
+    margin-left: 42px;
+}
+.menu a{
+    cursor: pointer;
+    margin-right: 35px;
+    box-sizing: border-box;
+    height: 90px;
+    line-height: 90px;
+    font-size: 18px;
+    color: #535353;
+    font-weight: 500;
+    padding-top: 5px;
+}
+.menu .active{
+
+    border-bottom: 4px solid #ea3667;
+}
+.search{
+    margin-left: 40px
+}
+.search-t{
+    margin-top: 18px
+}
+.search-t input{
+    background-image: url(../img/search-grey.93e495f0.png);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 9px center;
+    float: left;
+    width: 328px;
+    font-size: 14px;
+    padding: 8px 8px 8px 34px;
+    border: 1px solid #ececec;
+    border: solid 2px #ffa2bc;
+    border-right: 0;
+    outline: none;
+
+}
+.search-t button{
+    float: left;
+    display: block;
+    height: 37px;
+    width: 80px;
+    background-color: #ea3667;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    background-size: 22px 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.search-b ul{
+    margin-top: 4px;
+    display: flex;
+}
+.search-b ul li{
+    margin-right: 10px
+}
+
+.search-b ul li a{
+    color: #999
+}
+
+
+
+.header-right{
+    margin-left:26px;
+    position: relative;
+}
+.app,.login{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.app-icon{
+    background: url(../img/arr-down.9f1dbfdd.png) no-repeat right center;
+}
+.login{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+.submenu-account{
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    width: 154px;
+    height: 156px;
+    border: 1px solid #ececec;
+    background: #fff;
+    z-index: 9999
+
+}
+.abcdefg{
+    display: none
+}
+.submenu-account .submenu-inner{
+    margin-top: 10px;
+}
+.abcdefg::before{
+    position: absolute;
+    top:-20px;
+    right:40px;
+    content:'';
+    border:10px solid transparent;
+    border-bottom-color:#efefef;
+}
+.submenu-account .submenu-inner li a{ 
+    text-align: center;
+}
+.submenu-account .submenu-inner li{
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    height: 36px;
+    line-height: 36px;
+}
+.submenu-account .submenu-inner li:hover{
+    background-color: #e5e5e5
+}
+.login .logimg{
+     width: 44px;
+    height: 44px;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%
+}
+.logimg{
+    margin-right: 4px;
+}
+.login .logimg img{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%
+}
+.login .sanjiaoxing{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background:url(../img/arr-down.9f1dbfdd.png) no-repeat right center;
+}
+.app-icon,.login-icon{
+    display: inline-block;
+
+    height: 44px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+    margin-left: 6px
+}
+.app--icon,.login--icon{
+    display: flex;
+}
+.app--icon img{
+    width: 14px;
+    height: 22px;
+    
+}
+.login--icon img{
+    width: 18px;
+    height: 20px;
+}
+
+.header-right{
+    display: flex;
+}
+.qr{
+    height: 84px;
+    width: 84px;
+}
+.app{
+    position: relative;
+}
+.apptwo{
+    position: absolute;
+    left: -50px;
+    top: 60px;
+    width: 212px;
+    height: 200px;
+    border: 1px solid #f4f5fa;
+    background: #fff;
+    display: none;
+    z-index: 9999
+    
+}
+.app--icon{
+    cursor: pointer;
+}
+.apptwo::before{
+    position: absolute;
+    top:-20px;
+    left:100px;
+    content:'';
+    border:10px solid transparent;
+    border-bottom-color:#efefef;
+}
+.submenu-inner{
+     margin-top: 20px;
+}
+.submenu-inner .yy{
+    display: flex;
+}
+.submenu-inner li .title{
+    font-size: 16px;
+    margin-top: 10px;
+
+}
+.submenu-inner li .txt{
+   margin-left: 10px;
+   
+}
+.submenu-inner li .desc{
+    margin-top: 10px;
+    color: #999
+}
+.cover-login{
+    display: none;
+
+}
+
+.cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+    z-index: 9999
+}
+
+.light-login{
+    position: fixed;
+    top:20%;
+    left: 40%;
+    width: 435px;
+    background: #fff;
+    z-index: 9999
+}
+.titles{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+}
+.close{
+    position: absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+}
+.close img{
+    width: 44px;
+    height: 44px;
+    
+}
+
+.title-quick-login{
+   margin-right: 30px;
+    padding-bottom: 9px;
+    color: #262626;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+    background-size: 100px 46px;
+    display: inline-block;
+    font-size: 20px;
+    border-bottom: 4px solid #fea3bc;
+    } 
+
+
+
+.title-login{
+     margin-right: 30px;
+    padding-bottom: 9px;
+    color: #999;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+    background-size: 100px 46px;
+    display: inline-block;
+    font-size: 20px;
+    }
+.form-login .row,.form-quick-login .row {
+        width: 343px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+.form-login .row input,.form-quick-login .row input{
+    border-radius: 3px;
+   font-size: 14px;
+    width: 100%;
+    display: block;
+    border: 1px solid #e5e5e5;
+    padding: 7px 0 7px 13px;
+    height: 50px;
+    box-sizing: border-box;
+
+
+}
+.row .input-getcode{
+    width: 235px
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+
+}
+.row-getcode{
+    display: flex;
+    
+}
+.btn-getcode{
+    border: 1px solid #e5e5e5;
+    border-left: 0;
+    font-size: 14px;
+    padding: 0;
+    width: 106px;
+    line-height: 48px;
+    text-align: center;
+    color: #ea3667;
+    background: #fff;
+    cursor: pointer;
+}
+.form{
+    margin-top: 40px;
+}
+.row .btn-submit{
+    color: #fff;
+    cursor: pointer;
+    background: #ff2661;
+    opacity: 0.7;
+    font-size: 18px;
+}
+.hint{
+    
+    font-size: 12px;
+    color: #999;
+    
+    text-align: center;
+}
+.form-login{
+    display: none;
+}
+
+/*中部介绍开始*/
+main .inT{width: 100%;height: 2000px;}
+main .intro{width:1200px;margin:0 auto;padding: 25px 0;}
+body {font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;}
+main .intro ul {list-style-type: none;}
+main .intro ul a {color: #565656;text-decoration: none;}
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+main .intro ul h1 {color: #FFF;font-size: 24px;font-weight: 400;text-align: center;margin-top: 80px;}
+main .intro ul h1 a {color: #c12c42;font-size: 16px;}
+main .accordion {width: 205px;background: #FFF;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;border: 1px solid #eaeaec;float: left;}
+main .accordion .link {cursor: pointer;display: block;padding: 15px 15px 15px 42px;color: #4D4D4D;font-size: 18px;font-weight: 700;border-bottom: 1px solid #eaeaec;position: relative;-webkit-transition: all 0.4s ease;-o-transition: all 0.4s ease;transition: all 0.4s ease;}
+main .accordion li i {position: absolute;top: 16px;left: 12px;font-size: 18px;color: #595959;-webkit-transition: all 0.4s ease;-o-transition: all 0.4s ease;transition: all 0.4s ease;}
+main .accordion li i.fa-chevron-down {right: 12px;left: auto;font-size: 16px;}
+main .accordion li.open .link {color: #b63b4d;}
+main .accordion li.open i {color: #b63b4d;}
+main .accordion li.open i.fa-chevron-down {-webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
+
+/**
+ * Submenu
+ -----------------------------*/
+ main .submenu {display: none;background: #f7f8fa;font-size: 14px;}
+ main .submenu li {border-bottom: 1px solid #f7f8fa;}
+ main .submenu a {display: block;text-decoration: none;color: #565656;padding:12px;padding-left:42px;font-size: 14px; -webkit-transition: all 0.25s ease;-o-transition: all 0.25s ease;transition: all 0.25s ease;}
+ main .submenu a:hover {background: #fff;color: #ea3667;}
+
+ /*菜单内容 */
+ main .menu-content{width: 970px;float: right;position: relative;}
+ main .menu-content li{display: none;position: absolute;top: 0;left: 0;width: 100%;}
+ main .menu-content .active{display: block;}
+ main .change{border-left: 3px solid #ea3667;background-color: #fff;color: #ea3667;}
+ main .menu-content li h4{border-bottom: 1px solid #e6e6e6;font-size: 16px;padding: 20px 0;color: #535353;margin-bottom: 30px;}
+ main.menu-content li p{color: #999;font-size: 14px;line-height: 30px;}
+ /*尾部*/
+
+
+footer{
+    background: #fff; 
+}
+footer .content .container{
+    margin-top: 30px;
+    height: 108px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+footer .content .container a img{
+    width: 44px;
+    height: 44px;
+}
+footer .content .container a{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    text-decoration: none;
+
+}
+footer .content .container a .title{
+  font-size: 18px;
+  color: #000;
+}
+footer .content .container a .text{
+    margin-left: 10px
+}
+
+footer .content .container a .text .desc{
+    color: #EA3667;
+    font-size: 14px;
+}
+
+.footer{
+   background: #fff;
+   border-top: 1px solid #f5f5f5;
+   padding: 20px 0;
+}
+.footer .content{
+    margin-top: 40px;
+    margin:0 auto;
+    width: 1200px;
+}
+.footer .content .container .links-and-brand{
+    display: flex;
+}
+.footer .content .container .links-and-brand .footer-logo{
+    height: 40px;
+    margin-top: 30px;
+}
+.helps{
+    display: flex;
+    text-align: center;
+}
+.helps .item {
+       margin-bottom: 6px;
+}
+.helps .item a{
+    color: #666
+}
+.helps .help{
+    margin-left: 70px;
+}
+.footer .content .container .links-and-brand .helps .title{
+        font-weight: bold;
+    color: #565656;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.qr-codes{
+    margin-left: 40px;
+}
+.qr-codes .item .img{
+    width: 115px;
+    height: 115px;
+}
+.qr-codes .item .text{
+    color: #666;
+    text-align: center;
+}
+
+
+.footer1{
+    margin-bottom: 20px;
+    background: #fff;
+    border-top: 1px solid #f5f5f5
+}
+.hot-search::before{
+    position: absolute;
+    bottom:-40px;
+    left:80px;
+    content:'';
+    border:20px solid transparent;
+    border-top-color:#efefef;
+   
+}
+.footer1 .content{ 
+	position: relative;
+    margin-top: 20px;
+    margin:0 auto;
+    width: 1200px;
+
+}
+.footer1 .links{
+    
+    display: flex;
+    justify-content: center;
+}
+.footer1 .links a{
+    font-size: 13px;
+    color: #666666;
+    margin-right: 4px;
+     width: 70px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.footer1 .content .hot-search{
+    position: absolute;
+    top: -254px;
+    right:230px;
+    width: 187px;
+    height: 254px;
+    border: 1px solid #f5f5f5;
+    /*display: flex !important;*/
+    flex-direction: column;
+    background: #fff;
+    display: none;
+    text-align: center;
+}    
+
+.footer1 .content .hot-search a{
+    margin-top: 10px;
+    color: #4B8FEB;
+    font-size: 13px;
+    text-decoration: none;
+    
+}
+.links .hot-find{
+
+}
+.w-conduct,.police-icons a{
+    text-align: center;
+    color: #919496;
+}
+.police-icons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.police-icons a{
+    display: flex;
+    margin-left: 20px;
+    
+}
+.police-icons img{
+    width: 18px;
+    height: 18px;
+   }
+
+
+
+
+/*头部*/
+*{padding:0;margin:0;font-size:12px;}
+ul,ol,dl{padding:0;margin:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal;}
+i,em{font-style:normal;}
+b,strong{font-weight:normal;}
+a{text-decoration:none;color:#000;display: inline-block;}
+.clearfix:after{display:block;content:'';clear:both;}
+.clearfix{zoom:1;}
+.fl{float:left;}
+.fr{float:right;}
+table{border-collapse:collapse;}
+th,td{border:1px solid #000;padding:0;}
+a img{border:none;}
+

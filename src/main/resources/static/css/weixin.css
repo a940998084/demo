@@ -1,0 +1,25 @@
+   .wb{width:680px; 
+	height: 355px;
+	background: #fff;
+	border:1px solid #eee;
+	margin-top: -175px;
+	overflow: hidden;position: fixed;top: 50%;left: 50%;margin-left:-340px;z-index: 10;}
+    .zf{width: 288px;
+        	height: 355px;
+        	float:left;}
+    .zf .sale{font-size: 16px;
+         	color:#333333;
+         	margin-left: 20px;}
+   .zf .sale1{margin-left: 20px;
+         	font-size: 14px; 
+         	color:#333333;}
+     .zf img{margin-top: 45px;
+         	margin-left:25px;}
+   .zf  .time{color: #999;
+         	margin-left: 20px;
+         	font-size: 14px;
+         	margin-top: 30px;
+         	font-size: 14px;}
+    .cc{width: 60px;
+     height: 135px;
+     float: right;}
