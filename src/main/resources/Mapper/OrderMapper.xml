@@ -5,9 +5,10 @@
 <mapper namespace="com.piaoniu.demo.dao.OrderDao">
   <!---根据订单的状态查个人订单-->
     <select id="selectByUserAndStatus" resultType="com.piaoniu.demo.model.Order1">
-        select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.order_money,pn_show_place.show_place,pn_order.order_number,pn_order_status.order_sts,
+  select pn_show.show_name,pn_show.show_picture,pn_show.show_begin_time,pn_order.order_money,pn_show_place.show_place,pn_order.order_number,pn_order_status.order_sts,
         pn_order.order_time,pn_order.order_amount,pn_order.user_id from pn_order left join pn_show on pn_show.show_id=pn_order.show_id LEFT JOIN pn_show_place on
-         pn_show.show_place_id=pn_show_place.show_place_id LEFT JOIN pn_order_status on pn_order_status.order_status_id=pn_order.order_status_id WHERE pn_order.order_status_id=#{order_status_id} and pn_order.user_id=#{user_id}
+         pn_show.show_place_id=pn_show_place.show_place_id LEFT JOIN pn_order_status on pn_order_status.order_status_id=pn_order.order_status_id WHERE
+         pn_order.order_status_id=#{order_status_id} and pn_order.user_id=#{user_id}
     </select>
 
 <!--遍历用户的所有订单那-->
