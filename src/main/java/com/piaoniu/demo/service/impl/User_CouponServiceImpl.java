@@ -29,6 +29,7 @@ public class User_CouponServiceImpl implements User_CouponService {
             discount.setDiscount_end(end);
             discount.setShow_type_id(i);
             discount.setDiscount_money(20);
+            discount.setDiscount_name("立减20元");
             user_couponDao.shengchengyouhuiquan(discount);
             s++;
         }

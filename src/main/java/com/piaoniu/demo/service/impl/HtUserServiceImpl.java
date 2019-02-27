@@ -12,10 +12,10 @@ import java.util.List;
 public class HtUserServiceImpl implements HtUserService {
 
     @Resource
-    private Ht_UserDao userDao;
+    private Ht_UserDao ht_userDao;
 
     @Override
     public List<User> findAllUserInfo() {
-        return userDao.findAllUserInfo();
+        return ht_userDao.findAllUserInfo();
     }
 }
