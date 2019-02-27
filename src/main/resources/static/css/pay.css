@@ -1,0 +1,52 @@
+ *{padding: 0;margin:0;text-decoration: none;list-style: none;box-sizing: border-box;vertical-align: middle;}
+ .clearfix:after {  content: ""; display: block; height: 0; clear: both; visibility: hidden;  }   
+ .clearfix {*zoom: 1;}   /* IE6、7 专有 */
+ .fr{float: right;}
+ .fl{float: left;}
+ a,.cover{cursor: pointer;}
+ body{background-color: #eff0f1;}
+ /*顶部*/
+ .top{width: 100%;height: 25px;background-color: #81868b;font:12px/1.5 tahoma,arial,\5b8b\4f53}
+ .top header{width: 960px;height: 100%;margin:0 auto;}
+ .top header ul span{width: 2px;height: 14px;background-color: #686d71;margin: 6px 20px;}
+ .top header ul li{height: 25px;line-height: 25px;color: #fff;}
+ .top header ul li a{color: #fff;}
+ .top header ul li a:hover{text-decoration: underline;}
+/*小图标部分*/
+ .nav{width: 100%;height: 60px;background-color: #fff;border-bottom: 1px solid #d9d9d9;}
+ .nav_main{width: 960px;height: 100%;margin:0 auto;}
+ h2{padding:10px; }
+ .nav_main span{border-left: 1px solid #676d70;height: 30px;padding-left: 10px;display: inline-block;margin-top: 15px;line-height: 40px;color: #676d9c;}
+ /*支付界面文字*/
+.apply{width:960px;margin:0 auto;height: 100px;padding:20px 20px 0 20px;}
+.apply_l{position: relative;}
+.apply_l>p{margin:10px 0;}
+.apply_l>p:nth-of-type(1){font-size: 12px;}
+.apply_l>p:nth-of-type(2){font:12px/1.5 tahoma,arial,\5b8b\4f53;font-size: 14px;font-weight: 700;}
+.apply_l>p:nth-of-type(2) span{font-size: 14px;margin-left: 20px;font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+.apply_l>p i{font-style: normal;margin-left: 5px;color:#00a5dd;cursor: pointer;}
+.apply_r span strong{color: #ff6600;font-size: 14px;vertical-align: baseline;margin-right: 5px;}
+.apply_r span{font-size: 12px;margin-top: 20px;display: block;margin-bottom: 17px;}
+.apply_r a{width: 65px;height: 25px;line-height: 25px;color: #fff;font-size: 12px;text-align: center;background-color: #b3b3b3;display: block;}
+/*小提示框*/
+.tip {position: absolute;background-color: #fff;width: 410px;height: 60px;color: #eff0f1;font-family: sans-serif;padding-top: 5px;margin-left: 20px;left:140px;top: 5px;border-radius: 5px;display: none;}
+.tip:after{content: '';position: absolute;width: 0;height: 0;border: 8px solid;}
+.left:after{border-right-color: #fff;top: 30%;right: 100%;margin-top: -9px;}
+.tip p{margin-left: 10px;color: #4d4d4d;margin-top: 5px;font-size: 14px;}
+/*二维码部分*/
+.scan{width: 960px;height: 530px;margin:0 auto;border-top: 2px solid #b3b3b3;border-bottom: 2px solid #b3b3b3;background-color: #fff;}
+.scan_l{width: 790px;height: 100%;}
+.scan_l_m{width: 195px;height: 350px;margin:80px auto;position: relative;}
+.scan_l_m .cover{position: absolute;top: 0;right: -200px;width: 199px;height: 177px;}
+.scan_l_m p{width: 100%;text-align: center;font:12px/1.5 tahoma,arial,\5b8b\4f53;margin-bottom: 15px;}
+.scan_l_m h3{width: 100%;text-align: center;color: #ff6600;margin-bottom: 15px;font-size: 20px;}
+.scan_l_m a{font-size: 14px;color: #a6a6a6;margin:0 auto;text-decoration: underline;margin-left: 10px;}
+.scan_r{width: 155px;height: 100%;background-color: #e6e6e6;border-top-left-radius: 10px;border-bottom-left-radius: 10px;padding-right: 10px;}
+.scan_r_m{width: 110px;margin:165px auto;}
+.scan_r_m a{color: #fff;background-color: #00aeef;display: block;border:1px solid #0fa4db;border-radius: 5px;font-size: 14px;text-align: center;height:35px;width: 108px;line-height: 35px;margin-top: 15px;}
+/*赞助部分*/
+.sponsor{width: 960px;height:125px;margin:0 auto;}
+.sponsor p{width: 100%;text-align: center;margin:30px auto;}
+.sponsor p a{color:#808080;font-size: 14px;}
+.sponsor p a:hover,.apply_r a:hover{text-decoration: underline;}
+.sponsor ul{display: flex;justify-content: center;}

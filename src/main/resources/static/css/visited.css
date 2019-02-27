@@ -1,0 +1,202 @@
+@charset:'UTF-8';
+*{margin: 0;padding: 0;list-style: none;}
+a{text-decoration: none;}
+.lyy{width:1200px;margin:0 auto;}
+.lyy1{width: 1200px;margin: 0 auto;height:60px;line-height: 60px;}
+.lyy1 span{font-size: 12px;color: #333;}
+.lyy1 .lyy1-1{color: #999;}
+.lyy2{width: 1200px;margin: 0 auto;display: flex;height: 328px;margin-bottom: 15px;}
+.lyy2_1{width: 870px;height: 388px;display: flex;height: 328px;background: #f9f9f9;border: 1px solid #eaeaec;padding: 20px;box-sizing: border-box;}
+.lyy2_1 img{width:388px;margin-right: 17px;}
+.lyy2-11{color: #262626;font-size: 24px;margin-bottom: 10px;}
+.lyy2-12{font-size: 14px;color: #262626;margin-bottom: 28px;}
+.lyy2_2{width: 260px;margin-left: 20px;padding:20px;border: 1px solid #eaeaec;height: 400px;}
+.lyy2_22{font-size: 14px;color: #262626;margin-bottom: 10px;}
+.lyy2_2 .lyy2_23{font-size: 12px;color: #999;margin-bottom: 20px;}
+.lyy2-13{font-size: 12px;color: #666;line-height: 1.8;}
+.lyy3{height: 50px;width: 1200px;margin: 0 auto;line-height: 50px;font-size: 18px;color: #262626;}
+.box{width: 1200px;margin: 0 auto;}
+.lyy4{width: 870px;border-top:2px solid #eaebf0;}
+.lyy4 li{display: flex;height: 200px;border-bottom: 1px solid #eaeaec;padding-top: 20px;box-sizing: border-box;}
+.lyy4 li img{width: 120px;height:160px; }
+.lyy4-1{margin-left:30px;margin-right: 290px; }
+.lyy4-11{margin-bottom: 10px;width: 290px;line-height: 1.25;text-align: left;font-size: 16px;color: #262626;}
+.lyy4-11:hover{color: #ff2661;}
+.lyy4-13{color: #666;font-size: 12px;}
+.lyy4-14{margin: 5px 0px;}
+.lyy4-15{color: #ffb02e;font-size: 16px;font-weight: 600;margin-left: 3px;line-height: 0.88;}
+.lyy4-2{width: 100px;margin-bottom: 8px;}
+.lyy4-21{color: #ff2661;font-size: 24px;width: 100px;text-align: center;margin-bottom: 6px;}
+.lyy4-21 .lyy4-23{font-size: 12px;margin-left: 3px;color: #999;}
+.lyy4-22{width: 100px;height: 42px;background: #ea3667;border-radius: 3px;text-align: center;;line-height: 42px;color: #fff;}
+.lyy4-3{color: #999;width: 100px;text-align: center;font-size: 16px;}
+
+/*尾部*/
+footer a{color: #262626}
+footer{
+    background: #fff;
+}
+footer .content .container{
+	width: 1200px;
+	margin: 0 auto;
+    margin-top: 60px;
+    height: 108px;
+    display: flex;
+    /*justify-content: center;*/
+    align-content: space-around;
+    
+
+
+}
+footer .content .container a img{
+    width: 44px;
+    height: 44px;
+}
+footer .content .container a{
+    display: flex;
+    align-items: center;
+    margin-left: 140px;
+}
+footer .content .container a .title{
+  font-size: 18px;
+}
+footer .content .container a .text{
+    margin-left: 10px
+}
+
+footer .content .container a .text .desc{
+    color: #EA3667;
+    font-size: 14px;
+}
+
+
+
+
+.mar{
+	margin-left: 60px;
+}
+.footer{
+    background: #fff;
+   border-top: 1px solid #f5f5f5;
+}
+.footer .content{
+    margin-top: 40px;
+}
+.footer .content .container .links-and-brand{
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+.footer .content .container .links-and-brand a{
+	font-size: 12px;
+}
+.footer .content .container .links-and-brand .footer-logo{
+    height: 40px;
+    margin-top: 30px;
+}
+.helps{
+    display: flex;
+    text-align: center;
+}
+.helps .item {
+       margin-bottom: 6px;
+}
+.helps .item a{
+    color: #666
+}
+.helps .help{
+    margin-left: 90px;
+}
+.footer .content .container .links-and-brand .helps .title{
+        font-weight: bold;
+    color: #565656;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.qr-codes{
+    margin-left: 40px;
+}
+.qr-codes .item .img{
+    width: 115px;
+    height: 115px;
+}
+.qr-codes .item .text{
+    color: #666;
+    text-align: center;
+}
+
+
+.footer1{
+    position: relative;
+    background: #fff;
+    border-top: 1px solid #f5f5f5
+}
+.hot-search::before{
+    position: absolute;
+    bottom:-40px;
+    left:80px;
+    content:'';
+    border:20px solid transparent;
+    border-top-color:#efefef;
+   
+}
+.footer1 .content{
+    margin-top: 20px;
+}
+.footer1 .links{
+    
+    display: flex;
+    justify-content: center;
+}
+.footer1 .links a{
+    font-size: 13px;
+    color: #666666;
+    margin-right: 4px;
+     width: 70px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.hot-search{
+    position: absolute;
+    top: -254px;
+    right:250px;
+    width: 187px;
+    height: 254px;
+    border: 1px solid #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    display: none;
+    text-align: center;
+}    
+
+.hot-search a{
+    margin-top: 10px;
+    color: #4B8FEB;
+    font-size: 13px;
+    
+}
+.links .hot-find{
+
+}
+.w-conduct,.police-icons a{
+    text-align: center;
+    color: #919496;
+}
+.police-icons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.police-icons a{
+    display: flex;
+    margin-left: 20px;
+    
+}
+.police-icons img{
+    width: 18px;
+    height: 18px;
+}

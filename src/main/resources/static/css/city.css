@@ -1,0 +1,125 @@
+@charset 'utf-8'
+
+.city-name{
+    position: relative;
+	cursor: pointer;
+	margin-left: 20px;
+	font-size: 14px;
+/*	background: url(../img/1-arr-down.9f1dbfdd.png) no-repeat right center ;*/
+}
+.citylist{
+    position: absolute;
+    top: 60px;
+    left: 180px;
+    z-index: 9999;
+    background: #fff;
+
+    box-sizing: border-box;
+    border: solid 1px #ececec;
+   
+    font-size: 12px;
+    line-height: 20px;
+    padding: 15px 20px;
+    width: 440px;
+
+}
+/*.citylist::before{
+    position:absolute;
+    left:50%;
+    top:-20px;
+    content:'';
+    border:10px solid transparent;
+    border-bottom-color:#fff;
+}*/
+.top-rows{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+.citylist li{
+    cursor: pointer;
+}
+.city-item{
+    cursor: pointer;
+    color: #333;
+   
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    line-height: 1.5;
+}
+.citylist .title{
+    font-weight: bold;
+    
+    color: #000;
+    font-size: 12px;
+    width: 90px;
+}
+.citylist .row,.hot-cities{
+    display: flex;
+}
+.city-indexes{
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+.citylist .row ul,.city-indexes ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.hot-cities ul{
+    display: inline-block;
+    width: 360px;
+
+}
+.hot-cities ul li{
+    display: flex;
+    
+    
+}
+.hot-cities .item{
+    font-size: 12px;
+
+}
+
+.hot-cities{
+    
+    margin-top: 24px;
+    overflow: scroll;
+    height: 150px;
+}
+.hot-cities ul .items{
+    display: flex;
+
+    flex-wrap: wrap;
+}
+.capital{font-size: 17px;
+    color: #333;
+    font-weight: bold;
+    width: 28px;
+   }    
+.citylist .selected{
+    background-color: #fff5f8;
+    color: #ff2661;
+    cursor: pointer;
+
+    
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    line-height: 1.5;
+}
+
+
+.cap{
+    cursor: pointer;
+    float: left;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    background-color: #eee;
+    color: #666;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    text-align: center;
+}

@@ -1,0 +1,276 @@
+@charset"utf-8";
+/*header*/
+nav{
+    width:100%;
+    height:60px;
+    background-color:#32313a; 
+    line-height:60px;
+}
+.nav{
+    width:1200px;
+    margin:0 auto;
+    color:#fff;
+}
+.nav .logo img{
+    height:33px;
+    margin-top:13px;
+
+}
+.nav .lei{
+    margin-left:44px;
+}
+.nav .lei li{
+    padding: 0 20px;
+}
+.nav .lei li a{
+    color:#fff;
+}
+/* 全部演出隐藏 */
+.nav .lei li.ashow{
+    position: relative;
+}
+.nav .lei li.ashow .submenu{
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    display:none;
+}
+.nav .lei li.ashow .submenu .allshow{
+    padding: 10px 0;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    left: -50%;
+}
+.nav .lei li.ashow .submenu .allshow::before{
+    position: absolute;
+    top:-20px;
+    left:50px;
+    content:'';
+    border:10px solid transparent;
+    border-bottom-color:#fff;
+}
+.nav .lei li.ashow .submenu .allshow li{
+    text-align: center;
+    height: 34px;
+    line-height: 34px;
+    white-space: nowrap;
+}
+.nav .lei li.ashow .submenu .allshow li:hover{
+    background: #dfdfdf;
+}
+.nav .lei li.ashow .submenu .allshow li a{
+    margin: 0 12px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #333;
+}
+.nav .search{
+    margin-left:27px;
+    margin-top:12px;
+    border-radius:3px;
+    height:35px;
+    background-color:#fff;
+}
+.nav .search input{
+    border-radius:3px;
+    width:227px;
+    padding-left:8px;
+    box-sizing: border-box;
+    line-height:35px;
+    border:none;
+    font-size:14px;
+}
+.nav .search img{
+    height:20px;
+    margin-bottom:7px;
+    margin-right:8px;
+}
+.nav .right a{
+    color:#9b9aa2;
+    font-size:14px;
+    margin-right:18px;
+}
+.nav .right span{
+    color:#708aa2;
+}
+.nav .right .app{
+    position: relative;
+    padding-left:25px;
+    box-sizing: border-box;
+    margin-left:18px;
+    font-size:14px;
+    color:#9b9aa2;
+    cursor: pointer;
+    background: url(../img/1-icon-mobile.a94b470b.png) no-repeat left center;
+}
+.nav .right .app .submenu1{
+    position: absolute;
+    z-index:2;
+    top: 60px;
+    left: 50%;
+    display:none;
+}
+.nav .right .app .submenu1 .appshow{
+    background-color: #fff; 
+    width:200px;
+    padding:12px 12px 0;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    left:-160px;
+}
+.nav .right .app .submenu1 .appshow::before{
+    position: absolute;
+    right:40px;
+    top:-20px;
+    clear: both;
+    content:'';
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+}
+.nav .right .app .submenu1 .appshow .text .title{
+    line-height:34px;
+}
+.nav .right .app .submenu1 .appshow .text .desc{
+    font-size:12px;
+    line-height:20px;
+    color:#999;
+}
+/*person*/
+.person{
+	width:100%;
+	height:245px;
+	background-image: url(../img/background.jpg);
+	padding-top:40px;
+}
+.person .center{
+   width:1200px;
+   margin:auto;
+}
+.person .person1{
+	margin-right:33px;
+}
+.person .person2-1{
+	margin-bottom:73px;
+}
+.person .person2-1 .yanyi{
+	font-size:26px;
+	color:#fff;
+	margin-right:14px;
+}
+.person .person2-1 .renzheng{
+	padding-top:8px;
+}
+.person .person2-1 .renzheng p{
+	width:47px;
+	height:22px;
+	background:#ff4f60;
+	text-align:center;
+	line-height:22px;
+	color:#fff;
+	border-radius: 2px;
+}
+.person .person2-2{
+	width:181px;
+	height:45px;
+	background-color:#342b2d;
+	text-align:center;
+	line-height: 45px; 
+	padding-left:17px;
+}
+
+.person .person2-2 ul li{
+	font-size:15px;
+	color:#fff;
+}
+.person .person2-2 ul .person2-2-2{
+	margin:0 17px 0 17px;
+}
+.msg{
+	width:1200px;
+	margin:auto;
+	padding-top:20px;
+	margin-bottom: 107px;
+}
+.msg .msg1{
+	padding-top:20px;
+}
+.msg .msg1 .msg1-1{
+	position: relative;
+	width:644px;
+	height:433px;
+	border-left:1px dashed #ccc;
+	margin-left:16px;
+	padding-left:40px;
+}
+.msg .msg1 .msg1-2{
+	position: absolute;
+	top:-3px;
+	left:-3px;
+	width:7px;
+	height:7px;
+	background: #ccc;
+	border-radius: 4px;
+}
+.msg .msg1-3{
+	height:37px;
+}
+.msg .msg1-4{
+	font-size:16px;
+	height:37px;
+}
+.msg .msg1-1 .img{
+	margin-bottom:24px;
+	width:402px;
+	height:226px;
+}
+.msg .msg1-1 .msg1-5{
+	padding-left:10px;
+	width:534px;
+	height:53px;
+	background:#f3f5f5;
+	/*text-align: center;*/
+	line-height:53px;
+}
+.msg .msg1-6 .reply{
+	margin-right:25px;
+}
+.msg .msg1-6 li span{
+	color:#666;
+}
+.msg .msg2{
+	width:292px;
+	height:145px;
+	border:1px solid #eaeaec;
+	padding-top:20px;
+	padding-left:20px;
+}
+.msg .msg2 .app{
+	padding-top:20px;
+	padding-left:20px;
+}
+.footer .w-conduct,.police-icons a{
+    text-align: center;
+    color: #919496;
+    font-size:12px;
+}
+.footer .police-icons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.footer .police-icons a{
+    display: flex;
+    margin-left: 20px;
+}
+.footer .police-icons img{
+    width: 18px;
+    height: 18px;
+}
+
+.footer .police-icons a .text{
+    font-size:12px;
+}

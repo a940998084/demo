@@ -1,0 +1,167 @@
+
+@charset 'utf-8'
+
+footer{
+    background: #fff; 
+}
+footer .content .container{
+    /*margin-top: 30px;*/
+    height: 108px;
+    display: flex;
+    /*justify-content: center;*/
+    align-content: space-around;
+}
+footer .content .container a img{
+    width: 44px;
+    height: 44px;
+}
+footer .content .container a{
+    display: flex;
+    align-items: center;
+    margin-left: 140px;
+}
+footer .content .container a .title{
+  font-size: 18px;
+}
+footer .content .container a .text{
+    margin-left: 10px
+}
+
+footer .content .container a .text .desc{
+    color: #EA3667;
+    font-size: 14px;
+}
+
+
+
+
+
+.footer{
+    width:100%;
+    background: #fff;
+   border-top: 1px solid #f5f5f5;
+}
+.footer .content1{
+    width:1200px;
+    margin:0 auto;
+    margin-top: 40px;
+}
+.footer .content1 .container .links-and-brand{
+    display: flex;
+}
+.footer .content1 .container .links-and-brand .footer-logo{
+    width:260px;
+    height: 40px;
+    margin-top: 30px;
+}
+.helps{
+    display: flex;
+    text-align: center;
+}
+.helps .item {
+    margin-bottom: 6px;
+}
+.helps .item a{
+    color: #666;
+    font-size:12px;
+}
+.helps .help{
+    margin-left: 80px;
+}
+.footer .content1 .container .links-and-brand .helps .title{
+    font-weight: bold;
+    color: #565656;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.qr-codes{
+    margin-left: 80px;
+}
+.qr-codes .item .img{
+    width: 115px;
+    height: 115px;
+}
+.qr-codes .item .text{
+    color: #666;
+    text-align: center;
+}
+
+
+.footer1{
+    position: relative;
+    background: #fff;
+    border-top: 1px solid #f5f5f5
+}
+.hot-search::before{
+    position: absolute;
+    bottom:-40px;
+    left:80px;
+    content:'';
+    border:20px solid transparent;
+    border-top-color:#efefef;
+   
+}
+.footer1 .content{
+    margin-top: 20px;
+}
+.footer1 .links{
+    
+    display: flex;
+    justify-content: center;
+}
+.footer1 .links a{
+    font-size: 12px;
+    color: #666666;
+    margin-right: 4px;
+     width: 70px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.hot-search{
+    position: absolute;
+    top: -254px;
+    right:250px;
+    width: 187px;
+    height: 254px;
+    border: 1px solid #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    display: none;
+    text-align: center;
+}    
+
+.hot-search a{
+    margin-top: 10px;
+    color: #4B8FEB;
+    font-size: 13px;
+    
+}
+.links .hot-find{
+
+}
+.w-conduct,.police-icons a{
+    text-align: center;
+    color: #919496;
+    font-size:12px;
+}
+.police-icons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.police-icons a{
+    display: flex;
+    margin-left: 20px;
+}
+.police-icons img{
+    width: 18px;
+    height: 18px;
+}
+
+.police-icons a .text{
+    font-size:12px;
+}
