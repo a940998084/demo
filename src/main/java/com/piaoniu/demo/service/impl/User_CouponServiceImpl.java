@@ -19,6 +19,7 @@ public class User_CouponServiceImpl implements User_CouponService {
 
     @Override
     public int shengchengyouhuiquan(Discount discount) {
+
         int s = 0;
         for (int i = 1; i <= 8; i++) {
             Date date = new Date();
