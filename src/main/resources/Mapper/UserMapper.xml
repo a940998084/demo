@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.UserDao">
+    <!--查询关注-->
+    <select id="guanzhu" resultType="com.piaoniu.demo.model.GuanzhuModel">
+        SELECT pn_show.show_id,pn_show.show_money,pn_show.show_begin_time,pn_show.show_end_time,pn_show.show_name,pn_show.show_picture,
+        pn_show_place.show_place,
+        pn_show_status.show_status,
+        pn_like.like_id
+        FROM pn_like
+        INNER JOIN pn_user
+        on pn_like.user_id=pn_user.user_id INNER JOIN pn_show
+        ON pn_like.show_id=pn_show.show_id INNER JOIN pn_show_place
+        ON pn_show.show_place_id=pn_show_place.show_place_id INNER JOIN pn_show_status
+        ON pn_show.show_status_id=pn_show_status.show_status_id WHERE pn_user.user_id=#{user_id}
+        and pn_show.show_status_id=#{show_status_id}
+    </select>
+
+    <!--修改演出表中的演出的状态-->
+    <update id="xiugaizhuangtai">
+        UPDATE pn_show SET pn_show.show_status_id=2 WHERE pn_show.show_id=#{show_id} and pn_show.show_status_id=1
+    </update>
+
+    <!--查询某yonghu的关注-->
+    <select id="guanzhuList" resultType="com.piaoniu.demo.model.GuanzhuModel">
+        SELECT pn_show.show_attention,pn_show.show_id,pn_show.show_money,pn_show.show_begin_time,pn_show.show_end_time,pn_show.show_name,pn_show.show_picture,
+        pn_show_place.show_place,
+        pn_show_status.show_status,
+        pn_like.like_id
+        FROM pn_like
+        INNER JOIN pn_user
+        on pn_like.user_id=pn_user.user_id INNER JOIN pn_show
+        ON pn_like.show_id=pn_show.show_id INNER JOIN pn_show_place
+        ON pn_show.show_place_id=pn_show_place.show_place_id INNER JOIN pn_show_status
+        ON pn_show.show_status_id=pn_show_status.show_status_id WHERE pn_user.user_id=#{pn_user.user_id}
+    </select>
+    <!--取消关注-->
+    <delete id="quxiaoguanzhu" parameterType="int">
+        delete from pn_like where like_id=#{like_id}
+    </delete>
+
+    <!--修改关注量-->
+    <update id="xiugaiguanzhuliang" parameterType="com.piaoniu.demo.model.GuanzhuModel">
+         update pn_show set show_attention=#{show_attention} where show_id =#{show_id}
+    </update>
+
+    <!--添加关注-->
+    <insert id="tianjiaguanzhu" parameterType="com.piaoniu.demo.pojo.Like">
+        INSERT INTO pn_like (user_id,show_id)VALUES(#{user_id},#{show_id})
+    </insert>
+
+    <!--通过user_id和show_id查询关注表数据，用于判断是否已经关注-->
+    <select id="likeList" resultType="com.piaoniu.demo.pojo.Like">
+        select user_id,show_id FROM pn_like WHERE user_id=#{user_id} AND show_id=#{show_id}
+    </select>
+
+    <!--通过show_id查询关注量-->
+    <select id="guanzhuliang" resultType="com.piaoniu.demo.pojo.Show">
+        SELECT show_attention FROM pn_show WHERE show_id=#{show_id}
+    </select>
+
+</mapper>
