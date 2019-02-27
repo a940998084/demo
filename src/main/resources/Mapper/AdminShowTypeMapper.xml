@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.AdminDao">
+    <insert id="addshowType" parameterType="com.piaoniu.demo.pojo.ShowType">
+        insert into pn_show_type(
+                    show_type)
+        values(
+                    #{show_type})
+    </insert>
+    <select id="select" resultType="com.piaoniu.demo.pojo.ShowType">
+        select show_type from pn_show_type;
+    </select>
+    <update id="updateshowType">
+		update pn_show_type set show_type=#{show_type} where show_type_id=#{show_type_id}
+	</update>
+    <delete id="delshowType">
+		delete from pn_show_type where show_type_id=#{show_type_id}
+	</delete>
+
+</mapper>

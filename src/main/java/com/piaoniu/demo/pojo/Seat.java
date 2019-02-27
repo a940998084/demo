@@ -7,7 +7,7 @@ public class Seat {
     private int seat_id;  //座位id
     private int show_id;  //演出id
     private double seat_money; //座位价格
-    private int seat_status_type_id;  //座位状态id
+    private int seat_status_id;  //座位状态id
     private String seat_number;  //座位号（几排几号）
     private int hall_id;   //演厅id
     private int seat_num;    //座位数量
@@ -53,11 +53,11 @@ public class Seat {
     }
 
     public int getSeat_status_type_id() {
-        return seat_status_type_id;
+        return seat_status_id;
     }
 
     public void setSeat_status_type_id(int seat_status_type_id) {
-        this.seat_status_type_id = seat_status_type_id;
+        this.seat_status_id = seat_status_id;
     }
 
 

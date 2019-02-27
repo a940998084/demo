@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.AdCityDao">
+    <select id="selecthall" resultType="com.piaoniu.demo.pojo.Hall">
+        SELECT hall_name,hall_seatnum FROM pn_hall where show_place_id =#{show_place_id}
+    </select>
+
+    <insert id="inserthall" parameterType="com.piaoniu.demo.pojo.Hall">
+        INSERT INTO pn_hall ( hall_name,hall_seatnum) VALUES(#{hall_name},#{hall_seatnum})
+    </insert>
+    <update id="updatehall">
+		update pn_hall set hall_name=#{hall_name},hall_seatnum=#{hall_seatnum} where hall_id=#{hall_id}
+	</update>
+
+    <delete id="delhall">
+        delete from pn_hall where hall_id=#{hall_id}
+    </delete>
+</mapper>

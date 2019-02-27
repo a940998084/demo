@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.AdSeatDao">
+    <select id="selectseat" resultType="com.piaoniu.demo.pojo.Seat">
+        SELECT pn_seat.seat_number,pn_seat.seat_money,pn_seat_status.seat_status,
+        pn_show.show_name FROM pn_seat LEFT JOIN pn_seat_status ON
+        pn_seat.seat_status_id=pn_seat_status.seat_status_id LEFT JOIN
+        pn_show on pn_show.show_id=pn_seat.show_id WHERE hall_id=#{hall_id}
+    </select>
+
+    <insert id="insertseat" parameterType="com.piaoniu.demo.pojo.Seat">
+        INSERT into pn_seat(seat_number,seat_money,seat_status_id,hall_id,show_id)
+        VALUES(#{seat_number},#{seat_money},#{seat_status_id},#{hall_id},#{show_id})
+    </insert>
+    <update id="updateseat">
+		update pn_seat set seat_number=#{seat_number},seat_money=#{seat_money},
+		seat_status_id=#{seat_status_id},hall_id=#{hall_id},show_id=#{show_id}
+		 where seat_id=#{seat_id}
+	</update>
+
+    <delete id="delseat">
+        delete from pn_seat where seat_id=#{seat_id}
+    </delete>
+</mapper>
