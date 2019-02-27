@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.AdCityDao">
+    <select id="selectbycity" resultType="com.piaoniu.demo.pojo.ShowPlace">
+        SELECT show_place from pn_show_place where city_id=#{city_id}
+    </select>
+
+    <insert id="insertshowplace" parameterType="com.piaoniu.demo.pojo.ShowPlace">
+        INSERT into pn_show_place(show_place,city_id)VALUES(#{show_place},#{city_id})
+    </insert>
+
+    <delete id="delshowplace">
+        delete from pn_show_place where show_place_id=#{show_place_id}
+    </delete>
+</mapper>

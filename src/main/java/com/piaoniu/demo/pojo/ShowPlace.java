@@ -6,7 +6,7 @@ package com.piaoniu.demo.pojo;
 public class ShowPlace {
     private int show_place_id;  //演出地点id
     private String show_place;  //演出地点
-    private int seat_sum;   //座位总数
+    private int city_id;   //城市id
 
     public int getShow_place_id() {
         return show_place_id;
@@ -24,11 +24,11 @@ public class ShowPlace {
         this.show_place = show_place;
     }
 
-    public int getSeat_sum() {
-        return seat_sum;
+    public int getCity_id() {
+        return city_id;
     }
 
-    public void setSeat_sum(int seat_sum) {
-        this.seat_sum = seat_sum;
+    public void setCity_id(int city_id) {
+        this.city_id = city_id;
     }
 }
