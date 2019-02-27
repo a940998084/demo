@@ -57,7 +57,7 @@ public class User_CouponController {
     }
 
     @RequestMapping(value = "user/update/coupon",method = RequestMethod.GET)
-    @ApiOperation(value = "使用后修改用户状态",notes="使用后修改优惠券状态")
+    @ApiOperation(value = "使用后修改优惠券状态",notes="使用后修改优惠券状态")
     public Json userDiscountUpdate2(Integer user_id, Integer discount_id){
         Discount discount=new Discount();
         discount.setUser_id(user_id);
@@ -71,7 +71,7 @@ public class User_CouponController {
     }
 
     @RequestMapping(value = "user/select/dingdan/coupon",method = RequestMethod.GET)
-    @ApiOperation(value = "使用后修改用户状态",notes="使用后修改优惠券状态")
+    @ApiOperation(value = "用户买演出票时，遍历对应的优惠券",notes="用户买演出票时，遍历对应的优惠券")
     public Json duiyingDiscount(Integer user_id, Integer show_type_id){
         List<Discount> duiyingDiscountList=user_couponService.duiyingDiscount(user_id,show_type_id);
         if (duiyingDiscountList.size()<=0){
