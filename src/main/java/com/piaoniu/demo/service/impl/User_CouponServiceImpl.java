@@ -19,6 +19,7 @@ public class User_CouponServiceImpl implements User_CouponService {
 
     @Override
     public int shengchengyouhuiquan(Discount discount) {
+
         int s = 0;
         for (int i = 1; i <= 8; i++) {
             Date date = new Date();
@@ -29,6 +30,7 @@ public class User_CouponServiceImpl implements User_CouponService {
             discount.setDiscount_end(end);
             discount.setShow_type_id(i);
             discount.setDiscount_money(20);
+            discount.setDiscount_name("立减20元");
             user_couponDao.shengchengyouhuiquan(discount);
             s++;
         }

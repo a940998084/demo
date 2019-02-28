@@ -11,8 +11,15 @@
         INSERT INTO pn_hall ( hall_name,hall_seatnum) VALUES(#{hall_name},#{hall_seatnum})
     </insert>
     <update id="updatehall">
-		update pn_hall set hall_name=#{hall_name},hall_seatnum=#{hall_seatnum} where hall_id=#{hall_id}
-	</update>
+        update pn_hall set
+        <if test="hall_name!=null">
+            hall_name=#{hall_name},
+        </if>
+        <if test=" hall_seatnum!=null">
+            hall_seatnum=#{hall_seatnum}
+        </if>
+        where hall_id=#{hall_id}
+    </update>
 
     <delete id="delhall">
         delete from pn_hall where hall_id=#{hall_id}
