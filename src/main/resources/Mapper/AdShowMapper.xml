@@ -23,10 +23,43 @@
     </insert>
 
     <update id="updateshow">
-        UPDATE pn_show set show_name=#{show_name},show_type_id=#{show_type_id},show_people=#{show_people},
-        show_begin_time=#{show_begin_time},show_end_time=#{show_end_time},city_id=#{city_id},
-        show_status_id=#{show_status_id},show_place_id=#{show_place_id},show_picture=#{show_picture},
-        show_money=#{show_money},show_message=#{show_message},show_discount=#{show_discount}
+        UPDATE pn_show set
+        <if test="show_name!=null">
+            show_name=#{show_name},
+        </if>
+        <if test="show_type_id!=0">
+            show_type_id=#{show_type_id},
+        </if>
+        <if test="show_people!=null">
+            show_people=#{show_people},
+        </if>
+        <if test="show_begin_time!=null">
+            show_begin_time=#{show_begin_time},
+        </if>
+        <if test="show_end_time!=null">
+            show_end_time=#{show_end_time},
+        </if>
+        <if test="city_id!=0">
+            city_id=#{city_id},
+        </if>
+        <if test="show_status_id!=0">
+            show_status_id=#{show_status_id},
+        </if>
+        <if test="show_place_id!=0">
+            show_place_id=#{show_place_id},
+        </if>
+        <if test="show_picture!=null">
+            show_picture=#{show_picture},
+        </if>
+        <if test="show_money!=0">
+            show_money=#{show_money},
+        </if>
+        <if test="show_message!=null">
+            show_message=#{show_message},
+        </if>
+        <if test="show_discount!=null">
+            show_discount=#{show_discount}
+        </if>
         WHERE show_id =#{show_id}
     </update>
 
