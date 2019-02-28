@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaoniu.demo.dao.LoginDao">
+    <select id="findUser" resultType="int">
+      select count(user_id) from pn_user where user_phone=#{user_phone}
+    </select>
+
+    <insert id="userAdd">
+        insert into pn_user (user_phone,user_password) values (#{user_phone},"user_password")
+    </insert>
+
+    <select id="findPass" resultType="com.piaoniu.demo.model.LoginModel">
+        select * from pn_user where user_phone=#{user_phone}
+    </select>
+
+
+
+    <!--<insert id="userIntAdd">-->
+        <!--insert into yx_user_int (uid,integral) values (#{uid},0)-->
+    <!--</insert>-->
+
+    <!--<insert id="userTickAdd">-->
+        <!--insert into yx_ticket_user (uid,tid,tStatus,tTime) values (#{uid},#{tid},1,#{tTime})-->
+    <!--</insert>-->
+
+    <!--<insert id="userVipAdd">-->
+        <!--insert into yx_user_vip (uid,vipStatus,vipTime) values (#{uid},1,#{vipTime})-->
+    <!--</insert>-->
+
+    <!--<select id="findInt" resultType="int">-->
+        <!--select integral from yx_user_int where user_id=#{user_id}-->
+    <!--</select>-->
+
+    <select id="findTick" resultType="int">
+        select count(tuid) from discount where user_id=#{user_id}
+    </select>
+
+    <select id="findBal" resultType="double">
+        select user_money from pn_user where user_id=#{user_id}
+    </select>
+
+    <select id="findShop" resultType="int">
+        select count(1) from yx_shop where user_id=#{user_id}
+    </select>
+
+    <insert id="userBalAdd">
+        insert into yx_user_bal (user_id,balance) values (#{user_id},0.0)
+    </insert>
+
+</mapper>
