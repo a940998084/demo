@@ -8,10 +8,10 @@
     </select>
 
     <insert id="userAdd">
-        insert into pn_user (user_phone,user_password) values (#{user_phone},"user_password")
+        insert into pn_user (user_phone) values (#{user_phone})
     </insert>
 
-    <select id="findPass" resultType="com.piaoniu.demo.model.LoginModel">
+    <select id="findPass" resultType="com.piaoniu.demo.pojo.User">
         select * from pn_user where user_phone=#{user_phone}
     </select>
 
@@ -34,7 +34,7 @@
     <!--</select>-->
 
     <select id="findTick" resultType="int">
-        select count(tuid) from discount where user_id=#{user_id}
+        select count(user_id) from pn_user where user_id=#{user_id}
     </select>
 
     <select id="findBal" resultType="double">
@@ -42,11 +42,11 @@
     </select>
 
     <select id="findShop" resultType="int">
-        select count(1) from yx_shop where user_id=#{user_id}
+        select count(1) from pn_user where user_id=#{user_id}
     </select>
 
-    <insert id="userBalAdd">
-        insert into yx_user_bal (user_id,balance) values (#{user_id},0.0)
-    </insert>
+    <!--<insert id="userBalAdd">-->
+        <!--insert into pn_user (user_id) values (#{user_id})-->
+    <!--</insert>-->
 
 </mapper>

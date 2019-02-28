@@ -1,14 +1,13 @@
 package com.piaoniu.demo.service.impl;
 
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.piaoniu.demo.dao.LoginDao;
-import com.piaoniu.demo.model.LoginModel;
 import com.piaoniu.demo.model.LoginUserInfo;
+import com.piaoniu.demo.pojo.User;
 import com.piaoniu.demo.service.LoginService;
-import com.piaoniu.demo.util.GiveTicket;
 import com.piaoniu.demo.util.Json;
-import com.piaoniu.demo.util.SMSCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -101,53 +100,50 @@ public class LoginServiceImpl implements LoginService {
         }
     }
 
+    //注册登录
     @Override
     public void proofUser(String user_phone) {
         int a = loginDao.findUser(user_phone);
-        LoginModel loginModel;
+        User user;
         if (a>0){
             //登录
-            loginModel=loginDao.findPass(user_phone);
+            user=loginDao.findPass(user_phone);
+            System.out.println(user.getUser_id());
         }else {
             //注册
             loginDao.userAdd(user_phone);
-            loginModel=loginDao.findPass(user_phone);
-            int user_id=loginModel.getUser_id();
-            addUser(user_id);
+            user=loginDao.findPass(user_phone);
+            int user_id=user.getUser_id();
+            System.out.println(user_id);
         }
-        //存入redis
-        Gson gson=new Gson();
-        LoginUserInfo loginUserInfo = loginUserInfo(loginModel.getUser_id(),loginModel);
-        String user=redisTemplate.opsForValue().get("LoginUserInfo");
-        Map<Integer,LoginUserInfo> userMap=gson.fromJson(user,new TypeToken<Map<Integer,LoginUserInfo>>(){}.getType());
-        userMap.put(loginModel.getUser_id(),loginUserInfo);
-        redisTemplate.opsForValue().set("LoginUserInfo",gson.toJson(userMap));
+//        //存入redis
+//        Gson gson=new Gson();
+//        LoginUserInfo loginUserInfo = loginUserInfo(user.getUser_id(),user);
+//        String users=redisTemplate.opsForValue().get("LoginUserInfo");
+//        Map<Integer,LoginUserInfo> userMap=gson.fromJson(users,new TypeToken<Map<Integer,LoginUserInfo>>(){}.getType());
+//        userMap.put(user.getUser_id(),loginUserInfo);
+//        redisTemplate.opsForValue().set("LoginUserInfo",gson.toJson(userMap));
 
-        String num=redisTemplate.opsForValue().get("shopNum");
-        Map<Integer,Integer> shopNum=gson.fromJson(num,new TypeToken<Map<Integer,Integer>>(){}.getType());
-        shopNum.put(loginModel.getUser_id(),loginDao.findShop(loginModel.getUser_id()));
-        redisTemplate.opsForValue().set("shopNum",gson.toJson(shopNum));
+//        String num=redisTemplate.opsForValue().get("shopNum");
+//        Map<Integer,Integer> shopNum=gson.fromJson(num,new TypeToken<Map<Integer,Integer>>(){}.getType());
+//        shopNum.put(user.getUser_id(),loginDao.findShop(user.getUser_id()));
+//        redisTemplate.opsForValue().set("shopNum",gson.toJson(shopNum));
 
     }
 
     @Override
-    public LoginUserInfo loginUserInfo(int user_id, LoginModel loginModel) {
-        LoginUserInfo user=new LoginUserInfo();
-        user.setLoginModel(loginModel);
-        user.setUser_money(loginDao.findBal(user_id));
-        user.setTicketUser(loginDao.findTick(user_id));
-        return user;
+    public LoginUserInfo loginUserInfo(int user_phone, User user) {
+        LoginUserInfo loginUserInfo=new LoginUserInfo();
+        loginUserInfo.setUser(user);
+        return loginUserInfo;
     }
 
 
-    @Override
-    public void addUser(int user_id) {
-        loginDao.userBalAdd(user_id);
 
-        GiveTicket giveTicket=new GiveTicket(7);
-        loginDao.userTickAdd(user_id);
-
-        loginDao.userTickAdd(user_id);
-
-    }
+//
+//    @Override
+//    public void addUser(int user_id) {
+//        loginDao.userBalAdd(user_id);
+//        GiveTicket giveTicket=new GiveTicket(7);
+//    }
 }

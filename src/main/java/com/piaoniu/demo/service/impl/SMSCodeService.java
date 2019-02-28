@@ -1,4 +1,4 @@
-package com.piaoniu.demo.util;
+package com.piaoniu.demo.service.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,7 +16,6 @@ public class SMSCodeService {
         //打开连接，得到连接对象
         URLConnection connection=url.openConnection();
         //向服务器发出请求
-        connection.connect();
 
         //获得服务器响应的数据
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(connection.getInputStream(),"utf-8"));

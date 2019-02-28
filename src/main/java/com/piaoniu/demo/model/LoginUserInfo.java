@@ -1,16 +1,18 @@
 package com.piaoniu.demo.model;
 
+import com.piaoniu.demo.pojo.User;
+
 public class LoginUserInfo {
-    private LoginModel loginModel;
+    private User user;
     private Double user_money;
     private int ticketUser;
 
-    public LoginModel getLoginModel() {
-        return loginModel;
+    public User getUser() {
+        return user;
     }
 
-    public void setLoginModel(LoginModel loginModel) {
-        this.loginModel = loginModel;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Double getUser_money() {

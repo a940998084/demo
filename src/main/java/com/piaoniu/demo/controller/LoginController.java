@@ -2,10 +2,7 @@ package com.piaoniu.demo.controller;
 
 import com.piaoniu.demo.service.LoginService;
 import com.piaoniu.demo.util.Json;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/login")
 public class LoginController {
     @Autowired
-    private LoginService loginService;
+    public  LoginService loginService;
 
     //获取验证码
     @RequestMapping(value = "/getCode",method = RequestMethod.GET)
