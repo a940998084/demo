@@ -102,20 +102,19 @@ public class LoginServiceImpl implements LoginService {
 
     //注册登录
     @Override
-    public void proofUser(String user_phone) {
+    public User proofUser(String user_phone) {
         int a = loginDao.findUser(user_phone);
         User user;
         if (a>0){
             //登录
             user=loginDao.findPass(user_phone);
-            System.out.println(user.getUser_id());
+            return user;
         }else {
             //注册
             loginDao.userAdd(user_phone);
             user=loginDao.findPass(user_phone);
-            int user_id=user.getUser_id();
-            System.out.println(user_id);
-        }
+            return user;
+       }
 //        //存入redis
 //        Gson gson=new Gson();
 //        LoginUserInfo loginUserInfo = loginUserInfo(user.getUser_id(),user);

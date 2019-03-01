@@ -8,25 +8,28 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping(value = "index")
 public class IndexController {
     @Autowired
     IndexService indexService;
+
+    @GetMapping("/")
+    public String index(Model model){
+        this.getUser(model);
+        this.getUser4(model);
+        return "index";
+    }
+
     @RequestMapping(value = "selectShowType",method  = RequestMethod.GET)
     @ApiOperation(value = "遍历演出类型",notes="遍历演出类型")
     @ApiResponses({@ApiResponse(code = 1,message = "操作成功"),@ApiResponse(code = 0,message = "操作失败"),@ApiResponse(code = 3,message = "权限不足")})
-    public Json getUser() {
-        if(indexService.findShowtype()!=null){
-            return Status.getStatus(0,indexService.findShowtype());
-        }else {
-            return Status.getStatus(1);
-        }
+    public void getUser(Model model) {
+            model.addAttribute("message1",indexService.findShowtype());
     }
     @RequestMapping(value = "selectShowByAll",method = RequestMethod.GET)
     @ApiOperation(value = "根据大量条件遍历演出",notes="根据大量条件遍历演出")
@@ -61,12 +64,8 @@ public class IndexController {
     @RequestMapping(value = "selectHotCity",method = RequestMethod.GET)
     @ApiOperation(value = "查询热门城市",notes="查询热门城市")
     @ApiResponses({@ApiResponse(code = 1,message = "操作成功"),@ApiResponse(code = 0,message = "操作失败"),@ApiResponse(code = 3,message = "权限不足")})
-    public Json getUser4() {
-        if(indexService.findHotCity()!=null){
-            return Status.getStatus(0,indexService.findHotCity());
-        }else {
-            return Status.getStatus(1);
-        }
+    public void getUser4(Model model) {
+            model.addAttribute("message2",indexService.findHotCity());
     }
     @RequestMapping(value = "selectCity",method = RequestMethod.GET)
     @ApiOperation(value = "查询城市",notes="查询城市")
@@ -81,12 +80,9 @@ public class IndexController {
     @RequestMapping(value = "selectphoto",method = RequestMethod.GET)
     @ApiOperation(value = "查询轮播图",notes="查询轮播图")
     @ApiResponses({@ApiResponse(code = 1,message = "操作成功"),@ApiResponse(code = 0,message = "操作失败"),@ApiResponse(code = 3,message = "权限不足")})
-    public Json getUser6() {
-        if(indexService.findPhoto()!=null){
-            return Status.getStatus(0,indexService.findPhoto());
-        }else {
-            return Status.getStatus(1);
-        }
+    public void getUser6(Model model) {
+
+            model.addAttribute("lunbo",indexService.findPhoto());
     }
     @RequestMapping(value = "SelectBySome",method = RequestMethod.GET)
     @ApiOperation(value = "模糊查询",notes="模糊查询")

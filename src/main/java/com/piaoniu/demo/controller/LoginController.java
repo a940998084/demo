@@ -1,12 +1,16 @@
 package com.piaoniu.demo.controller;
 
+import com.piaoniu.demo.pojo.User;
 import com.piaoniu.demo.service.LoginService;
 import com.piaoniu.demo.util.Json;
+import com.piaoniu.demo.util.Status;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
 
 @RestController
 @Api(value = "手机登录",tags = {"登录功能接口"})
@@ -41,10 +45,12 @@ public class LoginController {
             @ApiImplicitParam(name = "user_phone",value = "手机号码",dataType = "String"),
             @ApiImplicitParam(name = "code",value = "验证码",dataType = "String")
     })
-    public Json proof(String user_phone, String code){
+    public Json proof(String user_phone, String code, HttpSession httpSession){
         Json json=loginService.proof(user_phone,code);
-        if (json.getStatus()==0){
-            loginService.proofUser(user_phone);
+        if (json.getStatus()==0) {
+            User user=loginService.proofUser(user_phone);
+            httpSession.setAttribute("User",user);
+            return Status.getStatus(0, user);
         }
         return json;
     }

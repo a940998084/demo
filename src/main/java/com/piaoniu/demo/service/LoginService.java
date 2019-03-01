@@ -12,7 +12,7 @@ public interface LoginService {
     Json proof(String user_phone, String code);
 
     //注册或者登录
-    void proofUser(String user_phone);
+    User proofUser(String user_phone);
 
     //获取用户信息
     LoginUserInfo loginUserInfo(int user_phone, User user);

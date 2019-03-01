@@ -1,4 +1,4 @@
-@charset="UTF-8";
+@charset"UTF-8";
 *{margin:0;padding:0;list-style: none;}
 a{text-decoration:none;color:#666;cursor:pointer;}
 .clearfix{display: block;content: '';clear:both;}

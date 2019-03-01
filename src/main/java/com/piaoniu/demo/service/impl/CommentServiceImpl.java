@@ -101,7 +101,11 @@ public class CommentServiceImpl implements CommentService {
                 e.printStackTrace();
             }
         } else {
-
+            Date date=new Date();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String dates=df.format(date);
+            comment.setComment_creat_time(dates);
+            insertComment(comment);
         }
     }
 }

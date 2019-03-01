@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -13,7 +13,7 @@
 		<a href="javascript:;"><img src="../img/logo.f6de0a61.png" alt=""></a>
 		<div>
 			<div class="city-name">上海</div>
-			
+
 				<div class="citylist">
 				      <div class="top-rows">
 				        <div class="row">
@@ -24,20 +24,8 @@
 				        </div>
 				        <div class="row">
 				          <div class="title">热门城市：</div>
-				          <ul class="asdf">
-				            <li class="city-item" data-name="shanghai">上海</li>
-				            <li class="city-item" data-name="beijing">北京</li>
-				            <li class="city-item" data-name="guangzhou">广州</li>
-				            <li class="city-item" data-name="shenzhen">深圳</li>
-				            <li class="city-item" data-name="chengdu">成都</li>
-				            <li class="city-item" data-name="chongqing">重庆</li>
-				            <li class="city-item" data-name="tianjin">天津</li>
-				            <li class="city-item" data-name="hangzhou">杭州</li>
-				            <li class="city-item" data-name="nanjing">南京</li>
-				            <li class="city-item" data-name="wuhan">武汉</li>
-				            <li class="city-item" data-name="xian">西安</li>
-				            <li class="city-item" data-name="changsha">长沙</li>
-				            <li class="city-item" data-name="kunming">昆明</li>
+				          <ul class="asdf" th:each="hot_city:${message2}">
+				            <li class="city-item" data-name="shanghai" th:text="${hot_city.getCity_name()}"></li>
 				          </ul>
 				        </div>
 				      </div>
@@ -306,44 +294,9 @@
 		<div id="banner">
 			<div id="banner-one">
 				<ul>
-					<li>
+					<li th:each="show_type:${message1}">
 						<div></div>
-						<a href="javascript:;">演唱会</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">话剧歌剧</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">休闲展览</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">体育赛事</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">音乐会</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">儿童亲子</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">舞蹈芭蕾</a>
-						<img src="../img/1.png" class="img">
-					</li>
-					<li>
-						<div></div>
-						<a href="javascript:;">戏曲综艺</a>
+						<a href="" th:text="${show_type.getShow_type()}"></a>
 						<img src="../img/1.png" class="img">
 					</li>
 				</ul>
