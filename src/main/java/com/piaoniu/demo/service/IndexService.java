@@ -18,4 +18,5 @@ public interface IndexService {
     List<City> findHotCity();
     List<Photo> findPhoto();
     List<IndexModel> findShowBySome(String message);
+    City findCityName(int city_id);
 }

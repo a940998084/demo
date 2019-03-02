@@ -12,20 +12,20 @@
 	<div class="content">
 		<a href="javascript:;"><img src="../img/logo.f6de0a61.png" alt=""></a>
 		<div>
-			<div class="city-name">上海</div>
+			<div class="city-name" th:text="${cname.getCity_name()}" th:onclick="dianji()"></div>
 
-				<div class="citylist">
+				<div class="citylist" style="display: none">
 				      <div class="top-rows">
 				        <div class="row">
 				          <div class="title">当前城市：</div>
 					          <ul>
-					            <li class="selected" data-name="shanghai">上海</li>
+					            <li class="selected" data-name="shanghai" th:text="${cname.getCity_name()}"></li>
 					          </ul>
 				        </div>
 				        <div class="row">
 				          <div class="title">热门城市：</div>
 				          <ul class="asdf" th:each="hot_city:${message2}">
-				            <li class="city-item" data-name="shanghai" th:text="${hot_city.getCity_name()}"></li>
+				            <a class="city-item" data-name="shanghai" th:text="${hot_city.getCity_name()}" th:href="@{/index/SelectByCity(city_id=${hot_city.getCity_id()})}"></a>
 				          </ul>
 				        </div>
 				      </div>
@@ -37,145 +37,81 @@
 				      </div>
 				      <div class="hot-cities">
 				        <ul>
-				          <li data-capital="A" id="A">
-				              <div class="capital">A</div>
+				          <li  data-capital="A" id="A" th:each="citys:${city}">
+				              <div class="capital" th:text="${citys.getInit()}"></div>
 				              <ul class="items">
-				                <div class="item city-item" data-name="anshun">安顺</div><div class="item city-item" data-name="macau">澳门</div>
+								  <div class="item city-item" data-name="anshun" th:each="cityss:${citys.getCity()}"><a th:text="${cityss.getCity_name()}" th:href="@{/index/SelectByCity(city_id=${cityss.getCity_id()})}"></a></div>
 				              </ul>
 				         </li>
 				         <li data-capital="B" id="B">
-				              <div class="capital">B</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="bangkok">曼谷</div><div class="item city-item" data-name="baoding">保定</div><div class="item city-item" data-name="baotou">包头</div><div class="item city-item" data-name="beihai">北海</div><div class="item city-item" data-name="beijing">北京</div><div class="item city-item" data-name="bengbu">蚌埠</div><div class="item city-item" data-name="benxi">本溪</div><div class="item city-item" data-name="binzhou">滨州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="C" id="C">
-				              <div class="capital">C</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="changchun">长春</div><div class="item city-item" data-name="changsha">长沙</div><div class="item city-item" data-name="changshu">常熟</div><div class="item city-item" data-name="changzhou">常州</div><div class="item city-item" data-name="chengde">承德</div><div class="item city-item" data-name="chengdu">成都</div><div class="item city-item" data-name="chongqing">重庆</div>
-				              </ul>
+
 				        </li>
-				        <li data-capital="D" id="D"> 
-				              <div class="capital">D</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="dalian">大连</div><div class="item city-item" data-name="daqing">大庆</div><div class="item city-item" data-name="deyang">德阳</div><div class="item city-item" data-name="dezhou">德州</div><div class="item city-item" data-name="dongguan">东莞</div><div class="item city-item" data-name="dongying">东营</div>
-				              </ul>
+				        <li data-capital="D" id="D">
+
 				        </li>
 				        <li data-capital="F" id="F">
-				              <div class="capital">F</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="foshan">佛山</div><div class="item city-item" data-name="fushun">抚顺</div><div class="item city-item" data-name="fuzhou">福州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="G" id="G">
-				              <div class="capital">G</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="ganzhou">赣州</div><div class="item city-item" data-name="guangan">广安</div><div class="item city-item" data-name="guangxiyulin">玉林</div><div class="item city-item" data-name="guangzhou">广州</div><div class="item city-item" data-name="guilin">桂林</div><div class="item city-item" data-name="guiyang">贵阳</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="H" id="H">
-				              <div class="capital">H</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="haerbin">哈尔滨</div><div class="item city-item" data-name="haikou">海口</div><div class="item city-item" data-name="handan">邯郸</div><div class="item city-item" data-name="hangzhou">杭州</div><div class="item city-item" data-name="hefei">合肥</div><div class="item city-item" data-name="hengshui">衡水</div><div class="item city-item" data-name="hengyang">衡阳</div><div class="item city-item" data-name="heyuan">河源</div><div class="item city-item" data-name="huaian">淮安</div><div class="item city-item" data-name="huanggang">黄冈</div><div class="item city-item" data-name="huhehaote">呼和浩特</div><div class="item city-item" data-name="huizhou">惠州</div><div class="item city-item" data-name="huzhou">湖州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="J" id="J">
-				              <div class="capital">J</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="jiangmen">江门</div><div class="item city-item" data-name="jiangxiyichun">宜春</div><div class="item city-item" data-name="jiaxing">嘉兴</div><div class="item city-item" data-name="jilin">吉林</div><div class="item city-item" data-name="jinan">济南</div><div class="item city-item" data-name="jingzhou">荆州</div><div class="item city-item" data-name="jinhua">金华</div><div class="item city-item" data-name="jining">济宁</div><div class="item city-item" data-name="jiujiang">九江</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="K" id="K">
-				              <div class="capital">K</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="kunming">昆明</div><div class="item city-item" data-name="kunshan">昆山</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="L" id="L">
-				              <div class="capital">L</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="langfang">廊坊</div><div class="item city-item" data-name="lanzhou">兰州</div><div class="item city-item" data-name="lasvegas">拉斯维加斯</div><div class="item city-item" data-name="leshan">乐山</div><div class="item city-item" data-name="lianyuangang">连云港</div><div class="item city-item" data-name="liaocheng">聊城</div><div class="item city-item" data-name="linyi">临沂</div><div class="item city-item" data-name="lishui">丽水</div><div class="item city-item" data-name="liuzhou">柳州</div><div class="item city-item" data-name="luoyang">洛阳</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="M" id="M">
-				              <div class="capital">M</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="maanshan">马鞍山</div><div class="item city-item" data-name="maoming">茂名</div><div class="item city-item" data-name="mianyang">绵阳</div><div class="item city-item" data-name="moscow">莫斯科</div><div class="item city-item" data-name="mudanjiang">牡丹江</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="N" id="N">
-				              <div class="capital">N</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="nanchang">南昌</div><div class="item city-item" data-name="nanjing">南京</div><div class="item city-item" data-name="nanning">南宁</div><div class="item city-item" data-name="nantong">南通</div><div class="item city-item" data-name="ningbo">宁波</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="P" id="P">
-				              <div class="capital">P</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="pingxiang">萍乡</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="Q" id="Q">
-				              <div class="capital">Q</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="qianjiang">潜江</div><div class="item city-item" data-name="qingdao">青岛</div><div class="item city-item" data-name="qingyuan">清远</div><div class="item city-item" data-name="qinhuangdao">秦皇岛</div><div class="item city-item" data-name="quanzhou">泉州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="R" id="R">
-				              <div class="capital">R</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="rizhao">日照</div><div class="item city-item" data-name="russia">俄罗斯</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="S" id="S">
-				              <div class="capital">S</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="sanya">三亚</div><div class="item city-item" data-name="shanghai">上海</div><div class="item city-item" data-name="shantou">汕头</div><div class="item city-item" data-name="shaoxing">绍兴</div><div class="item city-item" data-name="shenyang">沈阳</div><div class="item city-item" data-name="shenzhen">深圳</div><div class="item city-item" data-name="shijiazhuang">石家庄</div><div class="item city-item" data-name="singapore">新加坡</div><div class="item city-item" data-name="suining">遂宁</div><div class="item city-item" data-name="suzhou">苏州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="T" id="T">
-				              <div class="capital">T</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="taian">泰安</div><div class="item city-item" data-name="taiyuan">太原</div><div class="item city-item" data-name="taizhou">泰州</div><div class="item city-item" data-name="tangshan">唐山</div><div class="item city-item" data-name="tianjin">天津</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="W" id="W">
-				              <div class="capital">W</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="weifang">潍坊</div><div class="item city-item" data-name="weihai">威海</div><div class="item city-item" data-name="wenzhou">温州</div><div class="item city-item" data-name="wuhan">武汉</div><div class="item city-item" data-name="wuhu">芜湖</div><div class="item city-item" data-name="wulumuqi">乌鲁木齐</div><div class="item city-item" data-name="wuxi">无锡</div><div class="item city-item" data-name="wuzhou">梧州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="X" id="X">
-				              <div class="capital">X</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="xiamen">厦门</div><div class="item city-item" data-name="xian">西安</div><div class="item city-item" data-name="hongkong">香港</div><div class="item city-item" data-name="xuzhou">徐州</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="Y" id="Y">
-				              <div class="capital">Y</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="yancheng">盐城</div><div class="item city-item" data-name="yangzhou">扬州</div><div class="item city-item" data-name="yantai">烟台</div><div class="item city-item" data-name="yibin">宜宾</div><div class="item city-item" data-name="yichang">宜昌</div><div class="item city-item" data-name="yinchuan">银川</div><div class="item city-item" data-name="yingkou">营口</div><div class="item city-item" data-name="yiwu">义乌</div><div class="item city-item" data-name="yulin">榆林</div>
-				              </ul>
+
 				        </li>
 				        <li data-capital="Z" id="Z">
-				              <div class="capital">Z</div>
-				              <ul class="items">
-				                <div class="item city-item" data-name="zaozhuang">枣庄</div><div class="item city-item" data-name="zhangjiakou">张家口</div><div class="item city-item" data-name="zhangqiu">章丘</div><div class="item city-item" data-name="zhanjiang">湛江</div><div class="item city-item" data-name="zhaoqing">肇庆</div><div class="item city-item" data-name="zhejiangtaizhou">台州</div><div class="item city-item" data-name="zhengzhou">郑州</div><div class="item city-item" data-name="zhenjiang">镇江</div><div class="item city-item" data-name="zhongshan">中山</div><div class="item city-item" data-name="zhoushan">舟山</div><div class="item city-item" data-name="zhuhai">珠海</div><div class="item city-item" data-name="zhuzhou">株洲</div><div class="item city-item" data-name="zibo">淄博</div><div class="item city-item" data-name="zigong">自贡</div><div class="item city-item" data-name="zunyi">遵义</div>
-				              </ul>
+
 				            </li>
 				        </ul>
 				      </div>
 				    </div>
-
-
-
-
 			</div>
 	
 		<div class="menu">
         	<a href="javascript:;" class="active">首页</a>
-        	<a href="javascript:;">全部演出</a>
-        	<a href="javascript:;">发现</a>
+        	<a th:href="@{/allShow}">全部演出</a>
+        	<a  th:href="@{/faxian}">发现</a>
 
 		</div>
 		<div class="search">
@@ -183,7 +119,7 @@
 				<input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value="" class="input">
 				<button>搜索</button>
 			</div>
-			<div class="search-b">
+			<div class="search-b">3
 				<ul>
 					<li><a href="javascript:;" style="color: #ff2661;">胡军</a></li>
 					<li><a href="javascript:;">费玉清</a></li>
@@ -296,7 +232,7 @@
 				<ul>
 					<li th:each="show_type:${message1}">
 						<div></div>
-						<a href="" th:text="${show_type.getShow_type()}"></a>
+						<a href="javascript:;"th:text="${show_type.getShow_type()}"></a>
 						<img src="../img/1.png" class="img">
 					</li>
 				</ul>
@@ -357,59 +293,14 @@
 					<a href="javascript:;">更多 &gt</a>
 				</div>
 				<ul>
-					<li>
-						<img src="../img/1.jpg">
-						<span> 
-								<b>8778</b><br>
+					<li th:each="hotshow:${hot}">
+						<img th:src="@{/img/{fileName}(fileName=(${hotshow.getShow_picture()}))}"/>
+
+								<b th:text="${hotshow.getShow_attention()}"></b><br>
 								🔥想看
-						</span>
-						<a href="javascript:;">[西安] 音乐剧|乱世佳人</a>
-						<p><i>￥</i>226<b> 起</b></p>
-					</li>
-					<li>
-						<img src="../img/2.jpg">
-						<span> 
-								<b>3995</b><br>
-								🔥想看
-						</span>
-						<a href="javascript:;">[西安] 铁鹰锐士电竞嘉年华</a>
-						<p><i>￥</i>53<b> 起</b></p>
-					</li>
-					<li>
-						<img src="../img/3.jpg">
-						<span> 
-								<b>4万</b><br>
-								🔥想看
-						</span>
-						<a href="javascript:;">[西安] 德云社郭德纲 岳云...</a>
-						<p><i>￥</i>388<b> 起</b></p>
-					</li>
-					<li>
-						<img src="../img/4.jpg">
-						<span> 
-								<b>2414</b><br>
-								🔥想看
-						</span>
-						<a href="javascript:;">[西安] 浪漫辉煌</a>
-						<p><i>￥</i>150<b> 起</b></p>
-					</li>
-					<li>
-						<img src="../img/5.jpg">
-						<span> 
-								<b>7191</b><br>
-								🔥想看
-						</span>
-						<a href="javascript:;">[西安] 【小橙堡】 《印象...</a>
-						<p><i>￥</i>388<b> 起</b></p>
-					</li>
-					<li>
-						<img src="../img/6.jpg">
-						<span> 
-								<b>2771</b><br>
-								🔥想看
-						</span>
-						<a href="javascript:;">[西安] 杏仁豆腐心</a>
-						<p><i>￥</i>148<b> 起</b></p>
+
+						<a href="javascript:;"><span th:text="${hotshow.getCity_name()}"></span> <span th:text="${hotshow.getShow_name()}"></span></a>
+						<p><i>￥</i><b th:text="${hotshow.getShow_money()}"> &nbsp;起</b></p>
 					</li>
 				</ul>
 			</div>
@@ -423,53 +314,13 @@
 					<a href="javascript:;">更多 &gt</a>
 				</div>
 				<ul>
-					<li>
+					<li th:each="dis:${garde}">
 						<img src="../img/7.jpg">
 						<span>
-							8.3<br><b>折</b>
+							<span th:text="${dis.getShow_discount()}"></span><br><b>折</b>
 						</span>
-						<a href="javascript:;">[西安] 音乐剧|不能说的秘...</a>
+						<a href="javascript:;"><span th:text="${dis.getCity_name()}"></span> <span th:text="${dis.getShow_name()}"></a>
 						<p><i>￥</i>562 <b>￥680</b></p>
-					</li>
-					<li>
-						<span>
-							6.4<br><b>折</b>
-						</span>
-						<img src="../img/8.jpg">
-						<a href="javascript:;">[西安] 李茶的姑妈</a>
-						<p><i>￥</i>180 <b>￥280</b></p>
-					</li>
-					<li>
-						<span>
-							5.6<br><b>折</b>
-						</span>
-						<img src="../img/9.jpg">
-						<a href="javascript:;">[西安] 2019亲子年卡</a>
-						<p><i>￥</i>110 <b>￥198</b></p>
-					</li>
-					<li>
-						<span>
-							8.4<br><b>折</b>
-						</span>
-						<img src="../img/10.jpg">
-						<a href="javascript:;">[西安] 舞起狂澜</a>
-						<p><i>￥</i>401 <b>￥480</b></p>
-					</li>
-					<li>
-						<span>
-							8.6<br><b>折</b>
-						</span>
-						<img src="../img/11.jpg">
-						<a href="javascript:;">[西安] 戏台</a>
-						<p><i>￥</i>757 <b>￥880</b></p>
-					</li>
-					<li>
-						<span>
-							8.3<br><b>折</b>
-						</span>
-						<img src="../img/1.jpg">
-						<a href="javascript:;">[西安] 音乐剧|乱世佳人</a>
-						<p><i>￥</i>730 <b>￥880</b></p>
 					</li>
 				</ul>
 			</div>
@@ -527,10 +378,10 @@
 					</li>
 				</ul>
 				<ul class="two fr">
-					<li class="fl">
+					<li class="fl" th:each="music1:${music}">
 						<img src="../img/01.jpg" class="img">
 						<p>
-							<a href="javascript:;">[西安] 小野丽莎2018圣诞平安夜演唱会</a><br>
+							<a href="javascript:;"><span th:text="${music1.getCity_name()}"></span><span th:text="${music1.getShow_name()}"></span></a><br>
 							<img src="../img/star.png">
 							<img src="../img/star.png">
 							<img src="../img/star.png">
@@ -541,48 +392,7 @@
 							<span><em>￥</em>423 <strong>起</strong></span>
 						</p>
 					</li>
-					<li class="fl">
-						<img src="../img/02.jpg" class="img">
-						<p>
-							<a href="javascript:;">[西安] 长乐集 双城联合系列演出</a><br>
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<b>暂无评价</b><br>
-							<i>2018.12.15 20:30<br>西演艺术中心·叁剧场</i><br>
-							<span><em>￥</em>96 <strong>起</strong></span>
-						</p>
-					</li>
-					<li class="fl">
-						<img src="../img/03.jpg" class="img">
-						<p>
-							<a href="javascript:;">[太原] "嗨2019" 跨年音乐盛典</a><br>
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<b>暂无评价</b><br>
-							<i>2018.12.29 19:00<br>太原煤炭交易中心</i><br>
-							<span><em>￥</em>280 <strong>起</strong></span>
-						</p>
-					</li>
-					<li class="fl">
-						<img src="../img/04.jpg" class="img">
-						<p>
-							<a href="javascript:;">[郑州]JJ林俊杰 "圣所" 世界巡回演唱会-郑州站</a><br>
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<img src="../img/star1.png">
-							<b>暂无评价</b><br>
-							<i>2018.12.15 20:30<br>西演艺术中心·叁剧场</i><br>
-							<span><em>￥</em>90 <strong>起</strong></span>
-						</p>
-					</li>
+
 				</ul>
 					<ul class="three fr swiper-container swiper1">
 						<li class="fl swiper-wrapper">
@@ -929,38 +739,12 @@
 					<a href="javascript:;">更多 &gt</a>
 				</div>
 				<ul>
-					<li>
-						<img src="../img/xiao.jpg">
-						<p>[郑州] 2018郎朗和...<br><i>¥</i> <b>580</b> <em>起</em></p>
+					<li th:each="music1:${music}">
+						<img th:src="@{/img/{fileName}(fileName=(${music1.getShow_picture()}))}">
+						<p th:text="'['+${music1.getCity_name()}+']'+${music1.getShow_name()}+'   ¥'+${music1.getShow_money()}+'起'">
+							</p>
 					</li>
-					<li>
-						<img src="../img/xiao1.jpg">
-						<p>[西安] 卡塔尔爱乐...<br><i>¥</i> <b>250</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao2.jpg">
-						<p>[西安] 上海彩虹室...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao3.jpg">
-						<p>[郑州] 《天空之城...<br><i>¥</i> <b>160</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao4.jpg">
-						<p>[西安] 天空之城-宫...<br><i>¥</i> <b>40</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao5.jpg">
-						<p>[郑州] 理查德·克莱...<br><i>¥</i> <b>380</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao6.jpg">
-						<p>[西安] 理查德·克莱...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao7.jpg">
-						<p>[西安] 施特劳斯圆...<br><i>¥</i> <b>100</b> <em>起</em></p>
-					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -972,38 +756,11 @@
 					<a href="javascript:;">更多 &gt</a>
 				</div>
 				<ul>
-					<li>
-						<img src="../img/xiao.jpg">
-						<p>[郑州] 2018郎朗和...<br><i>¥</i> <b>580</b> <em>起</em></p>
+					<li th:each="childs:${child}">
+						<img th:src="@{/img/{fileName}(fileName=(${childs.getShow_picture()}))}">
+						<p th:text="'['+${childs.getCity_name()}+']'+${childs.getShow_name()}+'   ¥'+${childs.getShow_money()}+'起'"></p>
 					</li>
-					<li>
-						<img src="../img/xiao1.jpg">
-						<p>[西安] 卡塔尔爱乐...<br><i>¥</i> <b>250</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao2.jpg">
-						<p>[西安] 上海彩虹室...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao3.jpg">
-						<p>[郑州] 《天空之城...<br><i>¥</i> <b>160</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao4.jpg">
-						<p>[西安] 天空之城-宫...<br><i>¥</i> <b>40</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao5.jpg">
-						<p>[郑州] 理查德·克莱...<br><i>¥</i> <b>380</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao6.jpg">
-						<p>[西安] 理查德·克莱...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao7.jpg">
-						<p>[西安] 施特劳斯圆...<br><i>¥</i> <b>100</b> <em>起</em></p>
-					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -1015,37 +772,9 @@
 					<a href="javascript:;">更多 &gt</a>
 				</div>
 				<ul>
-					<li>
-						<img src="../img/xiao.jpg">
-						<p>[郑州] 2018郎朗和...<br><i>¥</i> <b>580</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao1.jpg">
-						<p>[西安] 卡塔尔爱乐...<br><i>¥</i> <b>250</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao2.jpg">
-						<p>[西安] 上海彩虹室...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao3.jpg">
-						<p>[郑州] 《天空之城...<br><i>¥</i> <b>160</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao4.jpg">
-						<p>[西安] 天空之城-宫...<br><i>¥</i> <b>40</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao5.jpg">
-						<p>[郑州] 理查德·克莱...<br><i>¥</i> <b>380</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao6.jpg">
-						<p>[西安] 理查德·克莱...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao7.jpg">
-						<p>[西安] 施特劳斯圆...<br><i>¥</i> <b>100</b> <em>起</em></p>
+					<li th:each="dances:${dance}">
+						<img th:src="@{/img/{fileName}(fileName=(${dances.getShow_picture()}))}">
+						<p th:text="'['+${dances.getCity_name()}+']'+${dances.getShow_name()}+'   ¥'+${dances.getShow_money()}+'起'"></p>
 					</li>
 				</ul>
 			</div>
@@ -1058,37 +787,9 @@
 					<a href="javascript:;">更多 &gt</a>
 				</div>
 				<ul>
-					<li>
-						<img src="../img/xiao.jpg">
-						<p>[郑州] 2018郎朗和...<br><i>¥</i> <b>580</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao1.jpg">
-						<p>[西安] 卡塔尔爱乐...<br><i>¥</i> <b>250</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao2.jpg">
-						<p>[西安] 上海彩虹室...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao3.jpg">
-						<p>[郑州] 《天空之城...<br><i>¥</i> <b>160</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao4.jpg">
-						<p>[西安] 天空之城-宫...<br><i>¥</i> <b>40</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao5.jpg">
-						<p>[郑州] 理查德·克莱...<br><i>¥</i> <b>380</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao6.jpg">
-						<p>[西安] 理查德·克莱...<br><i>¥</i> <b>280</b> <em>起</em></p>
-					</li>
-					<li>
-						<img src="../img/xiao7.jpg">
-						<p>[西安] 施特劳斯圆...<br><i>¥</i> <b>100</b> <em>起</em></p>
+					<li th:each="xiqus:${xiqu}">
+						<img th:src="@{/img/{fileName}(fileName=(${xiqus.getShow_picture()}))}">
+						<p th:text="'['+${xiqus.getCity_name()}+']'+${xiqus.getShow_name()}+'   ¥'+${xiqus.getShow_money()}+'起'"></p>
 					</li>
 				</ul>
 			</div>
@@ -1274,7 +975,6 @@
 <script type="text/javascript" src="../js/swiper.min.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
 <script>
-
 // 头部
 
 $('.title-login').click(function(){
@@ -1297,6 +997,9 @@ $('.title-quick-login').click(function(){
 	$(".form-login").css({'display':'none'})
 	$('.form-quick-login').css({'display':'block'})
 })
+function dianji(){
+    $("#citylist").css("display",block);
+}
 $('.close').click(function(){
 		$('.cover-login').fadeOut()
 })
@@ -1545,15 +1248,26 @@ $('.citylist').css({'display':'none'})
 
 var num = 0
 
-$('.city-name').click(function(){
-	if (num == 0) {
+$('.city-name').click(function () {
+    if (num == 0) {
 		num=1
 	$('.citylist').css({'display':'block'})
    }else{
    	num = 0
    	$('.citylist').css({'display':'none'})
    }
-})
+});
+
+// 	.click(function(){
+//     alert(1212);
+// 	if (num == 0) {
+// 		num=1
+// 	$('.citylist').css({'display':'block'})
+//    }else{
+//    	num = 0
+//    	$('.citylist').css({'display':'none'})
+//    }
+// })
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -307,8 +307,8 @@
 	<div class="lxl">
 		<div class="lxlleft">
 			<div class="lxltop">
-				<a href="action.html" class="top1">演出</a>
-				<a href="new_html.html" class="top2">评论</a>
+				<a th:href="@{/allShow}" class="top1">演出</a>
+				<a th:href="@{/commentTwo}" class="top2">评论</a>
 			</div>
 			<div class="lxltext">
 				<div class="lxltext1">

@@ -97,4 +97,9 @@ public class IndexServiceImpl implements IndexService {
     public List<IndexModel> findShowBySome(String message) {
         return indexDao.findShowBySome(message);
     }
+
+    @Override
+    public City findCityName(int city_id) {
+        return indexDao.findCityName(city_id);
+    }
 }

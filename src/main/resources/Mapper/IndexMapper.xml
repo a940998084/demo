@@ -37,4 +37,7 @@
     <select id="findShowBySome" resultType="com.piaoniu.demo.model.IndexModel" parameterType="String">
         select a.show_id,a.show_discount,a.show_money,a.show_picture,b.city_name from pn_show a,pn_city b,pn_show_place c where a.city_id=b.city_id and a.show_place_id=c.show_place_id and c.show_place like CONCAT('%',#{message},'%' ) or a.show_people like CONCAT('%',#{message},'%' ) or a.show_name like CONCAT('%',#{message},'%' ) group by a.show_id;
     </select>
+    <select id="findCityName" resultType="com.piaoniu.demo.pojo.City">
+        select * from pn_city where city_id=#{city_id};
+    </select>
 </mapper>
