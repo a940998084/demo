@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="../css/pypl2.css">
+	<link rel="stylesheet" th:href="@{../css/pypl2.css}">
 	
-	<link rel="stylesheet" type="text/css" href="../css/base1.css">
-	<link rel="stylesheet" type="text/css" href="../css/city.css">
+	<link rel="stylesheet" type="text/css" th:href="@{../css/base1.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{../css/city.css}">
 </head>
 <body>
 <!-- 头部 -->
     <nav class="clearfix">
         <div class="nav">
             <a class="logo fl" href="index.html">
-                <img src="../img/1-logo-white.3de707b4.png" alt="">
+                <img th:src="@{../img/1-logo-white.3de707b4.png}" alt="">
             </a>
             <div class="city-name fl" style="color:#fff;margin-left:20px;font-size:14px;width: 50px;background:  url(../img/1-arr-down.9f1dbfdd.png) no-repeat right center;">上海</div>
             <ul class="lei fl">
@@ -254,45 +255,46 @@
  <!-- 票牛首页 -->
 	<div style="width:1000px;margin:0 auto;display:flex;justify-content: space-around;margin-top:22px;">
 	<div style="width:650px;">
-	<div style="display:flex;margin-left:10px;" class="flexl" >
+	<div style="display:flex;margin-left:10px;" class="flexl" th:each="show:${showMassage}">
 		<a href=""><p>票牛首页&nbsp;></p></a>&nbsp;&nbsp;
-		<a href=""><p>西安戏曲综艺&nbsp;></p></a>&nbsp;&nbsp;
-		<a href=""><p>德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站&nbsp;></p></a>&nbsp;&nbsp;
+        <a href=""><p th:text="${show.getCity_name()}"></p></a>
+        <a href=""><p th:text="${show.getShow_type()}">&nbsp;></p></a>&nbsp;&nbsp;>
+        <a href=""><p th:text="${show.getShow_name()}">&nbsp;></p></a>&nbsp;&nbsp;>
 		<a href=""><p style="color:#333;">全部评论</p></a>
 	</div>
 <!-- 德云社 -->
-	<p style="margin-left:10px;font-size:20px;border-bottom: 1px solid #999;height:66px;margin-top:36px;">德云社《师徒父子相声大典》暨郭德纲 岳云鹏 郭麒麟专场演出 西安站的全部评论</p>
+        <p style="margin-left:10px;font-size:20px;border-bottom: 1px solid #999;height:66px;margin-top:36px;" th:each="s:${showMassage}"><span th:text="${s.getShow_name()}+${s.getCity_name()}" style="font-size : 20px;">的全部评论</span></p>
 
 <!-- 评论内容 -->
-	<ul class="comment-cennter">
+	<ul class="comment-cennter" th:each="comment:${comments}">
 		<li class="comment-cennter1">
 			<div class="comment-cennter1_l">
 				<div class="comment-cennter1_l1">
-					<img src="../img/11-6.jpg" alt="" style="width:100%;height: 100%">
+					<img src="" alt="" style="width:100%;height: 100%">
 				</div>
 				<div class="comment-cennter1_l2">LV3</div>
 			</div>
 			<div style="border-bottom: 1px solid #999;width:550px;" >
-				<div style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;overflow:hidden;height:20px;">
-					<span style="float:left;font-size:14px;">O(o(*￣︶￣*)o)太好笑了！！</span>
-					<span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px">2018-12-14</span>
+				<div   style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;overflow:hidden;height:20px;">
+					<span style="float:left;font-size:14px;" th:text="${comment.getUser_username()}"></span>
+					<span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px" th:text="${comment.getComment_creat_time()}"></span>
 				</div>
 				<div class="comment-cennter1_c"></div>
-				<div class="comment-cennter1_ct" style="width:500px;font-size:12px;">前排前排…我来了！虽然有点小贵！但是感觉值了！买到前排了…还是慢激动的！
+				<div class="comment-cennter1_ct" style="width:500px;font-size:12px;" th:text="${comment.getComment_message()}">
 					
 				</div>
 				<div style="text-align: left;margin-top: 20px;">
-				<img src="../img/11-9.jpg">
+				<!--<img src="../img/11-9.jpg">-->
 				</div>
 				<div class="comment-cennter1_r">
 					<div style="width:20px;height:20px;cursor: pointer;" class="praise">
-						<img src="../img/1-icon-reply.4c1a85db.png" alt="" style="width:20px;height:20px">
+						<img th:src="@{../img/1-icon-reply.4c1a85db.png}" alt="" style="width:20px;height:20px">
 					</div>
 					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black;"><p style="width:26px;">回复</p>
 						
 					</a>
 					<div style="width:18px;height:18px;cursor: pointer;margin-left:20px" >
-						<img src="../img/1-icon-like.479b123c.png" alt="" style="width:18px;height:18px">
+						<img th:src="@{../img/1-icon-like.479b123c.png}" alt="" style="width:18px;height:18px">
 					</div>
 					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black">
 						赞
@@ -302,164 +304,15 @@
 			</div>
 		</li>
 	</ul>
-	<ul class="comment-cennter">
-		<li class="comment-cennter1">
-			<div class="comment-cennter1_l">
-				<div class="comment-cennter1_l1">
-					<img src="../img/11-7.png" alt="" style="width:100%;height: 100%">
-				</div>
-				<div class="comment-cennter1_l2">LV3</div>
-			</div>
-			<div style="border-bottom: 1px solid #999;width:550px;" >
-				<div style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;overflow:hidden;height:20px;">
-					<span style="float:left;font-size:14px;">很合适啊！！</span>
-					<span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px">2018-12-14</span>
-				</div>
-				<div class="comment-cennter1_c"></div>
-				<div class="comment-cennter1_ct" style="width:500px;font-size:12px;">太开心了！找了半天没有前排的，在这发现了，刚开始还不敢下单~心里犹豫了。帮朋友买了两张1288的、自己买了两张1588的五排！位置还是比较中间的！很满意！发货也很挺快！1月5日！小岳岳！等我！！哈哈哈哈222222
-					
-				</div>
-				<div style="text-align: left;margin-top: 20px;">
-				
-				</div>
-				<div class="comment-cennter1_r">
-					<div style="width:20px;height:20px;cursor: pointer;" class="praise">
-						<img src="../img/1-icon-reply.4c1a85db.png" alt="" style="width:20px;height:20px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black;"><p style="width:26px;">回复</p>
-						
-					</a>
-					<div style="width:18px;height:18px;cursor: pointer;margin-left:20px" >
-						<img src="../img/1-icon-like.479b123c.png" alt="" style="width:18px;height:18px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black">
-						赞
-					</a>
-				</div>
-			</div>
-		</li>
-	</ul>
-	<ul class="comment-cennter">
-		<li class="comment-cennter1">
-			<div class="comment-cennter1_l">
-				<div class="comment-cennter1_l1">
-					<img src="../img/11-7.png" alt="" style="width:100%;height: 100%">
-				</div>
-				<div class="comment-cennter1_l2">LV3</div>
-			</div>
-			<div style="border-bottom: 1px solid #999;width:550px;" >
-				<div style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;overflow:hidden;height:20px;">
-					<span style="float:left;font-size:14px;">很合适啊！！</span>
-					<span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px">2018-12-14</span>
-				</div>
-				<div class="comment-cennter1_c"></div>
-				<div class="comment-cennter1_ct" style="width:500px;">太开心了！找了半天没有前排的，在这发现了，刚开始还不敢下单~心里犹豫了。帮朋友买了两张1288的、自己买了两张1588的五排！位置还是比较中间的！很满意！发货也很挺快！1月5日！小岳岳！等我！！哈哈哈哈222222
-					
-				</div>
-				<div style="text-align: left;margin-top: 20px;">
-				
-				</div>
-				<div class="comment-cennter1_r">
-					<div style="width:20px;height:20px;cursor: pointer;" class="praise">
-						<img src="../img/1-icon-reply.4c1a85db.png" alt="" style="width:20px;height:20px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black;"><p style="width:26px;">回复</p>
-						
-					</a>
-					<div style="width:18px;height:18px;cursor: pointer;margin-left:20px" >
-						<img src="../img/1-icon-like.479b123c.png" alt="" style="width:18px;height:18px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black">
-						赞
-					</a>
-				</div>
-			</div>
-		</li>
-	</ul>
-	<ul class="comment-cennter">
-		<li class="comment-cennter1">
-			<div class="comment-cennter1_l">
-				<div class="comment-cennter1_l1">
-					<img src="../img/11-7.png" alt="" style="width:100%;height: 100%">
-				</div>
-				<div class="comment-cennter1_l2">LV3</div>
-			</div>
-			<div style="border-bottom: 1px solid #999;width:550px;" >
-				<div style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;overflow:hidden;height:20px;">
-					<span style="float:left;font-size:14px;">很合适啊！！</span>
-					<span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px">2018-12-14</span>
-				</div>
-				<div class="comment-cennter1_c"></div>
-				<div class="comment-cennter1_ct" style="width:500px;">太开心了！找了半天没有前排的，在这发现了，刚开始还不敢下单~心里犹豫了。帮朋友买了两张1288的、自己买了两张1588的五排！位置还是比较中间的！很满意！发货也很挺快！1月5日！小岳岳！等我！！哈哈哈哈222222
-					
-				</div>
-				<div style="text-align: left;margin-top: 20px;">
-				
-				</div>
-				<div class="comment-cennter1_r">
-					<div style="width:20px;height:20px;cursor: pointer;" class="praise">
-						<img src="../img/1-icon-reply.4c1a85db.png" alt="" style="width:20px;height:20px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black;"><p style="width:26px;">回复</p>
-						
-					</a>
-					<div style="width:18px;height:18px;cursor: pointer;margin-left:20px" >
-						<img src="../img/1-icon-like.479b123c.png" alt="" style="width:18px;height:18px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black">
-						赞
-					</a>
-				</div>
-			</div>
-		</li>
-	</ul>
-	<ul class="comment-cennter">
-		<li class="comment-cennter1">
-			<div class="comment-cennter1_l">
-				<div class="comment-cennter1_l1">
-					<img src="../img/11-7.png" alt="" style="width:100%;height: 100%">
-				</div>
-				<div class="comment-cennter1_l2">LV3</div>
-			</div>
-			<div style="border-bottom: 1px solid #999;width:550px;" >
-				<div style="margin-top:25px;text-indent:1em;font-size:14px;height:100%;overflow:hidden;height:20px;">
-					<span style="float:left;font-size:14px;">很合适啊！！</span>
-					<span style="display:inline-block;color:#999;font-size:12px;float:right;margin-right:13px">2018-12-14</span>
-				</div>
-				<div class="comment-cennter1_c"></div>
-				<div class="comment-cennter1_ct" style="width:500px;">太开心了！找了半天没有前排的，在这发现了，刚开始还不敢下单~心里犹豫了。帮朋友买了两张1288的、自己买了两张1588的五排！位置还是比较中间的！很满意！发货也很挺快！1月5日！小岳岳！等我！！哈哈哈哈222222
-					
-				</div>
-				<div style="text-align: left;margin-top: 20px;">
-				
-				</div>
-				<div class="comment-cennter1_r">
-					<div style="width:20px;height:20px;cursor: pointer;" class="praise">
-						<img src="../img/1-icon-reply.4c1a85db.png" alt="" style="width:20px;height:20px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black;"><p style="width:26px;">回复</p>
-						
-					</a>
-					<div style="width:18px;height:18px;cursor: pointer;margin-left:20px" >
-						<img src="../img/1-icon-like.479b123c.png" alt="" style="width:18px;height:18px">
-					</div>
-					<a href="" style="text-decoration: none;margin-left:5px;font-size:13px;color:black">
-						赞
-					</a>
-				</div>
-			</div>
-		</li>
-	</ul>
-	
 	</div>
 <!-- 右边 -->
 	<div style="float: right;margin-top:34px;">
 
 		<div style="width:300px;height:460px;">
-			<div style="width:114px;height:36px;background: #5fb7fc;"><P style="text-align:center;line-height: 36px;color:#fff;">我要评论</P></div>
+            <div style="width:114px;height:36px;background: #5fb7fc;"><P style="text-align:center;line-height: 36px;color:#fff;"><a th:href="@{/comment/insertComment}">我要评论</a></P></div>
 		<div style="width:288px;height:246px;border:1px solid #eaeaec;margin-top:20px;">
-			<div style="width:248px;height:206px;margin:22px;">
-				<p style="font-size:18px;">德云社《师徒父子相声大典》<br> 暨郭德纲 岳云鹏 郭麒麟专场演出 西安站</p>
+			<div style="width:248px;height:206px;margin:22px;" th:each="sh:${showMassage}">
+                <p style="font-size:18px;" th:text="${sh.getShow_name()}+${sh.getCity_name()}+'站'"></p>
 					<div style="display:flex;">
 						<p style="font-size:18px;color:#ffb238;margin-top:14px;">10. <span style="font-size:16px;">0</span> </p>
 						<img src="../img/11-8.jpg" style="width:97px;height:18px;margin-top:20px;margin-left:16px;">

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="../css/index1.css">
-	<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+	<link rel="stylesheet" th:href="@{../css/index1.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{../css/swiper.min.css}">
 </head>
 <body>
 <!-- 头部 -->
@@ -181,8 +182,8 @@
 			</div>
 		<div class="menu">
         	<a href="javascript:;" class="active">首页</a>
-        	<a href="javascript:;">全部演出</a>
-        	<a href="javascript:;">发现</a>
+			<a th:href="@{/allShow}">全部演出</a>
+			<a  th:href="@{/faxian}">发现</a>
 
 		</div>
 		<div class="search">
@@ -405,7 +406,7 @@
 				<ul>
 					<li>
 						<img src="../img/1.jpg">
-						<span> 
+						<span>
 								<b>8778</b><br>
 								🔥想看
 						</span>
@@ -414,7 +415,7 @@
 					</li>
 					<li>
 						<img src="../img/2.jpg">
-						<span> 
+						<span>
 								<b>3995</b><br>
 								🔥想看
 						</span>
@@ -423,7 +424,7 @@
 					</li>
 					<li>
 						<img src="../img/3.jpg">
-						<span> 
+						<span>
 								<b>4万</b><br>
 								🔥想看
 						</span>
@@ -432,7 +433,7 @@
 					</li>
 					<li>
 						<img src="../img/4.jpg">
-						<span> 
+						<span>
 								<b>2414</b><br>
 								🔥想看
 						</span>
@@ -441,7 +442,7 @@
 					</li>
 					<li>
 						<img src="../img/5.jpg">
-						<span> 
+						<span>
 								<b>7191</b><br>
 								🔥想看
 						</span>
@@ -450,7 +451,7 @@
 					</li>
 					<li>
 						<img src="../img/6.jpg">
-						<span> 
+						<span>
 								<b>2771</b><br>
 								🔥想看
 						</span>
@@ -944,7 +945,7 @@
 						</li>
 					</ul>
 				</ul>
-				<ul class="two fr"> 
+				<ul class="two fr">
 					<div>
 						<span>精彩剧评</span>
 					</div>

@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="../css/index1.css">
-	<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+	<link rel="stylesheet" th:href="@{../css/index1.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{../css/swiper.min.css}">
 </head>
 <body>
 <!-- 头部 -->
 <header>
 	<div class="content">
-		<a href="javascript:;"><img src="../img/logo.f6de0a61.png" alt=""></a>
+		<a href="javascript:;"><img th:src="@{../img/logo.f6de0a61.png}" alt=""></a>
 		<div>
 			<div class="city-name" th:text="${cname.getCity_name()}" th:onclick="dianji()"></div>
 
@@ -178,9 +178,9 @@
 					    <div class="title-login title2">密码登录</div>
 					  </div>
 
-					  <form method="post" class="form form-quick-login">
+					  <form method="post" class="form form-quick-login" th:action="@{/login/login}">
 					    <div class="row">
-					      <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+					      <input placeholder="手机号" name="user_phone" maxlength="11" class="input input-mobile" id="user_phone">
 					    </div>
 <!-- 					    <div class="row row-vcode">
 					      <input placeholder="图形验证码" name="vcode" class="input input-vcode">
@@ -188,8 +188,8 @@
 					      <!-- <div class="btn btn-vcode">换一张</div> -->
 					 <!--    </div> -->
 					    <div class="row row-getcode">
-					      <input placeholder="验证码" maxlength="6" name="code" class="input input-getcode" style="">
-					      <div class="btn btn-getcode disabled">获取验证码</div>
+					      <input placeholder="验证码" maxlength="6" name="code" class="input input-getcode" id="code" style="">
+					      <div class="btn btn-getcode disabled" th:onclick="getCode">获取验证码</div>
 					    </div>
 					    <div class="row">
 					      <input type="submit" class="btn btn-submit" value="登录" style="">
@@ -1307,4 +1307,31 @@ window.onscroll = window.onresize = function(ev){
 			oL.style.display="none"
 		}
 	}
+
+	function getCode() {
+        var phone = $("#user_phone").val();
+        $.ajax({
+            url: "/login/getCode",
+            data:{"user_phone":phone},
+            dataType: "json",   //返回的数据是json 格式
+            type: "GET",
+            success: function (data) {
+
+            }
+        })
+    }
+
+    function loginIndex() {
+        var phone = $("#ua").val();
+        var code=$("#code").val;
+        $.ajax({
+            url: "/login/login",
+            data:{"user_phone":phone,"code":code},
+            dataType: "json",   //返回的数据是json 格式
+            type: "GET",
+            success: function (data) {
+
+            }
+        })
+    }
 </script>

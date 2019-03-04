@@ -108,13 +108,15 @@ public class LoginServiceImpl implements LoginService {
         if (a>0){
             //登录
             user=loginDao.findPass(user_phone);
-            return user;
+            System.out.println(user.getUser_id());
         }else {
             //注册
             loginDao.userAdd(user_phone);
             user=loginDao.findPass(user_phone);
-            return user;
-       }
+            int user_id=user.getUser_id();
+            System.out.println(user_id);
+        }
+        return user;
 //        //存入redis
 //        Gson gson=new Gson();
 //        LoginUserInfo loginUserInfo = loginUserInfo(user.getUser_id(),user);

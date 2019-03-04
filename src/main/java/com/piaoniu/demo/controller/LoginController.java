@@ -6,13 +6,15 @@ import com.piaoniu.demo.util.Json;
 import com.piaoniu.demo.util.Status;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 
-@RestController
+@Controller
 @Api(value = "手机登录",tags = {"登录功能接口"})
 @RequestMapping("/login")
 public class LoginController {
@@ -21,12 +23,13 @@ public class LoginController {
 
     //获取验证码
     @RequestMapping(value = "/getCode",method = RequestMethod.GET)
+    @ResponseBody
     @ApiOperation(value = "获取验证码")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "user_phone",value = "手机号码",dataType = "String"),
     })
     public Json getCode(String user_phone){
-
+        System.out.println("获取验证码");
         boolean falg=loginService.getCode(user_phone);
         Json json=new Json();
         int a=0;
@@ -45,13 +48,10 @@ public class LoginController {
             @ApiImplicitParam(name = "user_phone",value = "手机号码",dataType = "String"),
             @ApiImplicitParam(name = "code",value = "验证码",dataType = "String")
     })
-    public Json proof(String user_phone, String code, HttpSession httpSession){
-        Json json=loginService.proof(user_phone,code);
-        if (json.getStatus()==0) {
+    public String proof(String user_phone, String code, HttpSession httpSession){
+            Json json=loginService.proof(user_phone,code);
             User user=loginService.proofUser(user_phone);
             httpSession.setAttribute("User",user);
-            return Status.getStatus(0, user);
-        }
-        return json;
+        return "index-login";
     }
 }
